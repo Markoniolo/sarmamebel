@@ -1,0 +1,104 @@
+{%
+    set tileItemTextile = [
+    { icon: '/assets/img/tile-item/textile-1.jpg', hint: 'Велюр синий' },
+    { icon: '/assets/img/tile-item/textile-2.jpg', hint: 'Велюр Dream Beige' },
+    { icon: '/assets/img/tile-item/textile-3.jpg', hint: 'Велюр коричневый' },
+    { icon: '/assets/img/tile-item/textile-4.jpg', hint: 'Велюр серый' },
+]
+%}
+
+<div class="tile-item tile-item_hover">
+    <button class="tile-item__favorite" type="button" data-element="favorite" data-name="{{ item.name }}"></button>
+    <div class="tile-item__tags">
+        <div class="tile-item__tag text-11-medium" style="background-color: #D44A1B; color: #fff">Sale</div>
+        <div class="tile-item__tag text-11-medium" style="background-color: #EE7E19; color: #fff">Хит</div>
+        <div class="tile-item__tag text-11-medium" style="background-color: #D7CCC3; color: #333">Новинка</div>
+    </div>
+    <a href="#" class="tile-item__link">
+        <picture class="tile-item__picture">
+            <img src="{{ item.image }}" alt="" class="tile-item__image" loading="lazy">
+        </picture>
+        <div class="tile-item__title text-16-medium">{{ item.name }}</div>
+    </a>
+    <div class="tile-item__info">
+        <div class="tile-item__info-box">
+            <div class="tile-item__review-star">
+                <div class="tile-item__review-star-fill" style="width: 50%"></div>
+            </div>
+            <div class="tile-item__review text-14">4,9</div>
+        </div>
+        <div class="tile-item__info-count text-14">53 отзыва</div>
+        <div class="tile-item__info-status text-14">В наличии</div>
+    </div>
+    {% if item.mod == 'textile' %}
+        <div class="tile-item__textile">
+            <span class="tile-item__textile-note">Ткань</span>
+            <div class="tile-item__textile-list">
+                {% for box in tileItemTextile %}
+                    <label class="tile-item__textile-item">
+                        {% if loop.first %}
+                            <input type="radio" class="tile-item__textile-input" name="{{item.name}}" checked>
+                        {% else %}
+                            <input type="radio" class="tile-item__textile-input" name="{{item.name}}">
+                        {% endif %}
+                        <div class="tile-item__textile-view">
+                            <img src="{{ box.icon }}" alt="" class="tile-item__textile-icon">
+                            <span class="tile-item__textile-hint text-11-medium">{{ box.hint }}</span>
+                        </div>
+                    </label>
+                {% endfor %}
+            </div>
+            <div class="tile-item__textile-all text-14">+7</div>
+        </div>
+    {% else %}
+        <div class="tile-item__hardness">
+            <div class="tile-item__hardness-name text-14">Уровень жесткости</div>
+            <img src="/assets/img/ic_hardness_black.svg" alt="" class="tile-item__hardness-icon">
+            <div class="tile-item__hardness-value text-14">{{ item.mod }}</div>
+        </div>
+    {% endif %}
+    <div class="tile-item__select-box">
+        <div class="tile-item__select-note text-14">Ш х Д, см</div>
+        <div class="tile-item__select">
+            {% include 'custom-select.twig' with {
+                'name': 'size',
+                'placeholder': '120 x 200',
+                'mod': 'custom-select custom-select_size',
+                'options': [{value: '0', text: '120 x 200'},{value: '1', text: '200 x 120'},
+                    {value: '2', text: '150 x 150'}]
+            } %}
+        </div>
+    </div>
+    <div class="tile-item__price">
+        <div class="tile-item__price-current text-18-medium">11 250 ₽</div>
+        <div class="tile-item__price-old text-16">11 250 ₽</div>
+        <div class="tile-item__price-action text-14">–17%</div>
+    </div>
+    <div class="tile-item__hover">
+        <div class="tile-item__buttons">
+            {% if item.order %}
+                <a href="#modal-basket" class="tile-item__button-basket btn-blue" data-fancybox><span>В корзину</span></a>
+            {% else %}
+                <a href="#modal-order" class="tile-item__button-order btn-blue" data-fancybox><span>Под заказ</span></a>
+            {% endif %}
+            <button class="tile-item__favorite tile-item__favorite_mob" type="button" data-element="favorite" data-name="{{ item.name }}"></button>
+            <button class="tile-item__button-compare btn-grey" data-element="compare" data-name="{{ item.name }}" type="button"></button>
+        </div>
+        <p class="tile-item__description text-14">
+            Матрас со сторонами умеренно-мягкой жесткости с экопеной и умеренно-высокой жесткости с кокосовой койрой.
+            В основе – независимый пружинный блок. Жаккардовый чехол простеган  на синтепоне.
+        </p>
+        <div class="tile-item__features">
+            {% for featute in [{name:'Нагрузка:',value:'90 кг'},{name:'Жесткость:',value:'Средняя/Мягкая'},{name:'Серия:',value:'Just'}] %}
+                <div class="tile-item__feature">
+                    <div class="tile-item__feature-name text-11-medium">{{ featute.name }}</div>
+                    <div class="{{ loop.last ? 'tile-item__feature-value color-blue text-13-medium' : 'tile-item__feature-value text-13-medium' }}">
+                        {{ featute.value }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="tile-item__delivery text-14">
+            <span class="tile-item__delivery-span">Доставка</span>  —  <span class="tile-item__delivery-value">7 дней</span>
+        </div>
+    </div>
+</div>

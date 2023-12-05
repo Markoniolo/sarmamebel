@@ -1,0 +1,38 @@
+{%
+    set bonusCapList = [
+        { value: '10%', name: 'Кэшбек в виде бонусов  за каждую покупку' },
+        { value: '500', name: 'Бонусов  за&nbsp;регистрацию' },
+        { value: '>5 000', name: 'Бонусов за отзывы и прочие действия' },
+        { value: '>10', name: 'Бонусов, а также специальные возможности' },
+    ]
+%}
+
+<section class="bonus-cap">
+    <div class="container">
+        <div class="bonus-cap__area">
+            <picture class="bonus-cap__picture">
+                <source srcset="/assets/img/bonus-cap/bonus-cap_mob.png" media="(max-width: 1260px)">
+                <img src="/assets/img/bonus-cap/bonus-cap.png" alt="" class="bonus-cap__image" loading="lazy">
+            </picture>
+            <div class="bonus-cap__inner">
+                <h1 class="bonus-cap__title title">
+                    Бонусная система
+                    <div><img src="/assets/img/bonus-cap/ic_sarma_circle.svg" alt=""> Сарма —</div>
+                    выгода в каждой покупке!
+                </h1>
+                <div class="bonus-cap__text text-14">
+                    Вступайте в программу лояльности и получайте еще больше бонусов и преимуществ
+                </div>
+                <a href="#" class="bonus-cap__button btn-white">Зарегестрироваться</a>
+            </div>
+        </div>
+        <ul class="bonus-cap__list">
+            {% for item in bonusCapList %}
+                <li class="bonus-cap__item">
+                    <span class="bonus-cap__value title">{{ item.value }}</span>
+                    <div class="bonus-cap__name text-14">{{ item.name }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

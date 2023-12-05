@@ -1,0 +1,42 @@
+<div class="modal-recovery modal-recovery_email" id="modal-recovery">
+    <div class="modal-recovery__title headline">Восстановление пароля</div>
+    <div class="modal-recovery__done text-16">
+        На ваш электронный адрес отправлено письмо. Для смены пароля необходимо пройти по ссылке указанной в письме.
+    </div>
+    <div class="modal-recovery__text modal-recovery__text_phone text-16">
+        Чтобы сменить пароль введите четырехзначный код отправленный вам в СМС на
+        номер <span class="modal-recovery__text-value-phone">+7 999 876-54-32</span>
+    </div>
+    <div class="modal-recovery__text modal-recovery__text_email text-16">
+        Чтобы сменить пароль введите четырехзначный код отправленный вам на электронную
+        почту <span class="modal-recovery__text-value-email">mail@mail.ru</span>
+    </div>
+    <button class="modal-recovery__change-login modal-recovery__change-login_phone text-16">Изменить номер</button>
+    <button class="modal-recovery__change-login modal-recovery__change-login_email text-16">Изменить почту</button>
+    <div class="modal-recovery__code">
+        <input type="number" class="modal-recovery__code-input headline input" maxlength="1" name="code1">
+        <input type="number" class="modal-recovery__code-input headline input" maxlength="1" name="code2">
+        <input type="number" class="modal-recovery__code-input headline input" maxlength="1" name="code3">
+        <input type="number" class="modal-recovery__code-input headline input" maxlength="1" name="code4">
+    </div>
+    <div class="modal-recovery__send-again text-13">
+        <button class="modal-recovery__send-again-btn text-13 link-underline" disabled>Отправить повторно</button>
+        через
+        <div class="modal-recovery__send-again-counter text-13">0:57</div>
+    </div>
+    <div class="modal-recovery__nav">
+        <div class="modal-recovery__nav-btn modal-recovery__nav-btn_active text-14" data-value="email">По Email</div>
+        <div class="modal-recovery__nav-btn text-14" data-value="phone">По СМС</div>
+    </div>
+    <div class="modal-recovery__area">
+        <input type="email" class="modal-recovery__input modal-recovery__input_email input" placeholder="Введите ваш email">
+        <input type="tel" class="modal-recovery__input modal-recovery__input_phone input" placeholder="Введите ваш номер телефона">
+    </div>
+    <button class="modal-recovery__submit btn-blue">Продолжить</button>
+    <div class="modal-recovery__link-box">
+        <a href="#modal-login" class="modal-recovery__link link-underline text-13" data-fancybox>У меня есть пароль, хочу войти</a>
+    </div>
+    <div class="modal-recovery__link-box">
+        <a href="#modal-registration" class="modal-recovery__link link-underline text-13" data-fancybox>Регистрация</a>
+    </div>
+</div>

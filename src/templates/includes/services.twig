@@ -1,0 +1,30 @@
+{%
+    set servicesList = [
+        { icon: '/assets/img/services/services-1.svg', name: 'Где мой&nbsp;заказ?' },
+        { icon: '/assets/img/services/services-2.svg', name: 'Задать вопрос' },
+        { icon: '/assets/img/services/services-3.svg', name: 'Наши салоны' },
+        { icon: '/assets/img/services/services-4.svg', name: 'Заявка на&nbsp;подбор' },
+        { icon: '/assets/img/services/services-5.svg', name: 'Рассчитать доставку' },
+        { icon: '/assets/img/services/services-6.svg', name: 'Стать партнером' },
+    ]
+%}
+
+<section class="services">
+    <div class="container">
+        <div class="services__slider">
+            <div class="swiper-wrapper">
+                {% for item in servicesList %}
+                    <div class="services__item swiper-slide">
+                        <a href="#" class="services__box">
+                            <div class="services__icon-box">
+                                <img src="{{ item.icon }}" alt="" class="services__icon">
+                            </div>
+                            <div class="services__name text-14">{{ item.name }}</div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="services__scrollbar swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>

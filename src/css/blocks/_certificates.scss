@@ -1,0 +1,93 @@
+.certificates {
+    margin-bottom: 62px;
+}
+
+.certificates__wrap {
+    position: relative;
+}
+
+.certificates__area {
+    border-radius: 8px;
+    padding: 56px 32px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ECE5DF;
+    overflow: hidden;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+        padding: 48px 32px;
+        margin: 0 -16px;
+        border-radius: 0;
+    }
+}
+
+.certificates__emblem {
+    position: absolute;
+    left: 20px;
+    bottom: -40px;
+    width: 122px;
+    height: 122px;
+    transform: rotate(-15deg);
+    @include breakpoint-down($mobile-width) {
+        width: 73px;
+        height: 73px;
+        bottom: -30px;
+        left: 25px;
+    }
+}
+
+.certificates__box {
+    width: 360px;
+    margin-right: 44px;
+    flex-shrink: 0;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.certificates__title {
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.certificates__text {
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 24px;
+    }
+}
+
+.certificates__inner {
+    overflow: hidden;
+    margin-right: -32px;
+    padding-right: 32px;
+    @include breakpoint-down($mobile-width) {
+        overflow: visible;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.certificates__slider {
+    flex-grow: 1;
+    position: relative;
+    padding-bottom: 32px;
+    @include breakpoint-down($mobile-width) {
+        padding-bottom: 24px;
+    }
+}
+
+.certificates__wrapper {
+
+}
+
+.certificates__image {
+    border-radius: 8px;
+    width: 171px;
+    height: 242px;
+    &:not(:last-of-type) {
+        margin-right: 16px;
+    }
+}

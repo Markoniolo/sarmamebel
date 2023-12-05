@@ -1,0 +1,72 @@
+.modal-new-pas {
+    display: none;
+    border-radius: 8px;
+    background: $c-white;
+    padding: 42px 32px 32px;
+    width: 440px;
+    @include breakpoint-down($mobile-width) {
+        border-radius: 0;
+        padding: 29px 16px 32px;
+    }
+}
+
+.modal-new-pas_done {
+    .modal-new-pas__text, .modal-new-pas__area {
+        display: none;
+    }
+    .modal-new-pas__text_done {
+        display: block;
+    }
+}
+
+.modal-new-pas__title {
+    margin-bottom: 10px;
+}
+
+.modal-new-pas__text {
+    margin-bottom: 16px;
+    color: #808080;
+    max-width: 328px;
+    width: 100%;
+}
+
+.modal-new-pas__text_done {
+    display: none;
+}
+
+.modal-new-pas__area {
+    padding: 32px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    @include breakpoint-down($mobile-width) {
+        padding: 16px;
+    }
+}
+
+.modal-new-pas__input {
+    width: 100%;
+    &:not(:last-of-type) {
+        margin-bottom: 16px;
+    }
+}
+
+.modal-new-pas__submit {
+    width: 100%;
+    margin-top: 82px;
+    padding: 18px 19px 19px;
+    @include breakpoint-down($mobile-width) {
+        margin-top: 105px;
+    }
+}
+
+.modal-new-pas__link-box {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.modal-new-pas__link {
+    color: $c-blue;
+    &::before {
+        background-color: $c-blue;
+    }
+}

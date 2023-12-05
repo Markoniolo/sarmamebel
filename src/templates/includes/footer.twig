@@ -1,0 +1,115 @@
+{%
+    set footerList = [
+        { headline: 'Каталог' , list: ['Матрасы','Кровати','Диваны ','Мебель для спальни','Аксессуары для сна'] },
+        { headline: 'Покупателям' , list: ['Доставка и оплата','Акции и скидки','Бонусная программа','Обмен и возврат','Энциклопедия сна'] },
+        { headline: 'Партнерам' , list: ['О компании','Франшиза','Гостиницам','Сотрудничество','Представительства'] },
+    ]
+%}
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <ul class="footer__list">
+                {% for item in footerList %}
+                    <li class="footer__item">
+                        <div class="footer__headline text-16-medium" data-element="footer-headline">{{ item.headline }}</div>
+                        <div class="footer__nav">
+                            {% for link in item.list %}
+                                <a href="#" class="footer__nav-link text-14 link-hover-blue">{{ link }}</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="footer__box">
+                <div class="footer__caption text-18-medium">
+                    Подпишитесь на нашу рассылку и получите <span>200 бонусов!</span>
+                </div>
+                <span class="footer__note text-14">Скидки, статьи и новости — раз в месяц</span>
+                <form class="footer__form">
+                    <input type="email" class="footer__input input" placeholder="Ваш e-mail">
+                    <button class="footer__submit btn-blue" disabled>
+                        <img src="/assets/img/ic_send_button.svg" alt="" class="footer__submit-icon">
+                    </button>
+                </form>
+                <div class="footer__social">
+                    <span class="footer__social-note text-14">Наши соцсети</span>
+                    <div class="footer__social-list">
+                        <a href="#" target="_blank" class="footer__social-link btn-grey">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_586_155921" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                                    <rect width="32" height="32" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_586_155921)">
+                                    <mask id="mask1_586_155921" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="30" height="32">
+                                        <rect x="1" width="30" height="32" fill="#D9D9D9"/>
+                                    </mask>
+                                    <g mask="url(#mask1_586_155921)">
+                                        <path d="M17.0718 23C8.87188 23 4.19488 17.3694 4 8H8.10743C8.24235 14.8769 11.2704 17.7898 13.6689 18.3904V8H17.5366V13.9309C19.9051 13.6757 22.3933 10.973 23.2328 8H27.1004C26.4558 11.6637 23.7575 14.3664 21.8387 15.4775C23.7575 16.3784 26.8307 18.7357 28 23H23.7425C22.8281 20.1471 20.5497 17.9399 17.5366 17.6396V23H17.0718Z" fill="#808080"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" class="footer__social-link btn-grey">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_586_155910" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                                    <rect width="32" height="32" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_586_155910)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.64987 15.6099C11.0923 12.7874 15.3883 10.9267 17.5378 10.0277C23.675 7.46077 24.9503 7.01488 25.7815 7.00016C25.9643 6.99692 26.3731 7.04248 26.6379 7.25852C26.8614 7.44094 26.9229 7.68737 26.9524 7.86033C26.9818 8.03328 27.0185 8.42728 26.9893 8.73514C26.6568 12.249 25.2177 20.7762 24.4856 24.7118C24.1758 26.3771 23.5658 26.9354 22.9753 26.9901C21.6919 27.1088 20.7174 26.1372 19.4744 25.3179C17.5294 24.0358 16.4305 23.2377 14.5425 21.9867C12.3606 20.5408 13.7751 19.7462 15.0185 18.4475C15.344 18.1076 20.9985 12.9358 21.1079 12.4667C21.1216 12.408 21.1343 12.1893 21.0051 12.0738C20.8759 11.9583 20.6851 11.9978 20.5475 12.0292C20.3524 12.0737 17.2452 14.1389 11.2258 18.2247C10.3439 18.8337 9.545 19.1304 8.82924 19.1149C8.04018 19.0977 6.52233 18.6663 5.39397 18.2974C4.00999 17.8451 2.91003 17.6059 3.00581 16.8376C3.0557 16.4374 3.60372 16.0282 4.64987 15.6099Z" fill="#808080"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" class="footer__social-link btn-grey">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_586_155913" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                                    <rect width="32" height="32" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_586_155913)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.6104 3C15.5449 8.27 15.1852 11.232 13.2086 13.2086C11.232 15.1853 8.27003 15.545 3 15.6104V16.3896C8.27003 16.4551 11.232 16.8148 13.2086 18.7914C15.1852 20.768 15.5449 23.73 15.6104 29H16.3896C16.4551 23.73 16.8148 20.768 18.7914 18.7914C20.768 16.8148 23.73 16.4551 29 16.3896V15.6104C23.73 15.5449 20.768 15.1853 18.7914 13.2086C16.8148 11.232 16.4551 8.27 16.3896 3H15.6104Z" fill="#808080"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" class="footer__social-link btn-grey">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_586_155916" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                                    <rect width="32" height="32" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_586_155916)">
+                                    <path d="M16.0002 15.8986C19.473 15.8986 22.2888 13.2347 22.2888 9.94929C22.2888 6.66389 19.473 4 16.0002 4C12.5275 4 9.71165 6.66389 9.71165 9.94929C9.71165 13.2347 12.5275 15.8986 16.0002 15.8986ZM16.0002 7.26887C17.5643 7.26887 18.8328 8.46891 18.8328 9.94862C18.8328 11.4283 17.5643 12.6284 16.0002 12.6284C14.4361 12.6284 13.1676 11.4283 13.1676 9.94862C13.1676 8.46891 14.4361 7.26887 16.0002 7.26887ZM24.3456 18.7297C22.8032 19.8782 21.0888 20.6643 19.2025 21.0882C19.1788 21.0935 19.1725 21.1067 19.1837 21.1272C20.3382 23.2377 21.4949 25.3462 22.6543 27.452C22.8249 27.7614 22.7676 27.9975 22.3615 27.9981C21.1196 28.0001 19.8895 28.0008 18.6707 27.9988C18.554 27.9988 18.4484 27.9327 18.403 27.8309L16.0198 22.5295C16.0149 22.519 16.0023 22.5143 15.9911 22.519C15.9863 22.5209 15.9821 22.5249 15.98 22.5295C15.2126 24.2387 14.4452 25.9452 13.6778 27.649C13.5632 27.9029 13.5395 27.9988 13.2061 27.9995C11.9684 28.0001 10.732 27.9995 9.49639 27.9981C9.15813 27.9981 9.22802 27.6318 9.32866 27.4494C10.4881 25.3448 11.6497 23.241 12.8119 21.1378C12.8238 21.1166 12.8175 21.1027 12.793 21.0954C12.5505 21.026 12.3087 20.9586 12.069 20.8925C10.4637 20.4501 8.989 19.7255 7.64574 18.7198C7.43817 18.5644 7.47312 18.413 7.62058 18.2246C8.21673 17.4616 8.81149 16.6999 9.40554 15.9389C9.50199 15.8146 9.68719 15.7875 9.81858 15.8787C9.82277 15.882 9.82767 15.8853 9.83186 15.8887C13.7582 18.9453 18.345 18.9711 22.2406 15.8622C22.3412 15.7815 22.4922 15.7934 22.5775 15.8887C22.5809 15.8926 22.5844 15.8972 22.5879 15.9012C23.1925 16.6834 23.7837 17.449 24.3603 18.1975C24.5176 18.4011 24.5791 18.5565 24.3456 18.7297Z" fill="#808080"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__middle">
+            <div class="footer__contacts">
+                <a href="tel:88005553555" class="footer__contacts-value text-18-medium link-hover-blue">8 800 555-35-55</a>
+                <span class="footer__contacts-note text-13">Бесплатный звонок по России, 24/7</span>
+            </div>
+            <div class="footer__contacts">
+                <a href="mailto:info@sarmamebel.ru" class="footer__contacts-value text-18-medium link-hover-blue">info@sarmamebel.ru</a>
+                <span class="footer__contacts-note text-13">Бесплатный звонок по России, 24/7</span>
+            </div>
+            <div class="footer__pay">
+                <div class="footer__pay-list">
+                    <img src="/assets/img/footer/footer-pay-icon-1.svg" alt="" class="footer__pay-icon">
+                    <img src="/assets/img/footer/footer-pay-icon-2.svg" alt="" class="footer__pay-icon">
+                    <img src="/assets/img/footer/footer-pay-icon-3.svg" alt="" class="footer__pay-icon">
+                </div>
+                <span class="footer__pay-note text-13">Платежные системы</span>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span class="footer__copyright text-13">© 2017—2023, ООО «ПМК»</span>
+            <a href="#" class="footer__bottom-link link-underline text-13">Политика конфиденциальности</a>
+            <a href="#" class="footer__bottom-link link-underline text-13">Реквизиты</a>
+            <div class="footer__develop">
+                <span class="footer__develop-span text-13">Дизайн и разработка:</span>
+                <img src="/assets/img/footer/footer-develop-icon.svg" alt="" class="footer__develop-icon">
+            </div>
+        </div>
+    </div>
+</footer>

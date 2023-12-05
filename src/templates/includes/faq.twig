@@ -1,0 +1,101 @@
+{%
+    set faqList = [
+        'Как стать участником программы?',
+        'Могу ли я оплатить бонусами, товар, который продается  со скидкой?',
+        'Где я могу воспользоваться бонусной программой?',
+        'Какие преимущества есть у участников программы, кроме начисления бонусов?',
+        'Копятся ли бонусы при оплате заказа с использованием бонусов?',
+        'Как узнать, сколько у меня накоплено бонусов на счете?',
+        'Сколько времени действительны накопительные бонусы?',
+        'А можно бонусы обменять на наличные деньги?',
+        'Если я потерял(а) доступ к личному кабинету, могу ли я его восстановить?',
+        'Если я возвращаю товар, что произойдет с моими бонусами?',
+        'Если я расплачусь по безналичному расчёту, мне начислят бонусы?',
+        'Если у меня изменился электронный адрес, что мне делать?',
+        'Как будет использована информация, указанная мною при регистрации?',
+        'Когда бонусы появятся на моём счете?',
+        'Смогу ли я впоследствии отказаться от участия в бонусной программе?',
+        'Что такое бонусы, как ими воспользоваться?',
+    ]
+%}
+
+<section class="faq">
+    <div class="container">
+        <div class="faq__wrap">
+            <div class="faq__main">
+                <h2 class="faq__title title">Часто задаваемые вопросы</h2>
+                <ul class="faq__list">
+                    {% for item in faqList %}
+                        <li class="faq__item">
+                            <div class="faq__top text-18-medium link-hover-blue" data-element="faq-top">
+                                {{ item }}
+                                <div class="faq__arrow">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_517_68643" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                                            <rect width="16" height="16" fill="#333"/>
+                                        </mask>
+                                        <g mask="url(#mask0_517_68643)">
+                                            <path d="M7.99863 11.3746L3.87109 7.24706L4.84863 6.26953L7.99863 9.41953L11.1486 6.26953L12.1262 7.24706L7.99863 11.3746Z" fill="#333333"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="faq__text text-18">
+                                Если на сайте стоимость товара указана со скидкой, вы можете оплатить товар бонусами
+                                только в том случае, если откажетесь от скидки, и бонусы будут начислены на полную
+                                стоимость товара. Рассмотрим такой пример. Матрас стоит без акции 10 000 ₽. По акции
+                                со скидкой 10% его цена составляет  9 000 ₽. На балансе у вас накоплено 3 000 бонусов.
+                                В такой ситуации вы можете отказаться от скидки и купить товар с использованием бонусов  
+                                за 7 000 ₽. Для этого добавьте товар в корзину и укажите, что хотите оплатить товар
+                                с использованием бонусных рублей. Система автоматически пересчитает стоимость.
+                            </p>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <h2 class="faq__title title">Полные правила бонусной программы</h2>
+                <div class="faq__btns">
+                    <a href="#" download class="faq__download text-16-medium btn-grey">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_558_138322" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_558_138322)">
+                                <path d="M12 17L16 13L14.6 11.6L13 13.15V9H11V13.15L9.4 11.6L8 13L12 17ZM6 22C5.45 22 4.97917 21.8042 4.5875 21.4125C4.19583 21.0208 4 20.55 4 20V8L10 2H18C18.55 2 19.0208 2.19583 19.4125 2.5875C19.8042 2.97917 20 3.45 20 4V20C20 20.55 19.8042 21.0208 19.4125 21.4125C19.0208 21.8042 18.55 22 18 22H6ZM6 20H18V4H10.85L6 8.85V20Z" fill="#808080"/>
+                            </g>
+                        </svg>
+                        Скачать (pdf / 3,2 мб)
+                    </a>
+                    <a href="#" class="faq__more btn-grey">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_558_151699" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_558_151699)">
+                                <path d="M5 21C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V5C3 4.45 3.19583 3.97917 3.5875 3.5875C3.97917 3.19583 4.45 3 5 3H12V5H5V19H19V12H21V19C21 19.55 20.8042 20.0208 20.4125 20.4125C20.0208 20.8042 19.55 21 19 21H5ZM9.7 15.7L8.3 14.3L17.6 5H14V3H21V10H19V6.4L9.7 15.7Z" fill="#808080"/>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="faq__sidebar">
+                <div class="faq__sidebar-box">
+                    <div class="faq__sidebar-headline text-16-medium">У вас остались вопросы?</div>
+                    <div class="faq__sidebar-text text-14">Звоните — мы поможем! По всей России, бесплатно 24/7</div>
+                    <a href="tel:88005553555" class="faq__sidebar-phone link-hover-blue">8 800 555-35-55</a>
+                    <div class="faq__sidebar-text text-14">Или задайте нам вопрос</div>
+                    <a href="#modal-callback" class="faq__callback btn-blue" data-fancybox>Задать вопрос</a>
+                    <div class="faq__chats">
+                        <a href="#" target="_blank" class="faq__chat">
+                            <img src="/assets/img/ic_tg_color.svg" alt="" class="faq__chat-icon">
+                            <div class="faq__chat-name text-14">Чат Telegram</div>
+                        </a>
+                        <a href="#" target="_blank" class="faq__chat">
+                            <img src="/assets/img/ic_wp_color.svg" alt="" class="faq__chat-icon">
+                            <div class="faq__chat-name text-14">Чат WhatsApp</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+{%
+    set productInfoNav = [
+        'Характеристики','Описание','Доставка и оплата','Вопросы <span>7</span>','Отзывы <span>123</span>'
+    ]
+%}
+
+<div class="product-info" id="product-info">
+    <div class="container">
+        <div class="product-info__nav">
+            <button class="product-info__item product-info__item_active text-18-medium" type="button">Характеристики</button>
+            <div class="product-info__box">
+                {% include 'components/product-stats.twig' %}
+            </div>
+            <button class="product-info__item text-18-medium" type="button">Описание</button>
+            <div class="product-info__box">
+                {% include 'components/product-description.twig' %}
+            </div>
+            <button class="product-info__item text-18-medium" type="button">Доставка и оплата</button>
+            <div class="product-info__box">
+                {% include 'components/product-delivery.twig' %}
+            </div>
+            <button class="product-info__item text-18-medium" type="button">Вопросы <span class="text-13">7</span></button>
+            <div class="product-info__box">
+                {% include 'components/product-questions.twig' %}
+            </div>
+            <button class="product-info__item text-18-medium" type="button">Отзывы <span class="text-13">123</span></button>
+            <div class="product-info__box">
+                {% include 'components/product-reviews.twig' %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,395 @@
+{%
+    set shopsList = [
+    [
+        { name: 'Байкальская, 244в,  ТЦ «Мебель Холл», 2 этаж', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[52.255702, 104.332673]'},
+        { name: 'Октябрьской Революции, 1, корп. 7а, ТЦ «Акцент»', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[52.293245, 104.294746]'},
+        { name: 'Рабочего штаба, 29, ТЦ «Домашний» (АМТ), 2 этаж', span: 'Ежедневно с 10:00 до 19:00', placemark: 'orange',
+            note: 'магазин партнёров', icon: '/assets/img/ic_shop_orange.svg', dataCoords: '[52.307118, 104.296803]'},
+        { name: 'Академическая, 31, ТЦ «Версаль»,  3 этаж', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[52.233701, 104.302426]'},
+    ],
+    [
+        { name: 'Красная площадь, 3, МоскваТЦ ГУМ, этаж 1', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[55.755052, 37.619520]'},
+        { name: 'Большой Черкасский пер., 19', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[55.755880, 37.627858]'}
+    ],
+    [
+        { name: 'Малая Морская ул., 4/1, Санкт-Петербург ТРК Адмирал, этаж 1', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[59.936013, 30.314499]'},
+        { name: 'Большая Морская ул., 21, этаж 1', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[59.934632, 30.314314]'},
+        { name: 'Большая Конюшенная ул., 12, этаж 1', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[59.937003, 30.323162]'}
+    ]
+]
+%}
+
+{%
+    set orderSidebarList = [
+        { name: 'Кровать Berry (рогожка Savanna Plus Vision), ортопедическая решетка, 200х120', value: '16 990 ₽ ∙ 1 шт', mod: ''},
+        { name: 'Подушка Анатомическая подушка  Cool Soft, 9 см', value: '5 890 ₽ ∙ 2 шт', mod: ''},
+        { name: 'Кровать Berry (рогожка Savanna Plus Vision), ортопедическая решетка, 200х120', value: '16 990 ₽ ∙ 1 шт',
+            mod: 'order__sidebar-item order__sidebar-item_hide'},
+        { name: 'Подушка Анатомическая подушка  Cool Soft, 9 см', value: '5 890 ₽ ∙ 2 шт',
+            mod: 'order__sidebar-item order__sidebar-item_hide'},
+    ]
+%}
+
+{%
+    set orderRadioDelivery = [
+        {title: 'Бесплатно', text: 'Собственная служба доставки ∙ 1–2 дня', icon: '/assets/img/order/ic_order-delivery-1.svg',
+            value: 'free'},
+        {title: '680 ₽', text: 'CDEK ∙ 3–5 дней', icon: '/assets/img/order/ic_order-delivery-2.svg', value: 'CDEK'},
+        {title: '790 ₽', text: 'DPD ∙ 3–5 дней', icon: '/assets/img/order/ic_order-delivery-3.svg', value: 'DPD'},
+    ]
+%}
+
+{%
+    set orderRadioPay = [
+        {title: 'Наличными или картой курьеру', text: 'Оплата при получении', icon: '', value: 'pay-1'},
+        {title: 'Банковской картой онлайн', text: 'Мир, Visa, MasterCard', icon: '/assets/img/order/ic_order-pay-2.svg', value: 'pay-2'},
+        {title: 'В рассрочку', text: 'MoneyCare, Почта Банк', icon: '/assets/img/order/ic_order-pay-3.svg', value: 'pay-3'},
+        {title: 'В кредит', text: 'Сбер', icon: '/assets/img/order/ic_order-pay-4.svg', value: 'pay-4'},
+        {title: 'Оплата частями', text: '4 платежа от Долями', icon: '/assets/img/order/ic_order-pay-5.svg', value: 'pay-5'},
+        {title: 'Yandex Pay', text: 'Оплата через Яндекс', icon: '/assets/img/order/ic_order-pay-6.svg', value: 'pay-6'},
+    ]
+%}
+
+{%
+    set orderPart = [
+        { date: 'Сегодня', percent: '25%', dot: 'order__part-dot order__part-dot_active' },
+        { date: 'Через  2 недели', percent: '25%', dot: 'order__part-dot' },
+        { date: 'Через  4 недели', percent: '25%', dot: 'order__part-dot' },
+        { date: 'Через  6 недель', percent: '25%', dot: 'order__part-dot' },
+    ]
+%}
+
+<section class="order">
+    <div class="container">
+        <div class="order__title-box">
+            <button class="order__back"></button>
+            <h1 class="order__title title">Оформление заказа</h1>
+        </div>
+        <div class="order__wrap">
+            <div class="order__main">
+                <div class="order__area">
+                    <div class="order__top">
+                        <div class="order__headline text-18-medium">1. Данные получателя</div>
+                        <label class="order__top-label">
+                            <div class="order__top-checkbox-box">
+                                <input type="checkbox" class="order__top-checkbox" name="top-person">
+                                <div class="order__top-checkbox-view"></div>
+                            </div>
+                            <div class="order__top-text text-13">
+                                Заказ получит другой человек
+                            </div>
+                        </label>
+                    </div>
+                    <div class="order__box">
+                        <label class="order__label">
+                            <span class="order__label-name text-14">Имя*</span>
+                            <input type="text" class="order__input input" name="name">
+                        </label>
+                        <label class="order__label">
+                            <span class="order__label-name text-14">Фамилия*</span>
+                            <input type="text" class="order__input input" name="surname">
+                        </label>
+                        <label class="order__label">
+                            <span class="order__label-name text-14">Телефон*</span>
+                            <input type="tel" class="order__input input" name="surname" placeholder="Введите номер">
+                        </label>
+                        <label class="order__label">
+                            <span class="order__label-name text-14">Email</span>
+                            <input type="email" class="order__input input" name="email" placeholder="Пришлем информацию о заказе">
+                        </label>
+                        <label class="order__label order__label_wide">
+                            <span class="order__label-name text-14">Комментарии к заказу</span>
+                            <input type="text" class="order__input input" name="email" placeholder="Вопросы, пожелания, уточнения">
+                        </label>
+                    </div>
+                </div>
+                <div class="order__area" data-role="tabs-container">
+                    <div class="order__top">
+                        <div class="order__headline text-18-medium">2. Способ получения</div>
+                    </div>
+                    <div class="tabs-box tabs-box_delivery">
+                        <div class="tabs">
+                            <button class="tab tab_active text-14" data-index="0">Доставка</button>
+                            <button class="tab text-14" data-index="1">Самовывоз</button>
+                        </div>
+                    </div>
+                    <div class="tab-step tab-step_active">
+                        <div class="order__address">
+                            <div class="order__address-btns">
+                                <button class="order__address-btn order__address-btn_edit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <mask id="mask0_1125_132557" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                            <rect width="24" height="24" fill="#D9D9D9"/>
+                                        </mask>
+                                        <g mask="url(#mask0_1125_132557)">
+                                            <path d="M18.2701 9.4137L14.5493 5.73151L15.775 4.50411C16.1106 4.16804 16.5228 4 17.0116 4C17.5004 4 17.9126 4.16804 18.2482 4.50411L19.4738 5.73151C19.8094 6.06758 19.9845 6.47306 19.9991 6.94795C20.0137 7.42283 19.8532 7.82831 19.5176 8.16438L18.2701 9.4137ZM17.0006 10.7068L7.72072 20H4V16.274L13.2799 6.98082L17.0006 10.7068Z" fill="#B3B3B3"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <button class="order__address-btn order__address-btn_delete">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_203_403867" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                            <rect width="24" height="24" fill="#D9D9D9"/>
+                                        </mask>
+                                        <g mask="url(#mask0_203_403867)">
+                                            <path d="M9.4 16.5L12 13.9L14.6 16.5L16 15.1L13.4 12.5L16 9.9L14.6 8.5L12 11.1L9.4 8.5L8 9.9L10.6 12.5L8 15.1L9.4 16.5ZM7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6Z" fill="#B3B3B3"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="order__address-circle"></div>
+                            <div class="order__address-inner">
+                                <div class="order__address-name text-16-medium">Иркутск, ул. Халтурина, 4</div>
+                                <div class="order__address-text text-14">2 подъезд ∙ 3 этаж</div>
+                                <div class="order__address-text text-14">
+                                    На выъезде шлагбаум. Как будете подъезжать — наберите +7 999 876-54-32
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#modal-address" class="order__address-choose btn-grey text-16-medium" data-fancybox>Выбрать адрес</a>
+                        <div class="order__box">
+                            {% for item in orderRadioDelivery %}
+                                <label class="order__radio">
+                                    {% if loop.first %}
+                                        <input type="radio" checked class="order__radio-input" name="delivery" value="{{ item.value }}">
+                                    {% else %}
+                                        <input type="radio" class="order__radio-input" name="delivery" value="{{ item.value }}">
+                                    {% endif %}
+                                    <span class="order__radio-border"></span>
+                                    <span class="order__radio-view"></span>
+                                    <div class="order__radio-inner">
+                                        <span class="order__radio-title text-16-medium">{{ item.title }}</span>
+                                        <span class="order__text text-14">{{ item.text }}</span>
+                                    </div>
+                                    <img src="{{ item.icon }}" alt="" class="order__radio-icon">
+                                </label>
+                            {% endfor %}
+                        </div>
+                        <label class="order__toggle">
+                            <input type="checkbox" checked class="order__toggle-input" name="Подъем на этаж">
+                            <span class="order__toggle-view"></span>
+                            <div class="order__toggle-text">Подъем на этаж <span class="order__toggle-value">+59 ₽</span></div>
+                        </label>
+                    </div>
+                    <div class="tab-step">
+                        {% include 'components/shops-map.twig' with {'mod': 'shops__area shops__area_order', 'shopsList': shopsList} %}
+                    </div>
+                </div>
+                <div class="order__area">
+                    <div class="order__top">
+                        <div class="order__headline text-18-medium">3. Оплата</div>
+                        <label class="order__top-label">
+                            <div class="order__top-checkbox-box">
+                                <input type="checkbox" class="order__top-checkbox" name="ur-person">
+                                <div class="order__top-checkbox-view"></div>
+                            </div>
+                            <div class="order__top-text text-13">
+                                Покупаю как юр. лицо
+                            </div>
+                        </label>
+                    </div>
+                    <div class="order__box">
+                        {% for item in orderRadioPay %}
+                            <label class="{{ item.icon ? 'order__radio' : 'order__radio order__radio_no-icon' }}">
+                                {% if loop.first %}
+                                    <input type="radio" checked class="order__radio-input" name="pay" value="{{ item.value }}">
+                                {% else %}
+                                    <input type="radio" class="order__radio-input" name="pay" value="{{ item.value }}">
+                                {% endif %}
+                                <span class="order__radio-view"></span>
+                                <div class="order__radio-inner">
+                                    <span class="order__radio-title text-16-medium">{{ item.title }}</span>
+                                    <span class="order__text text-14">{{ item.text }}</span>
+                                </div>
+                                {% if item.icon %}
+                                    <img src="{{ item.icon }}" alt="" class="order__radio-icon">
+                                {% endif %}
+                                {% if item.title == 'В рассрочку' %}
+                                    <div class="order__installment" data-role="tabs-container">
+                                        <div class="tabs-box">
+                                            <div class="tabs">
+                                                <button class="tab text-14" data-index="0">
+                                                    MoneyCare
+                                                </button>
+                                                <button class="tab tab_active text-14" data-index="1">
+                                                    Почта России
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-step">
+                                            <div class="order__installment-area">
+                                                <div class="order__installment-box">
+                                                    <div class="order__installment-value headline">0</div>
+                                                    <div class="order__installment-span text-13">%</div>
+                                                </div>
+                                                <div class="order__installment-box">
+                                                    <div class="order__installment-value headline">3-5</div>
+                                                    <div class="order__installment-span text-13">мес.</div>
+                                                </div>
+                                            </div>
+                                            <div class="order__installment-text text-14">
+                                                Какой то текст для MoneyCare
+                                            </div>
+                                            <div class="order__installment-note text-13">
+                                                * Какой то серый текст для MoneyCare
+                                            </div>
+                                            <div class="order__more-box">
+                                                <a href="#" class="order__more text-14">Подробнее</a>
+                                            </div>
+                                        </div>
+                                        <div class="tab-step tab-step_active">
+                                            <div class="order__installment-area">
+                                                <div class="order__installment-box">
+                                                    <div class="order__installment-value headline">0</div>
+                                                    <div class="order__installment-span text-13">%</div>
+                                                </div>
+                                                <div class="order__installment-box">
+                                                    <div class="order__installment-value headline">6-12</div>
+                                                    <div class="order__installment-span text-13">мес.</div>
+                                                </div>
+                                            </div>
+                                            <div class="order__installment-text text-14">
+                                                Услуга доступна для обладателей дебетовых карт Почты России.
+                                            </div>
+                                            <div class="order__installment-note text-13">
+                                                * при оформлении заказа в рассрочку недоступно списание бонусов и применение промокода.
+                                            </div>
+                                            <div class="order__more-box">
+                                                <a href="#" class="order__more text-14">Подробнее</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if item.title == 'Оплата частями' %}
+                                    <div class="order__part">
+                                        <div class="order__part-span text-14">25% сейчас, остальное — позже</div>
+                                        <div class="order__part-area">
+                                            {% for box in orderPart %}
+                                                <div class="order__part-box">
+                                                    <div class="{{ box.dot }}"></div>
+                                                    <div class="order__part-date text-13">{{ box.date }} </div>
+                                                    <div class="order__part-percent text-18-medium">{{ box.percent }}</div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="order__more-box">
+                                            <a href="#" class="order__more text-14">Подробнее</a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="order__area order__area_bonus" data-role="tabs-container">
+                    <div class="tabs-box">
+                        <div class="tabs">
+                            <button class="tab tab_active text-14" data-index="0">Бонусы</button>
+                            <button class="tab text-14" data-index="1">Промокод</button>
+                        </div>
+                    </div>
+                    <div class="tab-step tab-step_active">
+                        <div class="order__bonus-span text-13">
+                            У вас <img src="/assets/img/bonus-share/ic_sarma_circle_black.svg" alt="" class="order__bonus-icon">
+                            <span class="order__bonus-value text-14">17 560 бонусов</span>
+                        </div>
+                        <input type="number" class="order__bonus-input input" placeholder="Введите количество бонусов">
+                        <div class="order__range">
+                            <tc-range-slider class="order__range-slider" value1="0" min="0" max="17560" step="1"
+                                 slider-height="2px" slider-width="100%" slider-bg="rgba(51, 51, 51, 0.08)" slider-bg-hover="rgba(51, 51, 51, 0.08)"
+                                 slider-bg-fill="#0A4881" pointer-width="16px" pointer-height="16px"
+                                 pointer-bg="#0A4881" pointer-bg-hover="#0A4881" pointer-bg-focus="#0A4881"
+                                 pointer-border="none" pointer-border-hover="none" pointer-border-focus="none"
+                                 pointer-shadow="none" pointer-shadow-hover="none" pointer-shadow-focus="none">
+                            </tc-range-slider>
+                        </div>
+                    </div>
+                    <div class="tab-step">
+                        <div class="order__promo-text text-13">Применить промокод</div>
+                        <input type="text" class="order__promo-input input" placeholder="Введите промокод">
+                    </div>
+                </div>
+                <div class="order__result">
+                    <div class="order__result-note text-13">Итого 8 товаров на сумму:</div>
+                    <div class="order__result-price headline">126 920 ₽</div>
+                    <button class="order__result-button btn-blue">Подтверждаю заказ</button>
+                    <label class="order__notify">
+                        <div class="order__checkbox-box">
+                            <input type="checkbox" checked class="order__checkbox" name="notify-checkbox">
+                            <div class="order__checkbox-view"></div>
+                        </div>
+                        <div class="order__notify-text text-13">
+                            Нажимая кнопку «Подтверждаю заказ», я даю свое согласие на сбор и обработку моих
+                            персональных данных в соответствии с <a href="#" class="link-underline">политикой конфиденциальности</a>
+                        </div>
+                    </label>
+                    <label class="order__notify">
+                        <div class="order__checkbox-box">
+                            <input type="checkbox" checked class="order__checkbox" name="notify-checkbox">
+                            <div class="order__checkbox-view"></div>
+                        </div>
+                        <div class="order__notify-text text-13">
+                            Хочу иногда получать смс-сообщения с подарками и интересными акциям
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="order__sidebar">
+                <div class="order__sidebar-title text-18-medium">4 товара в заказе</div>
+                <ul class="order__sidebar-list">
+                    {% for item in orderSidebarList %}
+                        <li class="{{ item.mod ? item.mod : 'order__sidebar-item' }}">
+                            <div class="order__sidebar-item-name text-14">
+                                Кровать Berry (рогожка Savanna Plus Vision), ортопедическая решетка, 200х120
+                            </div>
+                            <div class="order__sidebar-item-value text-14">
+                                16 990 ₽ ∙ 1 шт
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <button class="order__sidebar-more text-14">Развернуть</button>
+                <div class="order__sidebar-line order__sidebar-line_first">
+                    <div class="order__sidebar-name text-13">Промокод</div>
+                    <div class="order__sidebar-value text-13-medium color-orange">–1 500 ₽</div>
+                </div>
+                <div class="order__sidebar-line">
+                    <div class="order__sidebar-name text-13">Скидка за бонусы</div>
+                    <div class="order__sidebar-value text-13-medium">–2 389 ₽</div>
+                </div>
+                <div class="order__sidebar-line">
+                    <div class="order__sidebar-name text-13">Подъем на этаж</div>
+                    <div class="order__sidebar-value text-13-medium">59 ₽</div>
+                </div>
+                <div class="order__sidebar-line">
+                    <div class="order__sidebar-name text-13">Доставка</div>
+                    <div class="order__sidebar-value text-13-medium">Бесплатно</div>
+                </div>
+                <div class="order__sidebar-result">
+                    <div class="order__sidebar-result-span text-13">Итого</div>
+                    <div class="order__sidebar-result-box">
+                        <div class="order__sidebar-price">
+                            <div class="order__sidebar-price-current headline">126 920 ₽</div>
+                            <div class="order__sidebar-price-old text-16">186 920 ₽</div>
+                        </div>
+                        <div class="order__result-bonus">
+                            Вы получите
+                            <div class="order__result-bonus-value text-14">
+                                <img src="/assets/img/bonus-share/ic_sarma_circle_black.svg" alt="" class="order__result-bonus-icon">
+                                + 12 920 бонусов
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,78 @@
+{%
+    set stockTile = [
+        { image: '/assets/img/stock/stock-1.jpg', tag: 'Успейте до 30.09.2023',
+            left: 'Осталось 3 месяца 19 дней', name: 'Скидка на топпер при покупке матраса - 20%' },
+        { image: '/assets/img/stock/stock-2.jpg', tag: 'Успейте до 19.09.2023',
+            left: 'Осталось 1 месяц 12 часов', name: 'Герда + Fresh Herbs за 35 999 ₽' },
+        { image: '/assets/img/stock/stock-3.jpg', tag: 'Успейте до 10.09.2023',
+            left: 'Остался 6 дней 8 часов', name: 'Скидки на мебель и матрасы для детей и подростков' },
+        { image: '/assets/img/stock/stock-4.jpg', tag: 'Успейте до 10.09.2023',
+            left: 'Остался 2 месяца 6 дней', name: 'Обмен матраса после покупки' },
+        { image: '/assets/img/stock/stock-5.jpg', tag: '',
+            left: 'От 14 июня', name: 'Открытие дисконт-магазина в городе Усолье-Сибирское' },
+        { image: '/assets/img/stock/stock-6.jpg', tag: '',
+            left: 'От 14 июня', name: 'Особое предложение к открытию дачного сезона' },
+        { image: '/assets/img/stock/stock-7.jpg', tag: 'Успейте до 30.09.2023',
+            left: 'Осталось 3 месяца 19 дней', name: 'Скидка на топпер при покупке матраса - 20%' },
+        { image: '/assets/img/stock/stock-8.jpg', tag: 'Успейте до 19.09.2023',
+            left: 'Осталось 1 месяц 12 часов', name: 'Герда + Fresh Herbs за 35 999 ₽' },
+        { image: '/assets/img/stock/stock-9.jpg', tag: 'Успейте до 10.09.2023',
+            left: 'Остался 6 дней 8 часов', name: 'Скидки на мебель и матрасы для детей и подростков' },
+    ]
+%}
+
+{%
+    set filtersList = [
+    { name: 'Вид акций', type: 'checkbox', list: ['Все акции','Скидки на товары','Скидки на комплекты','Подарки'], mod: 'filters__dropdown filters__dropdown_active' },
+    { name: 'Срок акций', type: 'checkbox', list: ['Все акции','Горящие акции 🔥','Осталась неделя','Остался месяц','Завершённые'], mod: 'filters__dropdown filters__dropdown_active' },
+    ]
+%}
+
+<section class="stock">
+    <div class="container">
+        <h1 class="stock__title title">
+            Акции
+            <span class="stock__title-span text-13-medium">76</span>
+        </h1>
+        <div class="stock__wrap">
+            <div class="stock__sidebar">
+                <div class="stock__all">
+                    <div class="stock__all-title text-16-medium">Все товары по акции</div>
+                    <a href="#" class="stock__all-link text-16">Перейти в каталог</a>
+                </div>
+                <div class="stock__mob-btn">
+                    <a href="#filters" class="stock__mob-filters" data-fancybox>
+                        <div class="stock__mob-filters-note">Фильтры ∙ <span class="stock__mob-filters-counter">7</span></div>
+                    </a>
+                </div>
+                <div class="stock__filters">
+                    {% include 'components/filters.twig' with {'filtersList': filtersList, 'mod': 'stock'} %}
+                </div>
+            </div>
+            <div class="stock__main">
+                <div class="stock__tile">
+                    {% for item in stockTile %}
+                        <a href="#" class="stock__link">
+                            <div class="stock__box">
+                                <picture class="stock__picture">
+                                    <img src="{{ item.image }}" alt="" class="stock__image">
+                                </picture>
+                                {% if item.tag %}
+                                    <div class="stock__tag text-11-medium">
+                                        {{ item.tag }}
+                                        <span style="background-color: #14703F"></span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="stock__left text-13">{{ item.left }}</div>
+                            <div class="stock__name text-18-medium">{{ item.name }}</div>
+                        </a>
+                    {% endfor %}
+                </div>
+                <div class="stock__pagination">
+                    {% include 'components/pagination.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

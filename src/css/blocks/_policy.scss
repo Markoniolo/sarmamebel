@@ -1,0 +1,66 @@
+.policy {
+    margin-bottom: 56px;
+}
+
+.policy__title {
+    margin-top: 9px;
+    margin-bottom: 65px;
+    @include breakpoint-down($mobile-width) {
+        margin-top: 15px;
+        margin-bottom: 48px;
+    }
+}
+
+.policy__wrap {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.policy__main {
+    width: 705px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+    a {
+        text-decoration: none;
+        color: $c-blue;
+    }
+}
+
+.policy__box {
+    &:not(:last-of-type) {
+        margin-bottom: 56px;
+    }
+}
+
+.policy__headline {
+    margin-bottom: 16px;
+}
+
+.policy__text {
+    &:not(:last-of-type) {
+        margin-bottom: 10px;
+    }
+}
+
+.policy__list {
+    padding-left: 20px;
+}
+
+.policy__item {
+    list-style: disc;
+    &:not(:last-of-type) {
+        margin-bottom: 10px;
+    }
+}
+
+.policy__sidebar {
+    width: 392px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        margin-top: 48px;
+    }
+}

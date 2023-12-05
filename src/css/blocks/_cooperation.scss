@@ -1,0 +1,150 @@
+.cooperation {
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+    }
+}
+
+.cooperation__form {
+    max-width: 808px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: #F5F3F1;
+    padding: 56px 24px;
+    @include breakpoint-down($mobile-width) {
+        padding: 24px 16px;
+    }
+}
+
+.cooperation__title {
+    margin-bottom: 13px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.cooperation__text {
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.cooperation__area {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -4px;
+    @include breakpoint-down($mobile-width) {
+        margin: 0;
+        display: block;
+    }
+}
+
+.cooperation__label {
+    margin: 0 4px 24px;
+    width: calc(50% - 8px);
+    @include breakpoint-down($mobile-width) {
+        margin: 0 0 16px;
+        width: 100%;
+    }
+}
+
+.cooperation__label_wide {
+    width: calc(100% - 8px);
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.cooperation__note {
+    display: block;
+    margin-bottom: 8px;
+    color: #808080;
+}
+
+.cooperation__input {
+    width: 100%;
+}
+
+.cooperation__box {
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.cooperation__list {
+    display: flex;
+    @include breakpoint-down($mobile-width) {
+        flex-direction: column;
+    }
+}
+
+.cooperation__checkbox {
+    &:not(:last-of-type) {
+        margin-right: 24px;
+        @include breakpoint-down($mobile-width) {
+            margin-right: 0;
+            margin-bottom: 8px;
+        }
+    }
+    display: flex;
+    align-items: center;
+    padding: 4px 12px 4px 0;
+}
+
+.cooperation__checkbox-input {
+
+}
+
+.cooperation__checkbox-view {
+
+}
+
+.cooperation__checkbox-name {
+    margin-left: 8px;
+}
+
+.cooperation__bottom {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.cooperation__submit {
+    margin-right: 24px;
+    padding: 18px 44px 19px;
+    @include breakpoint-down($mobile-width) {
+        padding: 16px;
+        max-width: 400px;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+}
+
+.cooperation__bottom-note {
+    @include breakpoint-down($mobile-width) {
+        max-width: 200px;
+        width: 100%;
+    }
+}
+
+.cooperation__policy {
+    display: flex;
+}
+
+.cooperation__checkbox-box {
+    width: 20px;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.cooperation__policy-text {
+    color: #808080;
+    line-height: 140%;
+}

@@ -1,0 +1,323 @@
+.refund {
+    margin-bottom: 80px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+    }
+}
+
+.refund__wrap {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.refund__main {
+    width: 704px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.refund__title {
+    margin-bottom: 25px;
+    margin-top: 9px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 39px;
+        margin-top: 15px;
+    }
+}
+
+.refund__text-main {
+    margin-bottom: 40px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 32px;
+    }
+}
+
+.refund__dropdown-wrap {
+    border-top: 1px solid rgba(51, 51, 51, 0.08);
+    border-bottom: 1px solid rgba(51, 51, 51, 0.08);
+}
+
+.refund__dropdown {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    cursor: pointer;
+    &:hover {
+        .refund__dropdown-text {
+            color: $c-blue;
+        }
+    }
+}
+
+.refund__dropdown_active {
+    & + .refund__dropdown-content {
+        display: block;
+        .refund__dropdown-text {
+            &::before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.refund__dropdown-icon {
+    margin-right: 8px;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.refund__dropdown-text {
+    flex-grow: 1;
+    padding-right: 28px;
+    transition-duration: $transition-duration;
+    transition-property: color;
+    position: relative;
+    &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: block;
+        background-image: url("../img/ic_dropdown_arrow_bottom_black.svg");
+        background-size: cover;
+        position: absolute;
+        top: 4px;
+        right: 0;
+    }
+}
+
+.refund__dropdown-content {
+    display: none;
+}
+
+.refund__dropdown-list {
+    padding-left: 26px;
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.refund__dropdown-item {
+    list-style: disc;
+    &:not(:last-of-type) {
+        margin-bottom: 5px;
+    }
+}
+
+.refund__dropdown-box {
+    margin-bottom: 24px;
+    padding: 24px 40px 24px 24px;
+    background-color: #F5F3F1;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.refund__dropdown-note {
+    color: #808080;
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.refund__headline {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-top: 32px;
+        margin-bottom: 16px;
+    }
+}
+
+.refund__text {
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+    a {
+        text-decoration: none;
+        color: $c-blue;
+    }
+}
+
+.refund__note {
+    color: #808080;
+}
+
+.refund__caption {
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.refund__list {
+    padding-left: 20px;
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.refund__item {
+    margin-bottom: 5px;
+    a {
+        text-decoration: none;
+        color: $c-blue;
+    }
+}
+
+.refund__form {
+
+}
+
+.refund__area {
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 32px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+        padding: 16px;
+    }
+}
+
+.refund__label {
+    width: calc(50% - 8px);
+    margin-bottom: 16px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.refund__label_wide {
+    width: 100%;
+}
+
+.refund__label-name {
+    display: block;
+    color: #808080;
+    margin-bottom: 8px;
+}
+
+.refund__input {
+    width: 100%;
+}
+
+.refund__textarea {
+    width: 100%;
+    margin-bottom: 8px;
+    height: 120px;
+}
+
+.refund__label-left {
+    text-align: right;
+    color: #B3B3B3;
+}
+
+.refund__label-left-count {
+
+}
+
+.refund__file-title {
+    margin-bottom: 8px;
+}
+
+.refund__file-input {
+    display: none;
+}
+
+.refund__file-area {
+    display: flex;
+    align-items: center;
+}
+
+.refund__file-icon {
+    margin-right: 8px;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    background-image: url("../img/ic_input_file_plus.svg");
+    background-size: cover;
+}
+
+.refund__file-icon_active {
+    background-image: url("../img/ic_check_green.svg");
+}
+
+.refund__file-note {
+    color: #B3B3B3;
+}
+
+.refund__file-note_active {
+    color: $c-main;
+}
+
+.refund__legend {
+    margin-bottom: 16px;
+    color: #808080;
+}
+
+.refund__submit {
+    margin-bottom: 24px;
+    max-width: 298px;
+    width: 100%;
+    padding: 18px 19px 19px;
+    @include breakpoint-down($mobile-width) {
+        max-width: 343px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
+
+.refund__policy {
+    display: flex;
+    margin-top: 16px;
+}
+
+.refund__checkbox-box {
+    width: 20px;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.refund__checkbox {
+    display: none;
+    &:checked + .refund__checkbox-view {
+        background: url("../img/ic_checkbox_checked.svg");
+    }
+}
+
+.refund__checkbox-view {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/ic_checkbox_empty.svg");
+    background-size: cover;
+    transition-duration: $transition-duration;
+    transition-property: background;
+}
+
+.refund__policy-text {
+    max-width: 540px;
+    width: 100%;
+    color: #808080;
+    line-height: 140%;
+}
+
+.refund__sidebar {
+    width: 392px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        margin-top: 48px;
+    }
+}

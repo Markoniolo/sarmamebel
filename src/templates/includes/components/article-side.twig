@@ -1,0 +1,96 @@
+{%
+    set tags = [
+        'Матрас','Как выбрать','ТОП','Материалы','Подушка','Кровать ','Пружинный','Беспружинный','Ортопедический',
+        'Для ребенка','Сон','Пружинный блок','Натуральный латекс','Жесткость','Одеяло','Заболевания спины ',
+        'Наматрасник','Премиум','Уход','Двуспальный','Постельное белье '
+    ]
+%}
+
+{%
+    set popular = [
+        { image: '/assets/img/article-side/article-side-popular-1.jpg',
+            name: 'Как выбрать размер  кровати?', views: '10 533' },
+        { image: '/assets/img/article-side/article-side-popular-2.jpg',
+            name: '3 простых правила, чтобы ваш быт стал экологичным', views: '7 165' },
+        { image: '/assets/img/article-side/article-side-popular-3.jpg',
+            name: 'Исправляем осанку во сне:  3 совета', views: '7 005' },
+    ]
+%}
+
+<div class="{{ mod ? mod : 'article-side' }}">
+    {% if mod %}
+        <div class="article-side__social">
+            <a href="#" class="article-side__social-button btn-grey">
+                <svg class="article-side__social-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_586_155921" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                        <rect width="32" height="32" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_586_155921)">
+                        <mask id="mask1_586_155921" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="30" height="32">
+                            <rect x="1" width="30" height="32" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask1_586_155921)">
+                            <path d="M17.0718 23C8.87188 23 4.19488 17.3694 4 8H8.10743C8.24235 14.8769 11.2704 17.7898 13.6689 18.3904V8H17.5366V13.9309C19.9051 13.6757 22.3933 10.973 23.2328 8H27.1004C26.4558 11.6637 23.7575 14.3664 21.8387 15.4775C23.7575 16.3784 26.8307 18.7357 28 23H23.7425C22.8281 20.1471 20.5497 17.9399 17.5366 17.6396V23H17.0718Z" fill="#808080"/>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <a href="#" class="article-side__social-button btn-grey">
+                <svg class="article-side__social-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_586_155916" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                        <rect width="32" height="32" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_586_155916)">
+                        <path d="M16.0002 15.8986C19.473 15.8986 22.2888 13.2347 22.2888 9.94929C22.2888 6.66389 19.473 4 16.0002 4C12.5275 4 9.71165 6.66389 9.71165 9.94929C9.71165 13.2347 12.5275 15.8986 16.0002 15.8986ZM16.0002 7.26887C17.5643 7.26887 18.8328 8.46891 18.8328 9.94862C18.8328 11.4283 17.5643 12.6284 16.0002 12.6284C14.4361 12.6284 13.1676 11.4283 13.1676 9.94862C13.1676 8.46891 14.4361 7.26887 16.0002 7.26887ZM24.3456 18.7297C22.8032 19.8782 21.0888 20.6643 19.2025 21.0882C19.1788 21.0935 19.1725 21.1067 19.1837 21.1272C20.3382 23.2377 21.4949 25.3462 22.6543 27.452C22.8249 27.7614 22.7676 27.9975 22.3615 27.9981C21.1196 28.0001 19.8895 28.0008 18.6707 27.9988C18.554 27.9988 18.4484 27.9327 18.403 27.8309L16.0198 22.5295C16.0149 22.519 16.0023 22.5143 15.9911 22.519C15.9863 22.5209 15.9821 22.5249 15.98 22.5295C15.2126 24.2387 14.4452 25.9452 13.6778 27.649C13.5632 27.9029 13.5395 27.9988 13.2061 27.9995C11.9684 28.0001 10.732 27.9995 9.49639 27.9981C9.15813 27.9981 9.22802 27.6318 9.32866 27.4494C10.4881 25.3448 11.6497 23.241 12.8119 21.1378C12.8238 21.1166 12.8175 21.1027 12.793 21.0954C12.5505 21.026 12.3087 20.9586 12.069 20.8925C10.4637 20.4501 8.989 19.7255 7.64574 18.7198C7.43817 18.5644 7.47312 18.413 7.62058 18.2246C8.21673 17.4616 8.81149 16.6999 9.40554 15.9389C9.50199 15.8146 9.68719 15.7875 9.81858 15.8787C9.82277 15.882 9.82767 15.8853 9.83186 15.8887C13.7582 18.9453 18.345 18.9711 22.2406 15.8622C22.3412 15.7815 22.4922 15.7934 22.5775 15.8887C22.5809 15.8926 22.5844 15.8972 22.5879 15.9012C23.1925 16.6834 23.7837 17.449 24.3603 18.1975C24.5176 18.4011 24.5791 18.5565 24.3456 18.7297Z" fill="#808080"/>
+                    </g>
+                </svg>
+            </a>
+            <a href="#" class="article-side__social-share btn-grey">
+                <img src="/assets/img/ic_share_grey.svg" alt="" class="article-side__social-icon"> Поделиться
+            </a>
+        </div>
+    {% endif %}
+    <div class="article-side__title article-side__title_mob-hide text-18-medium">Рубрики</div>
+    <div class="article-side__tags">
+        {% for item in tags %}
+            {% if mod %}
+                <a href="#" class="article-side__tag">
+                    <div class="article-side__view">
+                        <span class="article-side__tag-name text-14">{{ item }}</span>
+                    </div>
+                </a>
+            {% else %}
+                <label class="article-side__tag">
+                    <input type="checkbox" class="article-side__input" name="tag" value="{{ item }}">
+                    <div class="article-side__view">
+                        <span class="article-side__tag-name text-14">{{ item }}</span>
+                    </div>
+                </label>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="article-side__title text-18-medium">Популярные статьи</div>
+    <div class="article-side__list">
+        {% for item in popular %}
+            <a href="#" class="article-side__item">
+                <img src="{{ item.image }}" alt="" class="article-side__image">
+                <div class="article-side__box">
+                    <div class="article-side__item-name text-16-medium">{{ item.name }}</div>
+                    <div class="article-side__item-views text-14">{{ item.views }}</div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    <div class="article-side__subscribe">
+        <div class="article-side__headline text-18-medium">
+            Подпишитесь на нашу рассылку и получите <span class="color-orange">200 бонусов!</span>
+        </div>
+        <div class="article-side__subscribe-note text-14">Скидки, статьи и новости — раз в месяц</div>
+        <div class="article-side__line">
+            <input type="email" class="article-side__subscribe-input input" placeholder="Ваш e-mail">
+            <button class="article-side__submit btn-blue" disabled>
+                <img src="/assets/img/ic_send_button.svg" alt="" class="article-side__submit-icon">
+            </button>
+        </div>
+    </div>
+</div>

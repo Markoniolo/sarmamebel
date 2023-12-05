@@ -1,0 +1,120 @@
+{%
+    set modalCity = [
+    {
+            letter: 'А',
+            list: ['Ангарск','Абакан',]
+     },
+    {
+            letter: 'Б',
+            list: ['Барнаул','Бийск','Биробиджан','Благовещенск','Братск']
+     },
+    {
+            letter: 'В',
+            list: ['Владивосток']
+     },
+    {
+            letter: 'Г',
+            list: ['Горно-Алтайск']
+     },
+    {
+            letter: 'Е',
+            list: ['Екатеринбург']
+     },
+    {
+            letter: 'И',
+            list: ['Иркутск']
+     },
+    {
+            letter: 'K',
+            list: ['Кабанский р-н (респ. Бурятия)','Канск','Кемерово','Комсомольск-на-Амуре','Красноярск',]
+     },
+    {
+            letter: 'М',
+            list: ['Магадан','Минусинск','Москва']
+     },
+    {
+            letter: 'Н',
+            list: ['Нижний Тагил','Новокузнецк','Новосибирск','Норильск']
+     },
+    {
+            letter: 'Н',
+            list: ['Нижний Тагил','Новокузнецк','Новосибирск','Норильск']
+     },
+    {
+            letter: 'П',
+            list: ['Петропавловск-Камчатский']
+     },
+    {
+            letter: 'У',
+            list: ['Улан-Удэ','Усолье-Сибирское']
+     },
+    {
+            letter: 'Ч',
+            list: ['Чита']
+     },
+    {
+            letter: 'Ю',
+            list: ['Южно-Сахалинск']
+     },
+    {
+            letter: 'Х',
+            list: ['Хабаровск']
+     },
+    {
+            letter: 'Я',
+            list: ['Якутск']
+     },
+    ]
+%}
+
+<div class="modal-city" id="modal-city">
+        <div class="modal-city__headline headline">Выберите ваш город</div>
+        <div class="modal-city__top">
+            <div class="modal-city__search-layer" data-element="modal-city-layer"></div>
+            <div class="modal-city__search" data-element="modal-city-search">
+                <label class="modal-city__search-label">
+                    <img src="/assets/img/ic_search_grey.svg" alt="" class="modal-city__search-icon">
+                    <input type="search" class="modal-city__search-input text-16-medium"
+                           placeholder="Начните вводить ваш город" data-element="modal-city-search-input">
+                </label>
+                <button class="modal-city__search-close" type="button" data-element="modal-city-search-close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_517_68614" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                            <rect width="16" height="16" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_517_68614)">
+                            <path d="M4.85 12L4 11.15L7.15 8L4 4.85L4.85 4L8 7.15L11.15 4L12 4.85L8.85 8L12 11.15L11.15 12L8 8.85L4.85 12Z" fill="#808080"/>
+                        </g>
+                    </svg>
+                </button>
+                <div class="modal-city__result">
+                    <div class="modal-city__result-inner">
+                        {% for item in ['Барнаул','Бийск','Биробиджан','Благовещенск','Братск','Барнаул','Бийск'] %}
+                            <a href="#" class="modal-city__result-item text-14">{{ item }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-city__tags">
+                {% for tag in ['Россия','Иркутск','Красноярск','Екатиринбург'] %}
+                    <div class="modal-city__tag text-14">{{ tag }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="modal-city__wrap">
+            <div class="modal-city__area">
+                {% for city in modalCity %}
+                    <div class="modal-city__box">
+                        <div class="modal-city__letter text-18-medium">{{ city.letter }}</div>
+                        <div class="modal-city__list">
+                            {% for item in city.list %}
+                                <div class="{{ item == 'Ангарск' ? 'modal-city__item modal-city__item_active text-14' : 'modal-city__item text-14' }}">
+                                    {{ item }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</div>

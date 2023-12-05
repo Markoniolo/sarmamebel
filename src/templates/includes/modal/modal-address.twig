@@ -1,0 +1,56 @@
+{%
+    set modalAddressList = [
+        { name: 'Иркутск, ул. Халтурина, 4', id: 'modal-address_1',
+            text: ['2 подъезд ∙ 3 этаж','На въезде шлагбаум. Как будете подъезжать — наберите +7 999 876-54-32'] },
+        { name: 'Петропавловск-Камчатский, просп. Рыбаков, 1', id: 'modal-address_2',
+            text: ['4 подъезд ∙ 5 этаж','Наберите — я вас встречу'] },
+        { name: 'Комсомольск-на-Амуре, ул. Хетагуровская , 3', id: 'modal-address_3',
+            text: ['3 подъезд ∙ 12 этаж'] },
+    ]
+%}
+
+<div class="modal-address" id="modal-address">
+    <div class="modal-address__headline headline">Выбрите другой адрес</div>
+    <div class="modal-address__list">
+        {% for label in modalAddressList %}
+            <label class="modal-address__label" for="{{ label.id }}">
+                <div class="modal-address__btns">
+                    <button class="modal-address__btn modal-address__btn_edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <mask id="mask0_1125_132557" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_1125_132557)">
+                                <path d="M18.2701 9.4137L14.5493 5.73151L15.775 4.50411C16.1106 4.16804 16.5228 4 17.0116 4C17.5004 4 17.9126 4.16804 18.2482 4.50411L19.4738 5.73151C19.8094 6.06758 19.9845 6.47306 19.9991 6.94795C20.0137 7.42283 19.8532 7.82831 19.5176 8.16438L18.2701 9.4137ZM17.0006 10.7068L7.72072 20H4V16.274L13.2799 6.98082L17.0006 10.7068Z" fill="#B3B3B3"/>
+                            </g>
+                        </svg>
+                    </button>
+                    <button class="modal-address__btn modal-address__btn_delete">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_203_403867" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_203_403867)">
+                                <path d="M9.4 16.5L12 13.9L14.6 16.5L16 15.1L13.4 12.5L16 9.9L14.6 8.5L12 11.1L9.4 8.5L8 9.9L10.6 12.5L8 15.1L9.4 16.5ZM7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6Z" fill="#B3B3B3"/>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                {% if loop.first %}
+                    <input type="radio" checked class="modal-address__input" name="modal-address" value="{{ label.name }}" id="{{ label.id }}">
+                {% else %}
+                    <input type="radio" class="modal-address__input" name="modal-address" value="{{ label.name }}" id="{{ label.id }}">
+                {% endif %}
+                <div class="modal-address__view"></div>
+                <div class="modal-address__border"></div>
+                <div class="modal-address__inner">
+                    <div class="modal-address__name text-16-medium">{{ label.name }}</div>
+                    {% for text in label.text %}
+                        <div class="modal-address__text text-14">{{ text }}</div>
+                    {% endfor %}
+                </div>
+            </label>
+        {% endfor %}
+    </div>
+    <button class="modal-address__button btn-grey text-16-medium">Добавить адрес</button>
+</div>

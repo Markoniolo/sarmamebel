@@ -1,0 +1,32 @@
+{%
+    set basketEmptyArea = [
+        { value: '10 %', span: 'От стоимости покупки возвращается бонусами' },
+        { value: 'до 15%', span: 'От суммы покупки можно оплатить бонусами' },
+        { value: '1 бонус = 1 рубль', span: 'От суммы покупки можно оплатить бонусами' },
+    ]
+%}
+
+<section class="basket-empty">
+    <div class="container">
+        <div class="basket-empty__top">
+            <button class="basket-empty__back"></button>
+            <h1 class="basket-empty__title title">Корзина</h1>
+        </div>
+        <div class="basket-empty__wrap">
+            <div class="basket-empty__headline text-18-medium">Тут пока пусто</div>
+            <div class="basket-empty__text">Получайте максимальную выгоду при покупке на нашем сайте</div>
+            <div class="basket-empty__area">
+                {% for box in basketEmptyArea %}
+                    <div class="basket-empty__box">
+                        <div class="basket-empty__value headline">{{ box.value }}</div>
+                        <div class="basket-empty__span text-14">{{ box.span }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="basket-empty__bottom">
+                <a href="#" class="basket-empty__catalog btn-blue">К покупкам</a>
+                <a href="#" class="basket-empty__bonus link-underline text-13">Подробнее о бонусной программе</a>
+            </div>
+        </div>
+    </div>
+</section>

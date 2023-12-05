@@ -1,0 +1,55 @@
+{%
+    set shopsList = [
+    [
+        { name: 'Байкальская, 244в,  ТЦ «Мебель Холл», 2 этаж', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[52.255702, 104.332673]'},
+        { name: 'Октябрьской Революции, 1, корп. 7а, ТЦ «Акцент»', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[52.293245, 104.294746]'},
+        { name: 'Рабочего штаба, 29, ТЦ «Домашний» (АМТ), 2 этаж', span: 'Ежедневно с 10:00 до 19:00', placemark: 'orange',
+            note: 'магазин партнёров', icon: '/assets/img/ic_shop_orange.svg', dataCoords: '[52.307118, 104.296803]'},
+        { name: 'Академическая, 31, ТЦ «Версаль»,  3 этаж', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[52.233701, 104.302426]'},
+    ],
+    [
+        { name: 'Красная площадь, 3, МоскваТЦ ГУМ, этаж 1', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[55.755052, 37.619520]'},
+        { name: 'Большой Черкасский пер., 19', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[55.755880, 37.627858]'}
+    ],
+    [
+        { name: 'Малая Морская ул., 4/1, Санкт-Петербург ТРК Адмирал, этаж 1', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[59.936013, 30.314499]'},
+        { name: 'Большая Морская ул., 21, этаж 1', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[59.934632, 30.314314]'},
+        { name: 'Большая Конюшенная ул., 12, этаж 1', span: 'Ежедневно с 10:00 до 19:00',
+            note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[59.937003, 30.323162]'}
+    ]
+]
+%}
+
+<section class="shops">
+    <div class="container">
+        <h2 class="shops__title title">Рады видеть вас в наших салонах!</h2>
+        <p class="shops__text text-16">
+            Мы предлагаем самый актуальный ассортимент на сегодня и предоставляем клиентам все возможности быть
+            уверенными  в покупке. Приглашаем посетить фирменные шоурумы и лично оценить качество используемых
+            тканей и материалов,  проверить комфортность наполнения и работы механизмов, убедиться в удобстве и
+            надежности нашей мебели!
+        </p>
+        <div class="shops__wrap">
+            {% include 'components/shops-map.twig' with {'mod': '', 'shopsList': shopsList} %}
+            <div class="shops__informer">
+                <div class="shops__slider" data-element="shops-slider">
+                    <div class="shops__wrapper swiper-wrapper">
+                        {% for item in [1,2,3] %}
+                            <a href="#" class="shops__slide swiper-slide">
+                                <img src="/assets/img/shops/shops-image-1.jpg" alt="" class="shops__image" loading="lazy">
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <div class="shops__pagination swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

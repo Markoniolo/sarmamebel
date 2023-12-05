@@ -1,0 +1,31 @@
+<div class="informer">
+    <div class="informer__wrap">
+        <div class="informer__slider" data-element="informer-slider">
+            <div class="swiper-wrapper">
+                {% for item in [1,2,3] %}
+                    <a href="#" class="informer__slide swiper-slide">
+                        <div class="informer__inner">
+                            <picture class="informer__picture">
+                                <img src="/assets/img/informer.jpg" alt="" class="informer__image" loading="lazy">
+                            </picture>
+                            <div class="informer__top">
+                                <div class="informer__title">Энциклопедия сна</div>
+                                <div class="informer__tag">#как выбрать</div>
+                            </div>
+                            <div class="informer__bottom">
+                                <div class="informer__line">
+                                    <div class="informer__date text-13">15 июня</div>
+                                    <div class="informer__time text-13">8 мин</div>
+                                </div>
+                                <div class="informer__name text-18-medium">
+                                    Как выбрать матрас:  4 важных вопроса,  на которые стоит ответить перед покупкой
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="informer__pagination swiper-pagination"></div>
+        </div>
+    </div>
+</div>

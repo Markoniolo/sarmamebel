@@ -1,0 +1,112 @@
+{%
+    set catalogTilePopular = [
+        'из натуральных материалов','поролоновые','для пожилых',
+        'из холкона','из холлофайбера','120х200','220х240','Скидки –70%',
+    ]
+%}
+
+{%
+    set filtersList = [
+        { name: 'Жесткость', type: 'checkbox', list: ['Мягкий','Средний','Выше среднего','Жесткий'], mod: 'filters__dropdown filters__dropdown_active' },
+        { name: 'Тип пружинного  блока', type: 'radio', list: ['Беспружинные','Зависимые','Независимые'], mod: '' },
+        { name: 'Серия', type: 'checkbox', list: ['Серия 1',' Серия 2','Серия 3'], mod: 'filters__dropdown filters__dropdown_hint' },
+        { name: 'Тип пружинного блока', type: 'radio', list: ['Тип пружинного блока 1','Тип пружинного блока 2','Тип пружинного блока 3'], mod: '' },
+        { name: 'Разная жесткость', type: 'checkbox', list: ['Разная жесткость 1','Разная жесткость 2','Разная жесткость 3'], mod: 'filters__dropdown filters__dropdown_hint' },
+        { name: 'Разница в весе', type: 'checkbox', list: ['Разница в весе 1','Разница в весе 2','Разница в весе 3'], mod: 'filters__dropdown filters__dropdown_hint' },
+        { name: 'Наличие', type: 'radio', list: ['Наличие 1','Наличие 2','Наличие 3'], mod: '' },
+        { name: 'Какой-то фильтр', type: 'radio', list: ['Какой-то фильтр 1','Какой-то фильтр 2','Какой-то фильтр 3'], mod: 'filters__dropdown filters__dropdown_hide' },
+        { name: 'Ещё какой-то фильтр', type: 'checkbox', list: ['Ещё какой-то фильтр 1','Ещё какой-то фильтр 2','Ещё какой-то фильтр 3'], mod: 'filters__dropdown filters__dropdown_hide' },
+    ]
+%}
+
+{%
+    set catalogTileList = [
+        { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_1.png', mod: 'мягкий', order: 'true' },
+        { name: 'Матрас Fresh Herbs', image: '/assets/img/tile-item/tile-item-2_2.png', mod: 'жесткий/мягкий', order: '' },
+        { name: 'Матрас Green Moss', image: '/assets/img/tile-item/tile-item-2_3.png', mod: 'жесткий', order: 'true' },
+        { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_4.png', mod: 'мягкий', order: '' },
+        { name: 'Матрас Fresh Herbs', image: '/assets/img/tile-item/tile-item-2_1.png', mod: 'жесткий/мягкий', order: 'true' },
+        { name: 'Матрас Just Care', image: '/assets/img/tile-item/tile-item-2_2.png', mod: 'жесткий', order: '' },
+        { name: 'Матрас Casper', image: '/assets/img/tile-item/tile-item-2_3.png', mod: 'мягкий', order: 'true' },
+        { name: 'Матрас Anabel', image: '/assets/img/tile-item/tile-item-2_4.png', mod: 'жесткий/мягкий', order: '' },
+        { name: 'Матрас Anabel', image: '/assets/img/tile-item/tile-item-2_1.png', mod: 'жесткий', order: 'true' },
+        { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_2.png', mod: 'мягкий', order: '' },
+        { name: 'Матрас Fresh Herbs', image: '/assets/img/tile-item/tile-item-2_3.png', mod: 'жесткий/мягкий', order: 'true' },
+        { name: 'Матрас Green Moss', image: '/assets/img/tile-item/tile-item-2_4.png', mod: 'жесткий', order: '' },
+        { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_1.png', mod: 'мягкий', order: 'true' },
+        { name: 'Матрас Fresh Herbs', image: '/assets/img/tile-item/tile-item-2_2.png', mod: 'жесткий/мягкий', order: '' },
+        { name: 'Матрас Just Care', image: '/assets/img/tile-item/tile-item-2_3.png', mod: 'жесткий', order: 'true' },
+    ]
+%}
+
+<section class="catalog-tile">
+    <div class="container">
+        <div class="catalog-tile__top">
+            <h1 class="catalog-tile__title title">Пружинные матраcы<span class="catalog-tile__title-span text-13-medium">
+                    753&nbsp;товара
+                </span></h1>
+            <div class="catalog-tile__popular">
+                <span class="catalog-tile__popular-note">Популярные запросы</span>
+                {% for link in catalogTilePopular %}
+                    <a href="#" class="catalog-tile__popular-link text-14">{{ link }}</a>
+                {% endfor %}
+            </div>
+            <a href="#" class="catalog-tile__choose text-16-medium">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_853_29760" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                        <rect width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_853_29760)">
+                        <path d="M8.8 21H5C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V15.2C3.8 15.2 4.5 14.9458 5.1 14.4375C5.7 13.9292 6 13.2833 6 12.5C6 11.7167 5.7 11.0708 5.1 10.5625C4.5 10.0542 3.8 9.8 3 9.8V6C3 5.45 3.19583 4.97917 3.5875 4.5875C3.97917 4.19583 4.45 4 5 4H9C9 3.3 9.24167 2.70833 9.725 2.225C10.2083 1.74167 10.8 1.5 11.5 1.5C12.2 1.5 12.7917 1.74167 13.275 2.225C13.7583 2.70833 14 3.3 14 4H18C18.55 4 19.0208 4.19583 19.4125 4.5875C19.8042 4.97917 20 5.45 20 6V10C20.7 10 21.2917 10.2417 21.775 10.725C22.2583 11.2083 22.5 11.8 22.5 12.5C22.5 13.2 22.2583 13.7917 21.775 14.275C21.2917 14.7583 20.7 15 20 15V19C20 19.55 19.8042 20.0208 19.4125 20.4125C19.0208 20.8042 18.55 21 18 21H14.2C14.2 20.1667 13.9375 19.4583 13.4125 18.875C12.8875 18.2917 12.25 18 11.5 18C10.75 18 10.1125 18.2917 9.5875 18.875C9.0625 19.4583 8.8 20.1667 8.8 21Z" fill="#333333"/>
+                    </g>
+                </svg>
+                Подобрать матрас
+            </a>
+            <div class="catalog-tile__mob-btns">
+                <a href="#filters" class="catalog-tile__mob-filters" data-fancybox>
+                    <div class="catalog-tile__mob-filters-note">Фильтры ∙ <span class="catalog-tile__mob-filters-counter">7</span></div>
+                </a>
+                <a href="#catalog-tile__sort" class="catalog-tile__mob-sort" data-fancybox>Сортировка</a>
+            </div>
+        </div>
+        <div class="catalog-tile__wrap">
+            <div class="catalog-tile__filters">
+                {% include 'components/filters.twig' with {'filtersList': filtersList, 'mod': ''} %}
+            </div>
+            <div class="catalog-tile__tile">
+                <div class="catalog-tile__sort" id="catalog-tile__sort">
+                    <div class="catalog-tile__sort-headline headline">Сортировка</div>
+                    {% for item in ['По размеру скидки','Сначала дешевле','Сначала дороже','По популярности','По новизне'] %}
+                        <label class="catalog-tile__sort-label">
+                            <input type="radio" class="catalog-tile__sort-input" name="sort" value="{{ item }}">
+                            <div class="catalog-tile__sort-name text-14">{{ item }}</div>
+                        </label>
+                    {% endfor %}
+                </div>
+                <div class="catalog-tile__empty">
+                    <div class="catalog-tile__empty-title text-18-medium">Странно, но ничего нет :(</div>
+                    <div class="catalog-tile__empty-text">Попробуйте изменить критерии поиска</div>
+                    <div class="catalog-tile__popular">
+                        {% for link in catalogTilePopular %}
+                            <a href="#" class="catalog-tile__popular-link text-14">{{ link }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="catalog-tile__list">
+                    {% for item in catalogTileList %}
+                        <div class="{{ loop.index == 9 ? 'catalog-tile__item catalog-tile__item_informer' : 'catalog-tile__item' }}">
+                            {% if loop.index == 9 %}
+                                {% include 'components/informer.twig' %}
+                            {% else %}
+                                {% include 'components/tile-item-hover.twig' with item %}
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="catalog-tile__pagination">
+                    {% include 'components/pagination.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

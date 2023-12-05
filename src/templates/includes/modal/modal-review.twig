@@ -1,0 +1,104 @@
+{%
+    set modalReviewRate = [
+        { id: 'modal-review-rate-radio-5', value: '5' },
+        { id: 'modal-review-rate-radio-4', value: '4' },
+        { id: 'modal-review-rate-radio-3', value: '3' },
+        { id: 'modal-review-rate-radio-2', value: '2' },
+        { id: 'modal-review-rate-radio-1', value: '1' }
+    ]
+%}
+
+<form class="modal-review" id="modal-review">
+    <div class="modal-review__headline headline">Новый отзыв</div>
+    <div class="modal-review__area">
+        <label class="modal-review__label">
+            <span class="modal-review__input-name text-14">Как вас зовут?*</span>
+            <input type="text" class="modal-review__input input text-16-medium" placeholder="Ваше имя">
+        </label>
+        <label class="modal-review__label">
+            <span class="modal-review__input-name text-14">Номер заказа*</span>
+            <input type="number" class="modal-review__input input text-16-medium" placeholder="6 цифр">
+        </label>
+        <div class="modal-review__rate">
+            <div class="modal-review__rate-box">
+                {% for item in modalReviewRate %}
+                    <input type="radio" class="modal-review__rate-radio" name="modal-review-rate" id="{{ item.id }}" value="{{ item.value }}">
+                    <label for="{{ item.id }}" class="modal-review__rate-label">
+                        <svg class="modal-review__rate-star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_735_155053" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                                <rect width="16" height="16" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_735_155053)">
+                                <path d="M8.29103 10.95L5.82436 12.8167C5.70214 12.9056 5.57991 12.9472 5.45769 12.9417C5.33547 12.9361 5.22436 12.9 5.12436 12.8333C5.02436 12.7667 4.94936 12.675 4.89936 12.5583C4.84936 12.4417 4.84658 12.3111 4.89103 12.1667L5.84103 9.1L3.22436 7.01667C3.11325 6.92778 3.0438 6.82222 3.01603 6.7C2.98825 6.57778 2.99658 6.46111 3.04103 6.35C3.08547 6.23889 3.15491 6.14444 3.24936 6.06667C3.3438 5.98889 3.46325 5.95 3.60769 5.95H6.74103L7.72436 2.91667C7.7688 2.77222 7.8438 2.66667 7.94936 2.6C8.05491 2.53333 8.1688 2.5 8.29103 2.5C8.41325 2.5 8.52714 2.53333 8.63269 2.6C8.73825 2.66667 8.81325 2.77222 8.85769 2.91667L9.84103 5.95H12.9744C13.1188 5.95 13.2382 5.98889 13.3327 6.06667C13.4271 6.14444 13.4966 6.23889 13.541 6.35C13.5855 6.46111 13.5938 6.57778 13.566 6.7C13.5382 6.82222 13.4688 6.92778 13.3577 7.01667L10.741 9.1L11.691 12.1667C11.7355 12.3111 11.7327 12.4417 11.6827 12.5583C11.6327 12.675 11.5577 12.7667 11.4577 12.8333C11.3577 12.9 11.2466 12.9361 11.1244 12.9417C11.0021 12.9472 10.8799 12.9056 10.7577 12.8167L8.29103 10.95Z" fill="#D9D9D9"/>
+                                <mask id="mask1_735_155053" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="0" width="12" height="15">
+                                    <rect x="2" width="12" height="15" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask1_735_155053)">
+                                    <path d="M8.29103 10.95L5.82436 12.8167C5.70214 12.9056 5.57991 12.9472 5.45769 12.9417C5.33547 12.9361 5.22436 12.9 5.12436 12.8333C5.02436 12.7667 4.94936 12.675 4.89936 12.5583C4.84936 12.4417 4.84658 12.3111 4.89103 12.1667L5.84103 9.1L3.22436 7.01667C3.11325 6.92778 3.0438 6.82222 3.01603 6.7C2.98825 6.57778 2.99658 6.46111 3.04103 6.35C3.08547 6.23889 3.15491 6.14444 3.24936 6.06667C3.3438 5.98889 3.46325 5.95 3.60769 5.95H6.74103L7.72436 2.91667C7.7688 2.77222 7.8438 2.66667 7.94936 2.6C8.05491 2.53333 8.1688 2.5 8.29103 2.5C8.41325 2.5 8.52714 2.53333 8.63269 2.6C8.73825 2.66667 8.81325 2.77222 8.85769 2.91667L9.84103 5.95H12.9744C13.1188 5.95 13.2382 5.98889 13.3327 6.06667C13.4271 6.14444 13.4966 6.23889 13.541 6.35C13.5855 6.46111 13.5938 6.57778 13.566 6.7C13.5382 6.82222 13.4688 6.92778 13.3577 7.01667L10.741 9.1L11.691 12.1667C11.7355 12.3111 11.7327 12.4417 11.6827 12.5583C11.6327 12.675 11.5577 12.7667 11.4577 12.8333C11.3577 12.9 11.2466 12.9361 11.1244 12.9417C11.0021 12.9472 10.8799 12.9056 10.7577 12.8167L8.29103 10.95Z" fill="#FFB800"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </label>
+                {% endfor %}
+            </div>
+            <div class="modal-review__rate-span text-14">— Ваша оценка</div>
+        </div>
+        <label class="modal-review__label">
+            <span class="modal-review__textarea-span text-14">Достоинства</span>
+            <textarea class="modal-review__textarea input text-16-medium" placeholder="Что вам понравилось?"></textarea>
+            <div class="modal-review__left text-13">
+                <div class="modal-review__counter text-13">
+                    Осталось символов: <span class="modal-review__counter-value">2 000</span>
+                </div>
+            </div>
+        </label>
+        <label class="modal-review__label">
+            <span class="modal-review__textarea-span text-14">Недостатки</span>
+            <textarea class="modal-review__textarea input text-16-medium" placeholder="Что вам не понравилось?"></textarea>
+            <div class="modal-review__left text-13">
+                <div class="modal-review__counter text-13">
+                    Осталось символов: <span class="modal-review__counter-value">2 000</span>
+                </div>
+            </div>
+        </label>
+        <label class="modal-review__label">
+            <span class="modal-review__textarea-span text-14">Комментарий*</span>
+            <textarea class="modal-review__textarea input text-16-medium" placeholder="Опишите подробнее свои впечатления"></textarea>
+            <div class="modal-review__left text-13">
+                <div class="modal-review__counter text-13">
+                    Осталось символов: <span class="modal-review__counter-value">2 000</span>
+                </div>
+            </div>
+        </label>
+        <div class="modal-review__recommend">
+            <div class="modal-review__recommend-note text-14">Рекомендуете данный товар?</div>
+            <div class="modal-review__recommend-line">
+                <label class="modal-review__recommend-label">
+                    <input type="radio" checked class="modal-review__checkbox" name="recommend-checkbox">
+                    <div class="modal-review__checkbox-view"></div>
+                    <span class="modal-review__recommend-span text-14">Да</span>
+                </label>
+                <label class="modal-review__recommend-label">
+                    <input type="radio" class="modal-review__checkbox" name="recommend-checkbox">
+                    <div class="modal-review__checkbox-view"></div>
+                    <span class="modal-review__recommend-span text-14">Нет</span>
+                </label>
+            </div>
+        </div>
+        <div class="modal-review__gallery">
+            <div class="modal-review__gallery-span text-14"></div>
+        </div>
+    </div>
+    <span class="modal-review__legend text-14">*обязательно для заполнения</span>
+    <button class="modal-review__submit btn-blue text-16-medium">Добавить отзыв</button>
+    <div class="modal-review__policy">
+        <label class="modal-review__checkbox-box">
+            <input type="checkbox" checked class="modal-review__checkbox" name="policy-checkbox">
+            <div class="modal-review__checkbox-view"></div>
+        </label>
+        <div class="modal-review__policy-text text-13">
+            Нажимая кнопку «Свяжитесь со мной», я даю свое согласие на сбор и обработку моих персональных
+            данных в соответствии с <a href="#">политикой конфиденциальности</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,23 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Партнерам{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': 'header_shadow'} %}
+    {% include 'templates/includes/header.twig' with vars %}
+{% endblock %}
+
+{% block page %}
+
+    {% set crumbsVars = {'list': ['Главная','Партнерам'], 'mod': ''} %}
+    {% include 'templates/includes/components/crumbs.twig' with crumbsVars %}
+
+    {% include 'templates/includes/partners.twig' %}
+
+    {% include 'templates/includes/certificates.twig' with {'title': 'Гарантированное качество продукции'} %}
+    {% include 'templates/includes/cooperation.twig' %}
+    {% include 'templates/includes/feedback.twig' %}
+    {% include 'templates/includes/services.twig' %}
+
+{% endblock %}
+

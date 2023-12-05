@@ -1,0 +1,75 @@
+{%
+    set agencyNav = [
+        { text: 'Все представительства', value: '0' },
+        { text: 'Дальневосточный округ', value: '1' },
+        { text: 'Иркутская область', value: '2' },
+        { text: 'Екатеринбург', value: '3' },
+        { text: 'Красноярск', value: '4' },
+        { text: 'Новосибирск', value: '5' },
+        { text: 'Хабаровск', value: '6' },
+    ]
+%}
+
+{%
+    set agencyList = [
+        { icons: ['/assets/img/agency/agency-icon-1.svg','/assets/img/agency/agency-icon-2.svg'], value: '1',
+            title: 'Представитель по работе с оптовыми клиентами в республиках Бурятия и Саха (Якутия)',name: 'Петров Андрей Михайлович',
+            lines: [ '8 3952 48-53-45, д. 5139','apetrov@sarmamebel.ru','г. Улан-Удэ, ул. Трактовая 1/2','Будни: с 9 до 18' ] },
+        { icons: ['/assets/img/agency/agency-icon-3.svg'], value: '2',
+            title: 'Представитель по работе с оптовыми клиентами по Иркутской области',name: 'Донская Анна Сергеевна',
+            lines: [ '8 3952 48-53-45, д. 159','adonskaya@sarmamebel.ru','г. Иркутск, ул. Лермонтова, 90/1','Будни с 8 до 17' ] },
+        { icons: ['/assets/img/agency/agency-icon-4.svg'], value: '3',
+            title: 'Представитель по работе с оптовыми клиентами в УрФО, г. Екатеринбурге',name: 'Копытов Антон Юрьевич',
+            lines: [ '8 982 750-05-74, +7 992 021-89-10','EKB@sarmamebel.ru','г. Березовский, ул. Транспортников, д.1, оф.111','Будни: с 9 до 18' ] },
+        { icons: ['/assets/img/agency/agency-icon-5.svg'], value: '4',
+            title: 'Представитель по работе с оптовыми клиентами в Красноярске',name: 'Березкина Ольга Геннадьевна',
+            lines: [ '8 391 276-81-49, 8 391 271-50-95','oberezkina@sarmamebel.ru','г. Красноярск, ул. Вавилова, 1, ст. 50 склад 5','Будни: с 9 до 18'] },
+        { icons: ['/assets/img/agency/agency-icon-6.svg'], value: '5',
+            title: 'Представитель по работе с оптовыми клиентами в Новосибирске',name: 'Миллер Евгений Александрович',
+            lines: [ '8 383 335-41-15','emiller@sarmamebel.ru','г. Новосибирск, ул. Палласа, 29','Будни: с 9 до 18' ] },
+        { icons: ['/assets/img/agency/agency-icon-7.svg'], value: '6',
+            title: 'Представитель по работе с оптовыми клиентами в Хабаровске',name: 'Левчук Анна Владимировна',
+            lines: [ '8 4212 77-34-14','khv@sarmamebel.ru','г. Хабаровск, ул. Павла Морозова, 56','Будни: с 9 до 18' ] },
+        { icons: ['/assets/img/agency/agency-icon-8.svg'],
+            title: 'Отдел по работе с корпоративными клиентами',name: 'Терещенко Анастасия Юрьевна',
+            lines: [ '8 3952 48-53-45 д. 163','atereshchenko@sarmamebel.ru','г. Красноярск, ул. Вавилова, 1, ст. 50 склад 5','Будни: с 9 до 18' ] },
+        { icons: ['/assets/img/agency/agency-icon-8.svg'],
+            title: 'Отдел по развитию и продаже франшизы',name: 'Плотников Александр Васильевич',
+            lines: [ '8 3952 48-53-45 д. 111','aplotnikov@sarmamebel.ru','г. Иркутск, ул. Лермонтова, 90/1, 5 этаж','Будни: с 8 до 17']  },
+    ]
+%}
+
+<div class="agency" data-element="agency">
+    <div class="agency__nav">
+        {% for item in agencyNav %}
+            <div class="{{ loop.first ? 'agency__tab agency__tab_active' : 'agency__tab' }}" data-index="{{ item.value }}">
+                {{ item.text }}
+            </div>
+        {% endfor %}
+    </div>
+    <ul class="agency__list">
+        {% for item in agencyList %}
+            <li class="agency__item" data-index="{{ item.value }}">
+                <div class="agency__top">
+                    <div class="agency__icons">
+                        {% for icon in item.icons %}
+                            <img src="{{ icon }}" alt="" class="agency__icon">
+                        {% endfor %}
+                    </div>
+                    <div class="agency__title text-18-medium">
+                        {{ item.title }}
+                    </div>
+                </div>
+                <div class="agency__name headline">{{ item.name }}</div>
+                <div class="agency__line">
+                    <div class="agency__span text-18-medium">{{ item.lines[0] }}</div>
+                    <a href="mailto:{{ item.lines[1] }}" class="agency__email text-18-medium">{{ item.lines[1] }}</a>
+                </div>
+                <div class="agency__line">
+                    <div class="agency__span text-16-medium">{{ item.lines[2] }}</div>
+                    <div class="agency__time text-16-medium">{{ item.lines[3] }}</div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

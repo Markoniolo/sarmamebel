@@ -1,0 +1,321 @@
+html {
+    box-sizing: border-box;
+    @include breakpoint-down($mobile-width) {
+        overflow-x: hidden;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    font-family: $font-main;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, ul, p, li, a, button {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-size: 62.5%;
+    font-weight: 400;
+}
+
+body {
+    line-height: 1.5;
+    color: $c-main;
+}
+
+address {
+    font-style: normal;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+picture {
+    display: block;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+input {
+    @extend .truncate;
+}
+
+label {
+    cursor: pointer;
+    user-select: none;
+    display: block;
+}
+
+textarea {
+    resize: none;
+}
+
+ul {
+    @include list-reset;
+}
+
+:focus {
+    @include placeholder {
+        color: transparent;
+    }
+}
+
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+
+    iframe,
+    object,
+    embed {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: $container-width;
+    padding: 0 16px;
+    @include breakpoint-down($mobile-width) {
+        max-width: 780px;
+    }
+}
+
+.site-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    min-height: 100vh;
+}
+
+.site-content {
+    flex: 1 0 auto;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.link-hover-blue {
+    transition-duration: $transition-duration;
+    transition-property: color;
+    &:hover {
+        color: $c-blue;
+    }
+}
+
+.link-underline {
+    display: inline-block;
+    text-decoration: none;
+    color: #808080;
+    position: relative;
+    transition-duration: $transition-duration;
+    transition-property: color;
+    &:hover {
+        color: $c-blue;
+        &::before {
+            background-color: $c-blue;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #808080;
+        transition-duration: $transition-duration;
+        transition-property: background-color;
+    }
+}
+
+.fancybox__container.is-closing {
+    background-color: transparent !important;
+}
+
+.fancybox__content {
+    color: $c-main;
+}
+
+.fancybox__container {
+    background-color: rgba(#000, 0.7);
+    --fancybox-bg: none;
+}
+
+.fancybox__slide {
+    @include breakpoint-down($mobile-width) {
+        padding: 0;
+    }
+}
+
+.fancybox__container:not(.is-compact) .fancybox__slide.has-close-btn {
+    padding: 40px 0;
+    @include breakpoint-down($mobile-width) {
+        padding: 0;
+    }
+}
+
+.fancybox__track .fancybox__slide .f-button.is-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    top: 32px;
+    right: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(51, 51, 51, 0.16);
+    opacity: 1;
+    background-color: transparent;
+    --f-button-color: 808080;
+    --f-button-hover-color: #c-main;
+    @include breakpoint-down($mobile-width) {
+        top: 16px;
+        right: 16px;
+    }
+    &:hover {
+        &::before {
+            background-image: url("../img/ic_close_blue.svg");
+        }
+    }
+    svg {
+        display: none;
+    }
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/ic_close_grey.svg");
+        transition-property: background;
+        transition-duration: $transition-duration;
+    }
+}
+
+.fancybox__track {
+    transform: none !important;
+}
+
+.swiper-scrollbar-blue.swiper-scrollbar {
+    background: rgba(51, 51, 51, 0.08);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 10px;
+    .swiper-scrollbar-drag {
+        background: $c-blue;
+        border-radius: 10px;
+    }
+}
+
+.swiper-initialized .swiper-wrapper {
+    @include breakpoint-down($mobile-width) {
+        padding-bottom: 0;
+    }
+}
+
+.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+.color-blue {
+    color: $c-blue;
+}
+
+.color-orange {
+    color: #EE7E19;
+}
+
+.hint {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+        .hint__box {
+            display: block;
+        }
+    }
+}
+
+.hint__icon {
+    width: 20px;
+    height: 20px;
+}
+
+.hint__box {
+    display: none;
+    width: 280px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 10px;
+    transform: translateY(-100%);
+    padding: 8px 16px;
+    border-radius: 4px 4px 4px 0;
+    background: #F5F3F1;
+    box-shadow: 0 16px 24px 0 #ECE5DF;
+    color: #808080;
+    @include breakpoint-down($mobile-width) {
+        transform: translateX(-100%) translateY(-100%);
+    }
+}
+
+.confetti {
+    overflow: hidden;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.checkbox {
+    display: none;
+    &:checked + .checkbox-view {
+        background: url("../img/ic_checkbox_checked.svg");
+    }
+}
+
+.checkbox-view {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/ic_checkbox_empty.svg");
+    background-size: cover;
+    transition-duration: $transition-duration;
+}

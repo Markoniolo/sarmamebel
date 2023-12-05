@@ -1,0 +1,63 @@
+{%
+    set historyTile = [
+        { mod: 'history-tile__item history-tile__item_middle', year: '1996', text: 'Открытие производства поролона в городе Усолье-Сибирском',
+            icons: ['/assets/img/history-tile/ic_history-tile_1.svg'] },
+        { mod: 'history-tile__item history-tile__item_middle', year: '1998', text: 'Выпуск первого дивана и открытие самостоятельного подразделения',
+            icons: [] },
+        { mod: 'history-tile__item history-tile__item_middle', year: '2000', text: 'Выпуск первого кухонного гарнитура',
+            icons: [] },
+        { mod: 'history-tile__item history-tile__item_middle', year: '2002', text: 'Запущено потоковое производство мягкой мебели и матрасов',
+            icons: [] },
+        { mod: 'history-tile__item history-tile__item_middle', year: '2004', text: 'Запущено потоковое производство корпусной и кухонной мебели',
+            icons: [] },
+        { mod: 'history-tile__item history-tile__item_middle', year: '2008', text: 'Проведена крупномасштабная модернизация оборудования',
+            icons: [] },
+        { mod: 'history-tile__item history-tile__item_text', year: '', text: '',
+            icons: [] },
+        { mod: 'history-tile__item history-tile__item_small', year: '2009', text: 'Открытие первого представительства в городе Красноярске',
+            icons: ['/assets/img/history-tile/ic_history-tile_2.svg'] },
+        { mod: 'history-tile__item history-tile__item_small', year: '2011', text: 'Начала свою работу собственная служба логистики',
+            icons: ['/assets/img/history-tile/ic_history-tile_3.svg'] },
+        { mod: 'history-tile__item history-tile__item_small', year: '2013', text: 'Представительства в городах Хабаровск и Новосибирск',
+            icons: ['/assets/img/history-tile/ic_history-tile_4.svg','/assets/img/history-tile/ic_history-tile_5.svg'] },
+        { mod: 'history-tile__item history-tile__item_small', year: '2014', text: 'Представительство на Урале в городе Екатеринбурге',
+            icons: ['/assets/img/history-tile/ic_history-tile_6.svg'] },
+        { mod: 'history-tile__item history-tile__item_small', year: '2018', text: 'Представительство в городе Улан-Удэ республики Бурятия',
+            icons: ['/assets/img/history-tile/ic_history-tile_7.svg'] },
+    ]
+%}
+
+<section class="history-tile">
+    <div class="container">
+        <div class="history-tile__top">
+            <h2 class="history-tile__title title">История</h2>
+            <a href="#" class="history-tile__all text-14">Все филиалы </a>
+        </div>
+        <div class="history-tile__area">
+            {% for item in historyTile %}
+                {% if item.icons.length %}
+                    <a href="#" class="{{ item.mod ? item.mod : 'history-tile__item' }}">
+                        <div class="history-tile__year title">{{ item.year }}</div>
+                        <div class="history-tile__text text-16">{{ item.text }}</div>
+                        <div class="history-tile__icons">
+                            {% for icon in item.icons %}
+                                <img src="{{ icon }}" alt="" class="history-tile__icon">
+                            {% endfor %}
+                        </div>
+                    </a>
+                {% else %}
+                    <div class="{{ item.mod ? item.mod : 'history-tile__item' }}">
+                        {% if item.mod == 'history-tile__item history-tile__item_text' %}
+                            <div class="history-tile__big-text title">
+                                Уверенными шагами компания начала наращивать обороты и расширять территорию своего присутствия:
+                            </div>
+                        {% else %}
+                            <div class="history-tile__year title">{{ item.year }}</div>
+                            <div class="history-tile__text text-16">{{ item.text }}</div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,306 @@
+.catalog-tile {
+    margin-top: 9px;
+    padding-bottom: 80px;
+    @include breakpoint-down($mobile-width) {
+        padding-bottom: 48px;
+    }
+}
+
+.catalog-tile__top {
+    position: relative;
+    @include breakpoint-down($mobile-width) {
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(51, 51, 51, 0.08);
+        margin-bottom: 32px;
+    }
+}
+
+.catalog-tile__title {
+    margin-bottom: 25px;
+    padding-right: 250px;
+    @include breakpoint-down($mobile-width) {
+        padding-right: 0;
+    }
+}
+
+.catalog-tile__title-span {
+    color: #808080;
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+.catalog-tile__popular {
+    display: flex;
+    margin-bottom: 32px;
+    @include breakpoint-down($mobile-width) {
+        overflow-x: auto;
+        padding-bottom: 12px;
+        margin: 0 -16px 12px;
+        &::before, &::after {
+            content: '';
+            width: 13px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+.catalog-tile__popular-note {
+    padding: 4px 8px 4px 0;
+    @include breakpoint-down($mobile-width) {
+        display: none;
+    }
+}
+
+.catalog-tile__popular-link {
+    flex-shrink: 0;
+    margin: 0 3px;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background-color: rgba(51, 51, 51, 0.08);
+    text-decoration: none;
+    color: #808080;
+    transition-duration: $transition-duration;
+    transition-property: background-color, color;
+    &:hover {
+        background-color: rgba(51, 51, 51, 0.16);
+        color: $c-blue;
+    }
+}
+
+.catalog-tile__choose {
+    padding: 8px 32px 8px 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: $c-main;
+    border-radius: 8px;
+    background-color: #ECE5DF;
+    transition-property: color;
+    transition-duration: $transition-duration;
+    @include breakpoint-down($mobile-width) {
+        position: static;
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+    &:hover {
+        color: $c-blue;
+        path {
+            fill: $c-blue;
+        }
+    }
+    svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        background-image: url("../img/ic_choose_btn.svg");
+    }
+    path {
+        transition-property: fill;
+        transition-duration: $transition-duration;
+    }
+}
+
+.catalog-tile__mob-btns {
+    display: none;
+    @include breakpoint-down($mobile-width) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.catalog-tile__mob-filters {
+    text-decoration: none;
+}
+
+.catalog-tile__mob-filters-note {
+    color: #808080;
+    padding-left: 32px;
+    position: relative;
+    line-height: 24px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/ic_filters_mob.svg");
+    }
+}
+
+.catalog-tile__mob-filters-counter {
+    color: $c-blue;
+}
+
+.catalog-tile__mob-sort {
+    text-decoration: none;
+    color: #808080;
+    padding-left: 32px;
+    line-height: 24px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/ic_sort_mob.svg");
+    }
+}
+
+.catalog-tile__wrap {
+    display: flex;
+}
+
+.catalog-tile__filters {
+    width: 256px;
+    margin-right: 24px;
+    flex-shrink: 0;
+    @include breakpoint-down($mobile-width) {
+        display: none;
+    }
+}
+
+.catalog-tile__tile {
+
+}
+
+.catalog-tile__sort {
+    display: flex !important;
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        display: none !important;
+        border-radius: 8px 8px 0 0;
+        width: 600px;
+        position: absolute;
+        bottom: 0;
+        padding: 29px 16px 24px;
+        margin-bottom: 0;
+    }
+}
+
+.catalog-tile__sort.fancybox__content {
+    @include breakpoint-down($mobile-width) {
+        display: block !important;
+    }
+}
+
+.catalog-tile__sort-headline {
+    display: none;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+        margin-bottom: 29px;
+    }
+}
+
+.catalog-tile__sort-label {
+    &:not(:last-of-type) {
+        margin-right: 32px;
+        @include breakpoint-down($mobile-width) {
+            margin-right: 0;
+            margin-bottom: 24px;
+        }
+    }
+    &:hover {
+        .catalog-tile__sort-name {
+            color: $c-blue;
+        }
+    }
+}
+
+.catalog-tile__sort-input {
+    display: none;
+    &:checked + .catalog-tile__sort-name {
+        color: $c-main;
+        padding-right: 20px;
+        position: relative;
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 1px;
+            right: 0;
+            background-image: url("../img/ic_sort_arrow_top.svg");
+            @include breakpoint-down($mobile-width) {
+                background-image: url("../img/ic_sort_check_mob.svg");
+            }
+        }
+    }
+}
+
+.catalog-tile__sort-name {
+    color: #808080;
+}
+
+.catalog-tile__list {
+    display: flex;
+    margin-bottom: -40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include breakpoint-down($mobile-width) {
+        justify-content: unset;
+        margin-bottom: 0;
+    }
+}
+
+.catalog-tile__item {
+    width: 288px;
+    margin-bottom: 40px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        padding-bottom: 32px;
+        margin-bottom: 32px;
+        border-bottom: 1px solid rgba(51, 51, 51, 0.08);
+        .informer {
+            margin-left: 0;
+        }
+    }
+    .informer__inner {
+        height: 361px;
+        &::before {
+            height: 421px;
+        }
+    }
+}
+
+.catalog-tile__item_informer {
+    @include breakpoint-down($mobile-width) {
+        display: none;
+    }
+}
+
+.catalog-tile__empty {
+    .catalog-tile__popular {
+        flex-wrap: wrap;
+        margin: 0 -3px;
+        @include breakpoint-down($mobile-width) {
+            &::before, &::after {
+                content: none;
+            }
+        }
+    }
+    .catalog-tile__popular-link {
+        margin-bottom: 6px;
+    }
+}
+
+.catalog-tile__empty-title {
+    margin-bottom: 8px;
+}
+
+.catalog-tile__empty-text {
+    margin-bottom: 24px;
+}
+
+.catalog-tile__pagination {
+    margin: 56px auto 0;
+    @include breakpoint-down($mobile-width) {
+        margin: 0 auto;
+    }
+}

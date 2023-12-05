@@ -1,0 +1,22 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Бонусная система{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': 'header_shadow'} %}
+    {% include 'templates/includes/header.twig' with headerVars %}
+{% endblock %}
+
+{% block page %}
+    {% set crumbsVars = {'list': ['Главная','Бонусная система'], 'mod': ''} %}
+    {% include 'templates/includes/components/crumbs.twig' with crumbsVars %}
+
+    {% include 'templates/includes/bonus-cap.twig' %}
+    {% include 'templates/includes/bonus-share.twig' %}
+    {% include 'templates/includes/bonus-table.twig' %}
+    {% include 'templates/includes/faq.twig' %}
+    {% include 'templates/includes/cyclopedia.twig' with {'title': 'Энциклопедия сна'} %}
+    {% include 'templates/includes/description.twig' %}
+    {% include 'templates/includes/feedback.twig' %}
+    {% include 'templates/includes/services.twig' %}
+{% endblock %}

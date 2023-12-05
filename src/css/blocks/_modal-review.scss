@@ -1,0 +1,205 @@
+.modal-review {
+    display: none;
+    width: 648px;
+    padding: 42px 32px 32px;
+    border-radius: 8px;
+    background: #FFF;
+    @include breakpoint-down($mobile-width) {
+        padding: 29px 16px 32px;
+        border-radius: 0;
+    }
+}
+
+.modal-review__headline {
+    margin-bottom: 34px;
+}
+
+.modal-review__area {
+    margin-bottom: 24px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    @include breakpoint-down($mobile-width) {
+        padding: 16px;
+    }
+}
+
+.modal-review__label {
+    margin-bottom: 16px;
+}
+
+.modal-review__rate {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    padding: 17px 16px;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+}
+
+.modal-review__rate-box {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.modal-review__rate-radio {
+    display: none;
+    & + .modal-review__rate-label svg path {
+        fill: #F2F2F2;
+    }
+    &:checked ~ .modal-review__rate-label svg path {
+        fill: #ffb800;
+    }
+    &:checked + .modal-review__rate-label svg path {
+        fill: #FFB800;
+    }
+}
+
+.modal-review__rate-label {
+    cursor: pointer;
+    display: block;
+    path {
+        fill: #FFB800;
+    }
+    &:hover {
+        opacity: 0.5;
+    }
+    &:hover ~ .modal-review__rate-label {
+        opacity: 0.5;
+    }
+}
+
+.modal-review__rate-star {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+}
+
+.modal-review__rate-span {
+
+}
+
+.modal-review__input-name {
+    display: block;
+    margin-bottom: 8px;
+    color: #808080;
+}
+
+.modal-review__input {
+    width: 100%;
+}
+
+.modal-review__textarea-span {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.modal-review__textarea {
+    width: 100%;
+    height: 120px;
+}
+
+.modal-review__left {
+
+}
+
+.modal-review__counter {
+    margin-top: 8px;
+    color: #B3B3B3;
+    text-align: right;
+}
+
+.modal-review__counter-value {
+
+}
+
+.modal-review__recommend {
+
+}
+
+.modal-review__recommend-note {
+    margin-bottom: 8px;
+}
+
+.modal-review__recommend-line {
+    display: flex;
+}
+
+.modal-review__recommend-label {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-review__checkbox {
+
+}
+
+.modal-review__checkbox-view {
+
+}
+
+.modal-review__recommend-span {
+    margin-left: 6px;
+}
+
+.modal-review__gallery {
+
+}
+
+.modal-review__gallery-span {
+
+}
+
+.modal-review__legend {
+    margin-bottom: 24px;
+    display: block;
+    color: #808080;
+}
+
+.modal-review__submit {
+    margin-bottom: 24px;
+    max-width: 335px;
+    width: 100%;
+    padding: 18px 19px 19px;
+    text-align: center;
+    @include breakpoint-down($mobile-width) {
+        max-width: 343px;
+    }
+}
+
+.modal-review__policy {
+    display: flex;
+}
+
+.modal-review__checkbox-box {
+    width: 20px;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.modal-review__checkbox {
+    display: none;
+    &:checked + .modal-review__checkbox-view {
+        background: url("../img/ic_checkbox_checked.svg");
+    }
+}
+
+.modal-review__checkbox-view {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/ic_checkbox_empty.svg");
+    background-size: cover;
+    transition-duration: $transition-duration;
+    transition-property: background;
+}
+
+.modal-review__policy-text {
+    color: #808080;
+    line-height: 140%;
+    a {
+        text-decoration: underline;
+        color: #808080;
+    }
+}

@@ -1,0 +1,139 @@
+{%
+    set bonusTable = [
+        [
+            { name: '', value: 'Кешбэк за покупку товара' },
+            { name: 'Сколько', value: '10% от стоимости' },
+            { name: 'В какой срок?', value: '14 дней' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Регистрация на сайте' },
+            { name: 'Сколько', value: '500' },
+            { name: 'В какой срок?', value: '10 минут' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Указание номера телефона' },
+            { name: 'Сколько', value: '100' },
+            { name: 'В какой срок?', value: '10 минут' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'День рождения' },
+            { name: 'Сколько', value: '1 000' },
+            { name: 'В какой срок?', value: 'В день рождения' },
+            { name: 'Сколько действуют?', value: '90 дней' }
+        ],
+        [
+            { name: '', value: 'Подписка на рассылку' },
+            { name: 'Сколько', value: '200' },
+            { name: 'В какой срок?', value: '1 день' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Отзыв к товару на сайте' },
+            { name: 'Сколько', value: '250' },
+            { name: 'В какой срок?', value: '1 день' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Отзыв к товару с фото на сайте' },
+            { name: 'Сколько', value: '1 000' },
+            { name: 'В какой срок?', value: '1 день' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Отзыв на платформе 2ГИС' },
+            { name: 'Сколько', value: '1 500' },
+            { name: 'В какой срок?', value: '2 дня' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Отзыв на платформе flamp.ru' },
+            { name: 'Сколько', value: '1 500' },
+            { name: 'В какой срок?', value: '2 дня' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Отзыв на otzovik.com' },
+            { name: 'Сколько', value: '1 500' },
+            { name: 'В какой срок?', value: '2 дня' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Пост видео-отзыв в социальных сетях:  Вконтакте, Одноклассники, Instagram, YouTube' },
+            { name: 'Сколько', value: '2 000' },
+            { name: 'В какой срок?', value: '2 дня' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Подписка на страницы Сарма в социальных сетях:  Вконтакте, Одноклассники, Instagram' },
+            { name: 'Сколько', value: '500' },
+            { name: 'В какой срок?', value: '2 дня' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Новоселам' },
+            { name: 'Сколько', value: '1 000' },
+            { name: 'В какой срок?', value: '1 день' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Пенсионерам' },
+            { name: 'Сколько', value: '500' },
+            { name: 'В какой срок?', value: '1 день' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Молодоженам' },
+            { name: 'Сколько', value: '500' },
+            { name: 'В какой срок?', value: '1 день' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+        [
+            { name: '', value: 'Бонусы другу' },
+            { name: 'Сколько', value: 'Любое кол-во' },
+            { name: 'В какой срок?', value: '1 день' },
+            { name: 'Сколько действуют?', value: '6 месяцев' }
+        ],
+
+    ]
+%}
+
+<section class="bonus-table" data-element="bonus-table">
+    <div class="container">
+        <div class="bonus-table__table">
+            <h2 class="bonus-table__title title" data-element="bonus-table-title">
+                За что начисляются бонусы?
+                <svg class="bonus-table__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_517_68643" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                        <rect width="16" height="16" fill="#333"/>
+                    </mask>
+                    <g mask="url(#mask0_517_68643)">
+                        <path d="M7.99863 11.3746L3.87109 7.24706L4.84863 6.26953L7.99863 9.41953L11.1486 6.26953L12.1262 7.24706L7.99863 11.3746Z" fill="#333333"/>
+                    </g>
+                </svg>
+            </h2>
+            <div class="bonus-table__top">
+                <div class="bonus-table__th text-13">За что начисляем</div>
+                <div class="bonus-table__th text-13">Сколько</div>
+                <div class="bonus-table__th text-13">В какой срок?</div>
+                <div class="bonus-table__th text-13">Сколько действуют?</div>
+            </div>
+            {% for box in bonusTable %}
+                <div class="bonus-table__box">
+                    {% for item in box %}
+                        <div class="{{ item.name ? 'bonus-table__td' : 'bonus-table__td bonus-table__td_headline' }}">
+                            {% if item.name %}
+                                <span class="bonus-table__name text-13">{{ item.name }}</span>
+                            {% endif %}
+                            <span class="{{ item.name ? 'bonus-table__value text-18-medium' : 'bonus-table__value text-16' }}">
+                                {{ item.value }}
+                            </span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

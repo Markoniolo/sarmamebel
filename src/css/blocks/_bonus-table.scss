@@ -1,0 +1,140 @@
+.bonus-table {
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+    }
+    &_hide {
+        @include breakpoint-down($mobile-width) {
+            .bonus-table__arrow {
+                transform: rotate(0);
+            }
+            .bonus-table__top, .bonus-table__box {
+                display: none;
+            }
+            .bonus-table__title {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.bonus-table__table {
+    border-radius: 8px;
+    background: #F2F2F2;
+    padding: 32px;
+    @include breakpoint-down($mobile-width) {
+        padding: 16px;
+        border-radius: 0;
+        margin: 0 -16px;
+    }
+}
+
+.bonus-table__title {
+    margin-bottom: 24px;
+    text-align: center;
+    @include breakpoint-down($mobile-width) {
+        text-align: left;
+        margin-bottom: 32px;
+        position: relative;
+        padding-right: 52px;
+    }
+}
+
+.bonus-table__arrow {
+    display: none;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: rotate(180deg);
+    }
+}
+
+.bonus-table__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px 16px;
+    @include breakpoint-down($mobile-width) {
+        display: none;
+    }
+}
+
+.bonus-table__th {
+    color: #808080;
+    width: 160px;
+    &:first-child {
+        width: auto;
+        flex-grow: 1;
+    }
+    &:not(:last-of-type) {
+        margin-right: 37px;
+    }
+}
+
+.bonus-table__box {
+    padding: 24px;
+    display: flex;
+    border-radius: 4px;
+    @include breakpoint-down($mobile-width) {
+        padding: 16px;
+        flex-wrap: wrap;
+    }
+    &:nth-child(odd) {
+        background: rgba(51, 51, 51, 0.08);
+    }
+}
+
+.bonus-table__td {
+    width: 160px;
+    @include breakpoint-down($mobile-width) {
+        width: calc(33.33% - 11px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &:not(:last-of-type) {
+        margin-right: 37px;
+        @include breakpoint-down($mobile-width) {
+            margin-right: 16px;
+        }
+    }
+    &:not(:first-of-type) {
+        flex-shrink: 0;
+    }
+}
+
+.bonus-table__td.bonus-table__td_headline {
+    flex-grow: 1;
+    width: auto;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 24px;
+        width: 100%;
+        margin-right: 0;
+    }
+    .bonus-table__value {
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -0.16px;
+        @include breakpoint-down($mobile-width) {
+            min-height: auto;
+        }
+    }
+}
+
+.bonus-table__name {
+    color: #808080;
+    display: none;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.bonus-table__value {
+    @include breakpoint-down($mobile-width) {
+        min-height: 46px;
+        margin-top: 16px;
+    }
+}

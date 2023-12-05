@@ -1,0 +1,243 @@
+{%
+    set basketMain = [
+        { name: 'Матрас Foggy Morning', type: 'mattress', image: '/assets/img/basket/basket-1.png'},
+        { name: 'Кровать Berry', type: 'textile', image: '/assets/img/basket/basket-2.png'},
+        { name: 'Кровать Мелоди Light', type: 'textile', image: '/assets/img/basket/basket-3.png'},
+        { name: 'Анатомическая подушка Cool Soft', type: 'height', image: '/assets/img/basket/basket-4.png'},
+        { name: 'Чехол для матраса Мовена', type: 'size', image: '/assets/img/basket/basket-5.png'},
+        { name: 'Кровать Валенсия', type: 'size', image: '/assets/img/basket/basket-6.png'},
+    ]
+%}
+
+<section class="basket">
+    <div class="container">
+        <div class="basket__top">
+            <button class="basket__back"></button>
+            <h1 class="basket__title title">Корзина</h1>
+        </div>
+        <div class="basket__wrap">
+            <div class="basket__main">
+                {% for area in basketMain %}
+                    {% if loop.last %}
+                        <div class="basket__headline text-18-medium">Временно нет в наличии</div>
+                    {% endif %}
+                    <div class="basket__area">
+                        <div class="basket__delete-box">
+                            <div class="basket__delete-name text-16-medium">{{ area.name }}</div>
+                            <div class="basket__delete-price text-16">
+                                Цена: <span class="text-18-medium">22 250 ₽</span>
+                            </div>
+                            <button class="basket__delete-recovery">Восстановить</button>
+                        </div>
+                        <div class="basket__inner">
+                            <picture class="basket__picture">
+                                <img src="{{ area.image }}" alt="" class="basket__image">
+                            </picture>
+                            <div class="basket__box">
+                                <button class="basket__delete">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_203_403867" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                            <rect width="24" height="24" fill="#D9D9D9"/>
+                                        </mask>
+                                        <g mask="url(#mask0_203_403867)">
+                                            <path d="M9.4 16.5L12 13.9L14.6 16.5L16 15.1L13.4 12.5L16 9.9L14.6 8.5L12 11.1L9.4 8.5L8 9.9L10.6 12.5L8 15.1L9.4 16.5ZM7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6Z" fill="#B3B3B3"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <div class="basket__artikul text-14">Арт. 822080102</div>
+                                <div class="basket__inner-box">
+                                    <a href="#" class="basket__name text-16-medium">{{ area.name }}</a>
+                                    {% if area.type != 'height' %}
+                                        <div class="basket__line">
+                                            Размеры:
+                                            <span class="basket__line-value text-14">200 см x 90 см x 19 см</span>
+                                        </div>
+                                    {% else %}
+                                        <div class="basket__line">
+                                            Высота:
+                                            <span class="basket__line-value text-14">9 см</span>
+                                        </div>
+                                    {% endif %}
+                                    {% if area.type == 'mattress' %}
+                                        <div class="basket__line">
+                                            Уровень жесткости
+                                            <img src="/assets/img/ic_hardness_black.svg" alt="" class="basket__line-icon-size">
+                                            <span class="basket__line-note text-14">мягкий</span>
+                                        </div>
+                                    {% endif %}
+                                    {% if area.type == 'textile' %}
+                                        <div class="basket__line">
+                                            Ткань
+                                            <img src="/assets/img/tile-item/textile-2.jpg" alt="" class="basket__line-icon-textile">
+                                            <span class="basket__line-name text-14">Велюр Atlanta Ocean</span>
+                                        </div>
+                                        <div class="basket__line">
+                                            Цвет
+                                            <img src="/assets/img/tile-item/textile-3.jpg" alt="" class="basket__line-icon-textile">
+                                            <span class="basket__line-name text-14">Alaska Ash</span>
+                                        </div>
+                                        <div class="basket__line">
+                                            Комплектация
+                                            <span class="basket__line-value text-14">Ортопедическая решетка</span>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                {% if loop.last %}
+                                    <div class="basket__ended">
+                                        <a href="#modal-order" class="basket__ended-button btn-grey" data-fancybox>Под заказ — 14 дней</a>
+                                        <div class="basket__ended-span text-18-medium">Товар закончился</div>
+                                    </div>
+                                {% else %}
+                                    <div class="basket__bottom">
+                                        <div class="basket__counter">
+                                            <button class="basket__counter-button basket__counter-button_minus">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g opacity="0.3">
+                                                        <mask id="mask0_894_49690" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                                            <rect width="20" height="20" fill="#D9D9D9"/>
+                                                        </mask>
+                                                        <g mask="url(#mask0_894_49690)">
+                                                            <path d="M4.83301 10.75V9.25H15.1663V10.75H4.83301Z" fill="#333333"/>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                            <input type="number" class="basket__counter-input text-16-medium" value="1">
+                                            <button class="basket__counter-button basket__counter-button_plus">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <mask id="mask0_894_49694" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                                        <rect width="20" height="20" fill="#D9D9D9"/>
+                                                    </mask>
+                                                    <g mask="url(#mask0_894_49694)">
+                                                        <path d="M9.25 10.75H5V9.25H9.25V5H10.75V9.25H15V10.75H10.75V15H9.25V10.75Z" fill="#333333"/>
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="basket__price">
+                                            <div class="basket__price-current text-18-medium">11 250 ₽</div>
+                                            <div class="basket__price-old text-16">11 250 ₽</div>
+                                            <div class="basket__price-discount text-14">–17%</div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% if loop.index == 1 or loop.index == 2 %}
+                            <div class="basket__more">
+                                <div class="basket__more-top">
+                                    <button class="basket__more-button text-16-medium">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_517_68643" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                                                <rect width="16" height="16" fill="#fff"/>
+                                            </mask>
+                                            <g mask="url(#mask0_517_68643)">
+                                                <path d="M7.99863 11.3746L3.87109 7.24706L4.84863 6.26953L7.99863 9.41953L11.1486 6.26953L12.1262 7.24706L7.99863 11.3746Z" fill="#333333"/>
+                                            </g>
+                                        </svg>
+                                        Не забудьте купить
+                                    </button>
+                                    <div class="basket__more-list">
+                                        {% for item in [1,2,3,4,5] %}
+                                            <picture class="basket__more-picture">
+                                                <img src="/assets/img/tile-item/tile-item-1_1.png" alt="" class="basket__more-image">
+                                            </picture>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="basket__more-nav-box">
+                                        <button class="basket__more-nav basket__more-nav_left"></button>
+                                        <button class="basket__more-nav basket__more-nav_right"></button>
+                                    </div>
+                                </div>
+                                <div class="basket__more__slider" data-element="basket__more-slider">
+                                    <div class="basket__more__wrapper swiper-wrapper">
+                                        {% for item in [1,2,3,4,5] %}
+                                            <div class="basket__more__slide swiper-slide">
+                                                <picture class="basket__more__slide-picture">
+                                                    <img src="/assets/img/tile-item/tile-item-1_1.png" alt="" class="basket__more__slide-image">
+                                                </picture>
+                                                <div class="basket__more__slide-name text-16-medium">Кровать Мелоди Light</div>
+                                                <div class="basket__more__slide-price">
+                                                    <div class="basket__more__slide-price-current text-16-medium">+12 890 ₽</div>
+                                                    <div class="basket__more__slide-price-old text-16">13 890 ₽</div>
+                                                </div>
+                                                {% if loop.first %}
+                                                    <button class="basket__more__slide-add basket__more__slide-add_active btn-grey text-16-medium" type="button">
+                                                        В корзине</button>
+                                                {% else %}
+                                                    <button class="basket__more__slide-add btn-grey text-16-medium" type="button">Добавить</button>
+                                                {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="basket__more__scrollbar swiper-scrollbar-blue swiper-scrollbar"></div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="basket__sidebar" id="basket-sidebar">
+                <div class="basket__sidebar-inner">
+                    <div class="basket__sidebar-title text-18-medium">
+                        <span class="basket__sidebar-product-count">4</span> товара в корзине
+                    </div>
+                    <div class="basket__sidebar-nav">
+                        <button class="basket__sidebar-nav-btn basket__sidebar-nav-btn_active text-14" data-index="0">Бонусы</button>
+                        <button class="basket__sidebar-nav-btn text-14" data-index="1">Промокод</button>
+                    </div>
+                    <div class="basket__sidebar-step basket__sidebar-step_active">
+                        <div class="basket__sidebar-bonus-span">
+                            У вас <img src="/assets/img/bonus-share/ic_sarma_circle_black.svg" alt="" class="basket__sidebar-bonus-icon">
+                            17 560 бонусов</div>
+                        <input type="number" class="basket__sidebar-bonus-input input" placeholder="Введите количество бонусов">
+                        <div class="basket__range">
+                            <tc-range-slider class="basket__range-slider" value1="0" min="0" max="17560" step="1"
+                                 slider-height="2px" slider-width="100%" slider-bg="rgba(51, 51, 51, 0.08)" slider-bg-hover="rgba(51, 51, 51, 0.08)"
+                                 slider-bg-fill="#0A4881" pointer-width="16px" pointer-height="16px"
+                                 pointer-bg="#0A4881" pointer-bg-hover="#0A4881" pointer-bg-focus="#0A4881"
+                                 pointer-border="none" pointer-border-hover="none" pointer-border-focus="none"
+                                 pointer-shadow="none" pointer-shadow-hover="none" pointer-shadow-focus="none">
+                            </tc-range-slider>
+                        </div>
+                    </div>
+                    <div class="basket__sidebar-step">
+                        <div class="basket__promo-text text-13">Применить промокод</div>
+                        <input type="text" class="basket__promo-input input" placeholder="Введите промокод">
+                    </div>
+                    <div class="basket__sidebar-line">
+                        <div class="basket__sidebar-name text-13">Промокод</div>
+                        <div class="basket__sidebar-value text-13-medium color-orange">–1 500 ₽</div>
+                    </div>
+                    <div class="basket__sidebar-line">
+                        <div class="basket__sidebar-name text-13">Скидка за бонусы</div>
+                        <div class="basket__sidebar-value text-13-medium">–2 389 ₽</div>
+                    </div>
+                    <div class="basket__sidebar-result">
+                        <div class="basket__sidebar-result-span text-13">Итого</div>
+                        <div class="basket__sidebar-result-box">
+                            <div class="basket__sidebar-price">
+                                <div class="basket__sidebar-price-current headline">126 920 ₽</div>
+                                <div class="basket__sidebar-price-old text-16">186 920 ₽</div>
+                            </div>
+                            <div class="basket__result-bonus">
+                                Вы получите
+                                <div class="basket__result-bonus-value text-14">
+                                    <img src="/assets/img/bonus-share/ic_sarma_circle_black.svg" alt="" class="basket__result-bonus-icon">
+                                    + 12 920 бонусов
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="basket__order btn-blue">Перейти к оформлению</a>
+                </div>
+                <button class="basket__sidebar-favorite btn-grey text-16-medium">Добавить всё в избранное</button>
+                <a href="#modal-clear" class="basket__sidebar-clear btn-grey text-16-medium" data-fancybox>Очистить корзину</a>
+                <div class="basket__sidebar-text text-13">
+                    Обращаем Ваше внимание, что окончательная стоимость  и состав заказа, если в нем присутствуют
+                    товары и/или услуги, участвующие в акции, будет подтверждена после обработки заказа.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

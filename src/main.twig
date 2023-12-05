@@ -1,0 +1,46 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': ''} %}
+    {% include 'templates/includes/header.twig' with vars %}
+{% endblock %}
+
+{% block page %}
+
+    {% include 'templates/includes/cap.twig' %}
+    {% include 'templates/includes/categories-circle.twig' %}
+    {% include 'templates/includes/actions.twig' %}
+    {% include 'templates/includes/tile-line.twig' with {
+        'mod': '',
+        'title': 'Хиты продаж среди <a href="#">кроватей</a>',
+        'tile': [
+            { name: 'Кровать Мелоди Light', image: '/assets/img/tile-item/tile-item-1_1.png', mod: 'textile' },
+            { name: 'Кровать Berry', image: '/assets/img/tile-item/tile-item-1_2.png', mod: 'textile' },
+            { name: 'Кровать Орион New', image: '/assets/img/tile-item/tile-item-1_3.png', mod: 'textile' },
+            { name: 'Кровать Валенсия', image: '/assets/img/tile-item/tile-item-1_4.png', mod: 'textile' },
+            { name: 'Кровать Валенсия 2', image: '/assets/img/tile-item/tile-item-1_4.png', mod: 'textile' },
+        ]
+    } %}
+    {% include 'templates/includes/history.twig' %}
+    {% include 'templates/includes/tile-line.twig' with {
+        'mod': '',
+        'title': 'Новинки в категории <a href="#">матрасов</a>',
+        'tile': [
+            { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_1.png', mod: 'жесткий/мягкий' },
+            { name: 'Матрас Foggy Morning 2', image: '/assets/img/tile-item/tile-item-2_2.png', mod: 'жесткий/мягкий' },
+            { name: 'Матрас Fresh Herbs', image: '/assets/img/tile-item/tile-item-2_3.png', mod: 'жесткий/мягкий' },
+            { name: 'Матрас Green Moss', image: '/assets/img/tile-item/tile-item-2_4.png', mod: 'жесткий/мягкий' },
+            { name: 'Матрас Foggy Morning 3', image: '/assets/img/tile-item/tile-item-2_4.png', mod: 'жесткий/мягкий' },
+        ]
+    } %}
+    {% include 'templates/includes/shops.twig' %}
+    {% include 'templates/includes/interiors.twig' %}
+    {% include 'templates/includes/cyclopedia.twig' with {'title': 'Энциклопедия сна'} %}
+    {% include 'templates/includes/description.twig' %}
+    {% include 'templates/includes/feedback.twig' %}
+    {% include 'templates/includes/services.twig' %}
+    {% include 'templates/includes/modal/modal-video-history.twig' %}
+
+{% endblock %}

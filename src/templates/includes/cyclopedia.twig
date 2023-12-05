@@ -1,0 +1,68 @@
+{%
+    set faqList = [
+        {
+            image: '/assets/img/cyclopedia/cyclopedia-1.jpg', tag: 'Как выбрать', date: '15 июня', time: '8 мин',
+            name: 'Как выбрать матрас:  4 важных вопроса,  на которые стоит ответить перед покупкой'
+        },
+        {
+            image: '/assets/img/cyclopedia/cyclopedia-2.jpg', tag: 'Матрасы', date: '1 июня', time: '4 мин',
+            name: 'Какой жесткости должен быть матраса для ребенка?'
+        },
+        {
+            image: '/assets/img/cyclopedia/cyclopedia-3.jpg', tag: 'Кровати', date: '15 июня', time: '6 мин',
+            name: 'Проверка на удобство:  4 способа понять, как расположить кровать  в спальне'
+        },
+        {
+            image: '/assets/img/cyclopedia/cyclopedia-4.jpg', tag: 'Кровати', date: '4 мая', time: '4 мин',
+            name: '3 простых правила, чтобы ваш быт стал экологичным'
+        },
+        {
+            image: '/assets/img/cyclopedia/cyclopedia-1.jpg', tag: 'Как выбрать', date: '15 июня', time: '8 мин',
+            name: 'Как выбрать матрас:  4 важных вопроса,  на которые стоит ответить перед покупкой'
+        },
+        {
+            image: '/assets/img/cyclopedia/cyclopedia-3.jpg', tag: 'Кровати', date: '15 июня', time: '6 мин',
+            name: 'Проверка на удобство:  4 способа понять, как расположить кровать  в спальне'
+        },
+    ]
+%}
+
+<section class="cyclopedia">
+    <div class="container">
+        <div class="cyclopedia__wrap">
+            <h2 class="cyclopedia__title title">{{ title }}</h2>
+            <a href="#" class="cyclopedia__all text-14">Все статьи</a>
+            <div class="cyclopedia__text text-16">
+                Пишем советы о матрасах и не только. Как купить и какой лучше, рекомендации,  обзоры материалов,
+                лайфхаки по экономии.
+            </div>
+            <div class="cyclopedia__nav">
+                <button class="cyclopedia__nav-button cyclopedia__nav-button_left" type="button"></button>
+                <button class="cyclopedia__nav-button cyclopedia__nav-button_right" type="button"></button>
+            </div>
+        </div>
+        <div class="cyclopedia__slider">
+            <div class="swiper-wrapper">
+                {% for item in faqList %}
+                    <a href="#" class="cyclopedia__slide swiper-slide">
+                        <div class="cyclopedia__box">
+                            <picture class="cyclopedia__picture">
+                                <img src="{{ item.image }}" alt="" class="cyclopedia__image" loading="lazy">
+                            </picture>
+                            <div class="cyclopedia__tag">{{ item.tag }}</div>
+                        </div>
+                        <div class="cyclopedia__inner">
+                            <div class="cyclopedia__line">
+                                <div class="cyclopedia__date text-13">{{ item.date }}</div>
+                                <div class="cyclopedia__time text-13">{{ item.time }}</div>
+                            </div>
+                            <div class="cyclopedia__name text-18-medium">{{ item.name }}</div>
+                            <span class="cyclopedia__button btn-blue">Читать</span>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="swiper-scrollbar-blue swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>

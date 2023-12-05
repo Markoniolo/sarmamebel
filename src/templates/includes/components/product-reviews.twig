@@ -1,0 +1,112 @@
+{%
+    set productReviewsSidebarList = [
+        { number: '5', count: '108 отзывов', width: '100%'},
+        { number: '4', count: '5 отзывов', width: '10%'},
+        { number: '3', count: '0 отзывов', width: '0'},
+        { number: '2', count: '0 отзывов', width: '0'},
+        { number: '1', count: '0 отзывов', width: '0'},
+    ]
+%}
+
+<div class="product-reviews">
+    <div class="product-reviews__main">
+        <div class="product-reviews__empty text-16-medium">Отзывов еще нет — станьте первым, кто его оставит!</div>
+        <ul class="product-reviews__list">
+            {% for item in [1,2,3,4] %}
+                <li class="product-reviews__item">
+                    <div class="product-reviews__top">
+                        <div class="product-reviews__author">
+                            <img src="/assets/img/ic_question_avatar_user.svg" alt="" class="product-reviews__avatar">
+                            <div class="product-reviews__name text-16-medium">Александра</div>
+                            <div class="product-reviews__tag text-11-medium">Товар куплен на сайте</div>
+                        </div>
+                        <div class="product-reviews__info">
+                            <div class="product-reviews__rate">
+                                <div class="product-reviews__rate-icon"></div>
+                                <div class="product-reviews__rate-value text-14">5</div>
+                            </div>
+                            <div class="product-reviews__date text-14">14 сентября 2023</div>
+                        </div>
+                    </div>
+                    <div class="product-reviews__line text-16"><span class="text-16-medium">Фото покупателя:</span></div>
+                    <div class="product-reviews__gallery">
+                        {% for image in [1,2,3,4] %}
+                            <img src="/assets/img/product-reviews/product-reviews-1.jpg" alt="" class="product-reviews__image">
+                        {% endfor %}
+                    </div>
+                    <div class="product-reviews__line text-16">
+                        <span class="text-16-medium">Достойнства:</span> Двуспальный, независимые пружины
+                    </div>
+                    <div class="product-reviews__line text-16">
+                        <span class="text-16-medium">Недостатки:</span> Не нашли
+                    </div>
+                    <p class="product-reviews__text">
+                        Наконец-то я получила, что хотела. Не могу нарадоваться. Всю ночь проспала  не просыпаясь
+                        (обычно, из за боли в суставах, спала всего по 2-3 часа). Не знаю,  как будет дальше, но пока
+                        матрас очень для меня удобный, средней жесткости,  нигде не "проваливается", поэтому мои суставы
+                        и сломанные рёбра чувствуют  себя прекрасно. Утром просыпаюсь отдохнувшей.
+                    </p>
+                    <div class="product-reviews__reacts">
+                        <button class="product-reviews__react product-reviews__react_like">
+                            <svg class="product-reviews__react-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_203_168442" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                    <rect width="20" height="20" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_203_168442)">
+                                    <path d="M14.9524 17H6.85714V6.6L12.5238 1L13.5357 2C13.6302 2.09333 13.7077 2.22 13.7685 2.38C13.8292 2.54 13.8595 2.69333 13.8595 2.84V3.12L12.969 6.6H17.381C17.8127 6.6 18.1905 6.76 18.5143 7.08C18.8381 7.4 19 7.77333 19 8.2V9.8C19 9.89333 18.9899 9.99333 18.9696 10.1C18.9494 10.2067 18.919 10.3067 18.8786 10.4L16.45 16.04C16.3286 16.3067 16.1262 16.5333 15.8429 16.72C15.5595 16.9067 15.2627 17 14.9524 17ZM5.2381 6.6V17H2V6.6H5.2381Z" fill="#B3B3B3"/>
+                                </g>
+                            </svg>
+                            <span class="product-reviews__react-value text-14">2</span>
+                        </button>
+                        <button class="product-reviews__react product-reviews__react_dislike">
+                            <svg class="product-reviews__react-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_203_168412" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                    <rect width="20" height="20" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_203_168412)">
+                                    <path d="M5.04762 3H13.1429V13.4L7.47619 19L6.46429 18C6.36984 17.9067 6.29226 17.78 6.23155 17.62C6.17083 17.46 6.14048 17.3067 6.14048 17.16V16.88L7.03095 13.4H2.61905C2.1873 13.4 1.80952 13.24 1.48571 12.92C1.1619 12.6 1 12.2267 1 11.8V10.2C1 10.1067 1.01012 10.0067 1.03036 9.9C1.0506 9.79333 1.08095 9.69333 1.12143 9.6L3.55 3.96C3.67143 3.69333 3.87381 3.46667 4.15714 3.28C4.44048 3.09333 4.7373 3 5.04762 3ZM14.7619 13.4V3H18V13.4H14.7619Z" fill="#B3B3B3"/>
+                                </g>
+                            </svg>
+                            <span class="product-reviews__react-value text-14"></span>
+                        </button>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="product-reviews__pagination">
+            {% include 'pagination.twig' %}
+        </div>
+    </div>
+    <div class="product-reviews__sidebar">
+        <div class="product-reviews__sidebar-top">
+            <div class="product-reviews__sidebar-title text-16-medium">Рейтинг модели</div>
+            <div class="product-reviews__sidebar-line">
+                <div class="product-reviews__sidebar-star">
+                    <div class="product-reviews__sidebar-star-fill" style="width: 70%"></div>
+                </div>
+                <div class="product-reviews__sidebar-value headline">4,9</div>
+                <div class="product-reviews__sidebar-count">123 отзыва</div>
+            </div>
+            <ul class="product-reviews__sidebar-list">
+                {% for item in productReviewsSidebarList %}
+                    <li class="product-reviews__sidebar-item">
+                        <div class="product-reviews__sidebar-number text-14">{{ item.number }}</div>
+                        <div class="product-reviews__sidebar-item-icon"></div>
+                        <div class="product-reviews__sidebar-bar">
+                            <div class="product-reviews__sidebar-bar-fill" style="width: {{ item.width }}"></div>
+                        </div>
+                        <div class="product-reviews__sidebar-item-count text-14">{{ item.count }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="product-reviews__recommend text-16">97% покупателей рекомедуют этот товар</div>
+        </div>
+        <div class="product-reviews__bottom">
+            <div class="product-reviews__gift text-14">Дарим <span>250</span> бонусов за отзыв!</div>
+            <a href="#modal-review" class="product-reviews__button btn-blue text-16-medium" data-fancybox>Оставить отзыв</a>
+            <div class="product-reviews__sidebar-note text-13">
+                Оставить отзыв можно в личном кабинете, только на товар, который вы заказывали.
+            </div>
+        </div>
+    </div>
+</div>

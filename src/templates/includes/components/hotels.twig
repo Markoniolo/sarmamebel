@@ -1,0 +1,64 @@
+{%
+    set hotelsSlider = [
+        { image: '/assets/img/hotels/hotels-1.jpg', name: 'Эконом' },
+        { image: '/assets/img/hotels/hotels-2.jpg', name: 'Стандарт' },
+        { image: '/assets/img/hotels/hotels-3.jpg', name: 'Премиум' },
+        { image: '/assets/img/hotels/hotels-4.jpg', name: 'Люкс' },
+    ]
+%}
+
+{%
+    set hotelsLogos = [
+        '/assets/img/hotels/hotels-logo-1.svg',
+        '/assets/img/hotels/hotels-logo-2.svg',
+        '/assets/img/hotels/hotels-logo-3.svg',
+        '/assets/img/hotels/hotels-logo-4.svg',
+        '/assets/img/hotels/hotels-logo-5.svg',
+    ]
+%}
+
+<div class="hotels">
+    <div class="hotels__area">
+        <div class="hotels__left">
+            <h2 class="hotels__title title">Более 20 лет «Сарма» производит спальные гарнитуры, матрасы и мягкую мебель</h2>
+            <div class="hotels__text text-14">
+                За это время компания «Сарма» зарекомендовала себя как надежный поставщик и ответственный деловой
+                партнер в вопросах качественных товаров для сна на Российском рынке.
+            </div>
+            <div class="hotels__bottom">
+                <div class="hotels__box">
+                    <div class="hotels__number">5635</div>
+                    <div class="hotels__box-text text-18-medium">Довольных клиентов гостиничного бизнеса</div>
+                </div>
+                <div class="hotels__list">
+                    <div class="hotels__item text-18-medium">Осуществим ваш заказ в сжатые сроки</div>
+                    <div class="hotels__item text-18-medium">Собственная система логистики</div>
+                </div>
+            </div>
+        </div>
+        <div class="hotels__right">
+            <picture class="hotels__picture">
+                <img src="/assets/img/hotels/hotels-big.jpg" alt="" class="hotels__image">
+            </picture>
+        </div>
+    </div>
+    <div class="hotels__headline headline">
+        Также мы готовы предложить готовые комплект-решения для оснащения номеров любого уровня
+    </div>
+    <div class="hotels__slider">
+        {% for slide in hotelsSlider %}
+            <div class="hotels__slide">
+                <picture class="hotels__slide-picture">
+                    <img src="{{ slide.image }}" alt="" class="hotels__slide-image">
+                </picture>
+                <div class="hotels__slide-name text-18-medium">{{ slide.name }}</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="hotels__headline title">Нас выбирают</div>
+    <div class="hotels__logos">
+        {% for logo in hotelsLogos %}
+            <img src="{{ logo }}" alt="" class="hotels__logo">
+        {% endfor %}
+    </div>
+</div>

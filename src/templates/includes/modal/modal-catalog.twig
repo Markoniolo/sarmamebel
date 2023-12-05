@@ -1,0 +1,115 @@
+{%
+    set modalCatalogCategories = [
+    { title: 'Матрасы', mod: 'dropdown', index: '0', text: 'Матрасы',
+        list: [
+        {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+        {name: 'Размер', list: ['Односпальные','Двуспальные','Детские']},
+        {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+        {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+        {name: 'По форме', list: ['Тонкие','Высокие','Топперы']},
+        {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+    ]
+    },
+    { title: 'Кровати', mod: 'dropdown', index: '1', text: 'Кровати',
+        list: [
+        {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+        {name: 'Размер', list: ['Односпальные','Двуспальные','Детские']},
+        {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+        {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+    ]
+    },
+    { title: 'Диваны <span class="grey">∙</span> <span>Ценопад</span>', mod: 'green', index: '2', text: 'Диваны',
+        list: [
+        {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+        {name: 'По форме', list: ['Тонкие','Высокие','Топперы']},
+        {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+    ]
+    },
+    { title: 'Аксессуары для сна', mod: 'dropdown', index: '3', text: 'Аксессуары для сна',
+        list: [
+        {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+        {name: 'Размер', list: ['Односпальные','Двуспальные','Детские']},
+        {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+        {name: 'По форме', list: ['Тонкие','Высокие','Топперы']},
+        {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+    ]
+    },
+    { title: 'Мебель для спальни', mod: 'dropdown', index: '4', text: 'Мебель для спальни',
+        list: [
+        {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+        {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+        {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+        {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+    ]
+    },
+    { title: 'Кресла и пуфы', mod: 'dropdown', index: '5', text: 'Кресла и пуфы',
+        list: [
+        {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+        {name: 'Размер', list: ['Односпальные','Двуспальные','Детские']},
+        {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+        {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+        {name: 'По форме', list: ['Тонкие','Высокие','Топперы']},
+        {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+    ]
+    },
+    { title: 'Новинки', mod: 'red', index: '6',
+    },
+]
+%}
+
+<div class="modal-catalog" id="modal-catalog" data-element="modal-catalog">
+    <div class="modal-catalog__top">
+        <div class="modal-catalog__title headline">Каталог товаров</div>
+        <div class="modal-catalog__back headline" data-element="modal-catalog-back">Взрослые матрасы</div>
+    </div>
+    <div class="modal-catalog__search">
+        <div class="modal-catalog__search-box">
+            <div class="modal-catalog__search-top">
+                <button class="modal-catalog__search-back" type="button" data-element="modal-catalog__search-back"></button>
+                <div class="modal-catalog__search-area">
+                    <div class="modal-catalog__search-btns">
+                        <button class="modal-catalog__search-close" data-element="modal-catalog-search-close"></button>
+                        <button class="modal-catalog__search-submit btn-blue"></button>
+                    </div>
+                    <label class="modal-catalog__search-label">
+                        <input type="search" class="modal-catalog__search-input text-16-medium" placeholder="Поиск по каталогу"
+                               data-element="modal-catalog-search-input">
+                        <img src="/assets/img/ic_search_grey.svg" alt="" class="modal-catalog__search-icon">
+                    </label>
+                </div>
+            </div>
+            {% include '../components/search.twig' %}
+        </div>
+    </div>
+    <div class="modal-catalog__list">
+        {% for item in modalCatalogCategories %}
+            {% if item.list %}
+                <button type="button" data-index="{{ item.index }}" class="modal-catalog__item text-16-medium"
+                        data-element="modal-catalog-item" data-text="{{ item.text }}">
+                    {{ item.title }}
+                </button>
+            {% else %}
+                <a href="#" class="modal-catalog__item text-16-medium modal-catalog__item_red">{{ item.title }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% for item in modalCatalogCategories %}
+        <div class="modal-catalog__full" data-element="modal-catalog-full">
+            <a href="#" class="modal-catalog__all text-16-medium">Смотреть все {{ item.text }}</a>
+            <div class="modal-catalog__area">
+                {% for box in item.list %}
+                    <div class="modal-catalog__box">
+                        <div class="modal-catalog__box-name text-13-medium">
+                            {{ box.name }}
+                        </div>
+                        <div class="modal-catalog__box-list">
+                            {% for link in box.list %}
+                                <a href="#" class="modal-catalog__box-item text-16">{{ link }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,150 @@
+<form class="filters" id="filters" data-element="filters">
+    <div class="filters__area" data-element="filters-area">
+        <div class="filters__headline headline">Фильтры</div>
+        {% if mod != 'stock' %}
+            <div class="filters__dropdown filters__dropdown_active" data-element="filters-dropdown">
+                <div class="filters__dropdown-top">
+                    <div class="filters__dropdown-name text-16-medium" data-element="filters-dropdown-name">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_577_140125" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                <rect width="20" height="20" fill="#fff"/>
+                            </mask>
+                            <g mask="url(#mask0_577_140125)">
+                                <path d="M10 13.0625L5 8.0625L6.0625 7L10 10.9375L13.9375 7L15 8.0625L10 13.0625Z" fill="#333333"/>
+                            </g>
+                        </svg>
+                        Цена, ₽
+                    </div>
+                    <button class="filters__dropdown-reset" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_598_44661" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_598_44661)">
+                                <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#808080"/>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <div class="filters__dropdown-content" data-element="filters-dropdown-content">
+                    <div class="filters__range">
+                        <label class="filters__range-label">
+                            <span class="filters__range-span text-11-medium">от</span>
+                            <input type="text" class="filters__range-input filters__range-input_min text-14" readonly>
+                        </label>
+                        <label class="filters__range-label">
+                            <span class="filters__range-span text-11-medium">до</span>
+                            <input type="text" class="filters__range-input filters__range-input_max text-14" readonly>
+                        </label>
+                    </div>
+                    <div class="filters__range-slider" data-min="4900" data-max="25000"></div>
+                </div>
+            </div>
+            <div class="filters__dropdown filters__dropdown_active" data-element="filters-dropdown">
+                <div class="filters__dropdown-top">
+                    <div class="filters__dropdown-name text-16-medium" data-element="filters-dropdown-name">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_577_140125" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                <rect width="20" height="20" fill="#fff"/>
+                            </mask>
+                            <g mask="url(#mask0_577_140125)">
+                                <path d="M10 13.0625L5 8.0625L6.0625 7L10 10.9375L13.9375 7L15 8.0625L10 13.0625Z" fill="#333333"/>
+                            </g>
+                        </svg>
+                        Размеры, см
+                    </div>
+                    <button class="filters__dropdown-reset" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_598_44661" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_598_44661)">
+                                <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#808080"/>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <div class="filters__dropdown-content" data-element="filters-dropdown-content">
+                    <div class="filters__double">
+                        <div class="filters__double-box">
+                            <div class="filters__double-name text-13">Ширина</div>
+                            <input type="number" class="filters__double-input text-14">
+                        </div>
+                        <div class="filters__double-box">
+                            <div class="filters__double-name text-13">Длина</div>
+                            <input type="number" class="filters__double-input text-14">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% for item in filtersList %}
+            <div class="{{ item.mod ? item.mod : 'filters__dropdown' }}" data-element="filters-dropdown">
+                <div class="filters__dropdown-top">
+                    <div class="filters__dropdown-name text-16-medium" data-element="filters-dropdown-name">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_577_140125" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                <rect width="20" height="20" fill="#fff"/>
+                            </mask>
+                            <g mask="url(#mask0_577_140125)">
+                                <path d="M10 13.0625L5 8.0625L6.0625 7L10 10.9375L13.9375 7L15 8.0625L10 13.0625Z" fill="#333333"/>
+                            </g>
+                        </svg>
+                        {{ item.name }}
+                    </div>
+                    <div class="filters__dropdown-top-btns">
+                        {% if (loop.index == 3 or loop.index == 5 or loop.index == 6)  %}
+                            <div class="filters__dropdown-hint">
+                                {% include '../components/hint.twig' %}
+                            </div>
+                        {% endif %}
+                        <button class="filters__dropdown-reset" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_598_44661" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                    <rect width="24" height="24" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_598_44661)">
+                                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#808080"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="filters__dropdown-content" data-element="filters-dropdown-content">
+                    {% for name in item.list %}
+                        {% if item.type == 'checkbox' %}
+                            <label class="filters__checkbox">
+                                <input type="checkbox" class="filters__checkbox-input" value="{{ name }}" name="{{ item.name }}">
+                                <span class="filters__checkbox-view"></span>
+                                <span class="filters__checkbox-name text-14">{{ name }}</span>
+                            </label>
+                        {% else %}
+                            <label class="filters__radio">
+                                <input type="radio" class="filters__radio-input" value="{{ name }}" name="{{ item.name }}">
+                                <span class="filters__radio-view"></span>
+                                <span class="filters__radio-name text-14">{{ name }}</span>
+                            </label>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="filters__bottom">
+        {% if mod != 'stock' %}
+            <button class="filters__all text-16" type="button">
+                Все фильтры
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_577_140125" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                        <rect width="20" height="20" fill="#fff"/>
+                    </mask>
+                    <g mask="url(#mask0_577_140125)">
+                        <path d="M10 13.0625L5 8.0625L6.0625 7L10 10.9375L13.9375 7L15 8.0625L10 13.0625Z" fill="#0A4881"/>
+                    </g>
+                </svg>
+            </button>
+        {% endif %}
+        <button class="filters__apply btn-blue text-16-medium">Применить <span class="filters__apply-counter">(64)</span></button>
+        <button class="filters__reset text-16-medium btn-grey">Сбросить</button>
+    </div>
+</form>

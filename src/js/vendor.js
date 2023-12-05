@@ -1,0 +1,9 @@
+//=require svg4everybody/dist/svg4everybody.min.js
+//=require jquery/dist/jquery.min.js
+//=require slick-carousel/slick/slick.min.js
+//=require @fancyapps/ui/dist/fancybox/fancybox.umd.js
+//=require imask/dist/imask.js
+//=require swiper/swiper-bundle.js
+//=require simplebar/dist/simplebar.min.js
+//=require multi-range-slider-control/MultiRangeSlider.js
+//=require toolcool-range-slider/dist/toolcool-range-slider.min.js

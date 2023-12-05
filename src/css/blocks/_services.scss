@@ -1,0 +1,67 @@
+.services {
+    padding: 56px 0;
+    overflow: hidden;
+    @include breakpoint-down($mobile-width) {
+        padding: 48px 0;
+    }
+    .swiper-wrapper {
+        display: flex;
+        @include breakpoint-down($mobile-width) {
+            padding-bottom: 24px;
+        }
+    }
+}
+
+.services__slider {
+    position: relative;
+}
+
+.services__item {
+    width: 184px !important;
+    &:not(:last-of-type) {
+        margin-right: 24px;
+    }
+}
+
+.services__box {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.services__icon-box {
+    margin-right: 12px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    border: 1px solid rgba(51, 51, 51, 0.16);
+}
+
+.services__icon {
+    width: 24px;
+    height: 24px;
+}
+
+.services__name {
+    max-width: 80px;
+    width: 100%;
+    color: #808080;
+}
+
+.services__scrollbar.swiper-scrollbar {
+    display: none;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+        background: rgba(51, 51, 51, 0.08);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .swiper-scrollbar-drag {
+        background: $c-blue;
+    }
+}

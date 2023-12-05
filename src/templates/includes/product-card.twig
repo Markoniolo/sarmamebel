@@ -1,0 +1,208 @@
+{%
+    set productCardSlider = [
+        { image: '/assets/img/product-card/product-card-1.jpg', mod: '' },
+        { image: '/assets/img/product-card/product-card-2.jpg', mod: '' },
+        { image: '/assets/img/product-card/product-card-3.jpg', mod: '' },
+        { image: '/assets/img/product-card/product-card-1.jpg', mod: 'product-card__slide product-card__slide_half swiper-slide' },
+        { image: '/assets/img/product-card/product-card-2.jpg', mod: 'product-card__slide product-card__slide_half swiper-slide' },
+        { image: '/assets/img/product-card/product-card-3.jpg', mod: 'product-card__slide product-card__slide_hide swiper-slide' },
+        { image: '/assets/img/product-card/product-card-1.jpg', mod: 'product-card__slide product-card__slide_hide swiper-slide' },
+    ]
+%}
+
+{%
+    set productCardTextile = [
+        { icon: '/assets/img/tile-item/textile-1.jpg', hint: 'Велюр синий' },
+        { icon: '/assets/img/tile-item/textile-2.jpg', hint: 'Велюр Dream Beige' },
+        { icon: '/assets/img/tile-item/textile-3.jpg', hint: 'Велюр коричневый' },
+        { icon: '/assets/img/tile-item/textile-4.jpg', hint: 'Велюр серый' },
+    ]
+%}
+
+<section class="product-card">
+    <div class="container">
+        <div class="product-card__wrap">
+            <div class="product-card__top">
+                <h1 class="product-card__title title">{{ type ? 'Матрас Intense' : 'Кровать Палермо' }}</h1>
+                <div class="product-card__stats">
+                    <div class="product-card__rate">
+                        <div class="product-card__rate-stars">
+                            <div class="product-card__rate-stars-fill" style="width: 90%"></div>
+                        </div>
+                        <div class="product-card__rate-count">4,9</div>
+                    </div>
+                    <div class="product-card__stats-span">53 отзыва</div>
+                    <div class="product-card__stats-span">7 вопросов</div>
+                </div>
+            </div>
+            <div class="product-card__code-line">
+                <div class="product-card__buy-count text-14">Купили 1 153 раза</div>
+                <div class="product-card__code text-14">Арт. 822080102</div>
+            </div>
+            <div class="product-card__gallery">
+                <div class="product-card__tags">
+                    <div class="product-card__tag text-11-medium" style="background-color: #D44A1B; color: #fff">Sale</div>
+                    <div class="product-card__tag text-11-medium" style="background-color: #EE7E19; color: #fff">Хит</div>
+                    <div class="product-card__tag text-11-medium" style="background-color: #D7CCC3; color: #333">Новинка</div>
+                </div>
+                <div class="product-card__slider" data-element="product-card-slider">
+                    <div class="product-card__wrapper swiper-wrapper">
+                        {% for item in productCardSlider %}
+                            <div class="{{ item.mod ? item.mod : 'product-card__slide swiper-slide' }}">
+                                <picture class="product-card__picture">
+                                    <img src="{{ item.image }}" alt="" class="product-card__image">
+                                </picture>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="product-card__pagination swiper-pagination"></div>
+                </div>
+                <button class="product-card__gallery-more btn-grey text-16-medium" type="button">Смотреть все фото</button>
+            </div>
+            <div class="product-card__inner">
+                <div class="product-card__price-area">
+                    <div class="product-card__small-btns">
+                        <button class="product-card__favorite btn-favorite" data-element="favorite" data-name="{{ type ? 'Матрас Intense' : 'Кровать Палермо' }}"></button>
+                        <button class="product-card__compare btn-compare" data-element="compare" data-name="{{ type ? 'Матрас Intense' : 'Кровать Палермо' }}"></button>
+                    </div>
+                    <div class="product-card__price">
+                        <div class="product-card__price-current headline">22 335 ₽</div>
+                        <div class="product-card__price-old text-16">24 817 ₽</div>
+                        <div class="product-card__price-discount text-14">–23%</div>
+                    </div>
+                    <div class="product-card__bonus text-14">+ 1 125 бонусов</div>
+                    <a href="#" class="product-card__pay-plan">
+                        <div class="product-card__pay-plan-box">
+                            <span class="product-card__pay-plan-note text-14">Рассрочка</span>
+                            <span class="product-card__pay-plan-value text-14">от 2 335 ₽/месяц</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-card__features">
+                    <div class="product-card__size">
+                        <div class="product-card__size-line">
+                            <div class="product-card__size-note text-16">Габариты, Ш х Д, см</div>
+                            <div class="product-card__size-status text-14">В наличии</div>
+                        </div>
+                        <div class="product-card__size-select">
+                            {% include 'components/custom-select.twig' with {
+                                'name': 'size',
+                                'placeholder': '120 x 200',
+                                'mod': '',
+                                'options': [{value: '0', text: '120 x 200'},{value: '1', text: '200 x 120'},
+                                    {value: '2', text: '150 x 150'}]
+                            } %}
+                        </div>
+                    </div>
+                    {% if type != 'mattress' %}
+                        <div class="product-card__textile">
+                            <div class="product-card__textile-note text-16">Цвет и ткань</div>
+                            <div class="product-card__textile-line">
+                                <div class="product-card__textile-list">
+                                    {% for box in productCardTextile %}
+                                        <label class="product-card__textile-item">
+                                            {% if loop.first %}
+                                                <input type="radio" class="product-card__textile-input" name="product-textile" checked>
+                                            {% else %}
+                                                <input type="radio" class="product-card__textile-input" name="product-textile">
+                                            {% endif %}
+                                            <div class="product-card__textile-view">
+                                                <img src="{{ box.icon }}" alt="" class="product-card__textile-icon">
+                                                <span class="product-card__textile-hint text-11-medium">{{ box.hint }}</span>
+                                            </div>
+                                        </label>
+                                    {% endfor %}
+                                </div>
+                                <div class="product-card__textile-all text-14">+7</div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                {% if type != 'mattress' %}
+                    <a href="#" class="product-card__more product-card__more_blue" data-fancybox>
+                        <span class="product-card__more-plus"></span>
+                        <span class="product-card__more-note text-14">Не забудьте:</span>
+                        <span class="product-card__more-span text-14">основу, механизм подъема</span>
+                    </a>
+                {% endif %}
+                <a href="#" class="product-card__more" data-fancybox>
+                    <span class="product-card__more-plus"></span>
+                    <span class="product-card__more-note text-14">Добавить: </span>
+                    <span class="product-card__more-span text-14">чехол, наматрасник, подушка</span>
+                </a>
+                <div class="product-card__extra">
+                    <img src="/assets/img/product-card/product-card-extra-1.jpg" alt="" class="product-card__extra-image">
+                    <div class="product-card__extra-box">
+                        <div class="product-card__extra-top">
+                            <div class="product-card__extra-name text-14">Sarma Aquastop 120x200</div>
+                            <button class="product-card__extra-reset"></button>
+                        </div>
+                        <div class="product-card__extra-bottom">
+                            <div class="product-card__extra-counter">
+                                <button class="product-card__extra-counter-btn product-card__extra-counter-btn_minus">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g opacity="0.3">
+                                            <mask id="mask0_894_49690" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                                <rect width="20" height="20" fill="#D9D9D9"/>
+                                            </mask>
+                                            <g mask="url(#mask0_894_49690)">
+                                                <path d="M4.83301 10.75V9.25H15.1663V10.75H4.83301Z" fill="#333333"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <input type="number" class="product-card__extra-input text-16-medium" value="1">
+                                <button class="product-card__extra-counter-btn product-card__extra-counter-btn_plus">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_894_49694" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                            <rect width="20" height="20" fill="#D9D9D9"/>
+                                        </mask>
+                                        <g mask="url(#mask0_894_49694)">
+                                            <path d="M9.25 10.75H5V9.25H9.25V5H10.75V9.25H15V10.75H10.75V15H9.25V10.75Z" fill="#333333"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-card__extra-price">
+                                <div class="product-card__extra-price-current text-16-medium">+2 890 ₽</div>
+                                <div class="product-card__extra-price-old text-16">3 890 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if type != 'mattress' %}
+                    <div class="product-card__gift">
+                        <img src="/assets/img/product-card/product-card-gift-1.jpg" alt="" class="product-card__gift-image">
+                        <div class="product-card__gift-box">
+                            <div class="product-card__gift-name text-14">Анатомическая подушка Cool Soft</div>
+                            <div class="product-card__gift-line text-16-medium">Подарок!</div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="product-card__buttons">
+                    <a href="#modal-basket" class="product-card__basket btn-blue" data-fancybox>Добавить в корзину</a>
+                    <a href="#modal-one-click" class="product-card__one-click btn-grey text-16-medium" data-fancybox>Купить в один клик</a>
+                </div>
+                <div class="product-card__delivery">
+                    <div class="product-card__delivery-line">
+                        <div class="product-card__delivery-note text-14">
+                            Доставка по <a href="#" class="product-card__city">Иркутску</a> — </div>
+                        <span class="product-card__delivery-span text-14">бесплатно</span>
+                    </div>
+                    <div class="product-card__delivery-line">
+                        <div class="product-card__delivery-note text-14">Привезем</div>
+                        <span class="product-card__delivery-span text-14">12 сентярбря, во вторник</span>
+                    </div>
+                </div>
+                <div class="product-card__nav">
+                    <a href="#product-info" class="product-card__nav-item text-14" data-index="0"
+                       data-role="scroll-to-anchor" data-element="product-card-nav-item">Характеристики</a>
+                    <a href="#product-info" class="product-card__nav-item text-14" data-index="2"
+                       data-role="scroll-to-anchor" data-element="product-card-nav-item">Доставка и оплата</a>
+                    <a href="#product-info" class="product-card__nav-item text-14" data-index="4"
+                       data-role="scroll-to-anchor" data-element="product-card-nav-item">Ответы и отзывы</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

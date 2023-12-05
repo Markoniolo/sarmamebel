@@ -1,0 +1,122 @@
+{%
+    set mobileMenuList = [
+        { title: 'Бонусная система', mod: '' },
+        { title: 'Магазины', mod: '' },
+        { title: 'Акции', mod: 'circle' },
+        { title: 'Энциклопедия сна', mod: '' },
+        { title: 'Доставка и оплата', mod: '' },
+        { title: 'О компании', mod: '' },
+        { title: 'Обмен и возврат', mod: '' },
+        { title: 'Гостиницам', mod: '' },
+        { title: 'Партнерам', mod: '' },
+    ]
+%}
+
+{%
+    set mobileMenuSocialList = [
+        '/assets/img/ic_vk_grey.svg','/assets/img/ic_tg_grey.svg',
+        '/assets/img/ic_dz_grey.svg','/assets/img/ic_ok_grey.svg'
+    ]
+%}
+
+{%
+    set mobileMenuCategories = [
+        { title: 'Матрасы', mod: '' },
+        { title: 'Кровати', mod: '' },
+        { title: 'Диваны <span class="grey">∙</span> <span>Ценопад</span>', mod: 'green' },
+        { title: 'Аксессуары для сна', mod: '' },
+        { title: 'Мебель для спальни', mod: '' },
+        { title: 'Кресла и пуфы', mod: '' },
+        { title: 'Новинки', mod: 'red' },
+    ]
+%}
+
+<div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__title headline">Меню</div>
+    <a href="#modal-city" class="mobile-menu__city text-13-medium" data-fancybox>
+        <img src="/assets/img/ic_city_arrow_blue.svg" alt="" class="mobile-menu__city-icon">
+        <div class="mobile-menu__city-current">Иркутск <span class="mobile-menu__city-count">∙ 23 салона</span></div>
+    </a>
+    <div class="mobile-menu__categories">
+        {% for item in mobileMenuCategories %}
+            <a href="#" class="mobile-menu__category mobile-menu__category_{{ item.mod }}">
+                {{ item.title }}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_517_68643" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                        <rect width="16" height="16" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_517_68643)">
+                        <path d="M7.99863 11.3746L3.87109 7.24706L4.84863 6.26953L7.99863 9.41953L11.1486 6.26953L12.1262 7.24706L7.99863 11.3746Z" fill="#333333"/>
+                    </g>
+                </svg>
+            </a>
+        {% endfor %}
+    </div>
+    <div class="mobile-menu__profile">
+        <a href="#" class="mobile-menu__profile-link text-16-medium" data-favorite-count="3">
+            <div class="mobile-menu__profile-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_256_119797" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                        <rect width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_256_119797)">
+                        <path d="M6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V11C4 10.45 4.19583 9.97917 4.5875 9.5875C4.97917 9.19583 5.45 9 6 9C6.55 9 7.02083 9.19583 7.4125 9.5875C7.80417 9.97917 8 10.45 8 11V18C8 18.55 7.80417 19.0208 7.4125 19.4125C7.02083 19.8042 6.55 20 6 20ZM12 20C11.45 20 10.9792 19.8042 10.5875 19.4125C10.1958 19.0208 10 18.55 10 18V6C10 5.45 10.1958 4.97917 10.5875 4.5875C10.9792 4.19583 11.45 4 12 4C12.55 4 13.0208 4.19583 13.4125 4.5875C13.8042 4.97917 14 5.45 14 6V18C14 18.55 13.8042 19.0208 13.4125 19.4125C13.0208 19.8042 12.55 20 12 20ZM18 20C17.45 20 16.9792 19.8042 16.5875 19.4125C16.1958 19.0208 16 18.55 16 18V15C16 14.45 16.1958 13.9792 16.5875 13.5875C16.9792 13.1958 17.45 13 18 13C18.55 13 19.0208 13.1958 19.4125 13.5875C19.8042 13.9792 20 14.45 20 15V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20Z" fill="#333333"/>
+                    </g>
+                </svg>
+            </div>
+            <span class="mobile-menu__profile-name">Сравнение</span>
+        </a>
+        <a href="#" class="mobile-menu__profile-link text-16-medium" data-favorite-count="7">
+            <div class="mobile-menu__profile-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_517_29971" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                        <rect width="24" height="24" transform="matrix(-1 0 0 1 24 0)" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_517_29971)">
+                        <path d="M12 20.3234C12.2333 20.3234 12.4708 20.2818 12.7125 20.1984C12.9542 20.1151 13.1667 19.9818 13.35 19.7984L15.075 18.2234C16.8417 16.6068 18.4375 15.0026 19.8625 13.4109C21.2875 11.8193 22 10.0651 22 8.14844C22 6.58177 21.475 5.27344 20.425 4.22344C19.375 3.17344 18.0667 2.64844 16.5 2.64844C15.6167 2.64844 14.7833 2.83594 14 3.21094C13.2167 3.58594 12.55 4.09844 12 4.74844C11.45 4.09844 10.7833 3.58594 10 3.21094C9.21667 2.83594 8.38333 2.64844 7.5 2.64844C5.93333 2.64844 4.625 3.17344 3.575 4.22344C2.525 5.27344 2 6.58177 2 8.14844C2 10.0651 2.70833 11.8234 4.125 13.4234C5.54167 15.0234 7.15 16.6318 8.95 18.2484L10.65 19.7984C10.8333 19.9818 11.0458 20.1151 11.2875 20.1984C11.5292 20.2818 11.7667 20.3234 12 20.3234Z" fill="#333333"/>
+                    </g>
+                </svg>
+            </div>
+            <span class="mobile-menu__profile-name">Избранное</span>
+        </a>
+    </div>
+    <ul class="mobile-menu__list">
+        {% for item in mobileMenuList %}
+            <li class="mobile-menu__item">
+                <a href="#" class="mobile-menu__link text-13-medium">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="mobile-menu__bottom">
+        <div class="mobile-menu__box">
+            <a href="tel:88005553555" class="mobile-menu__contact text-18-medium">8 800 555-35-55</a>
+            <span class="mobile-menu__note text-13">Бесплатный звонок по России, 24/7</span>
+        </div>
+        <div class="mobile-menu__box">
+            <div class="mobile-menu__chats">
+                <a href="#" target="_blank" class="mobile-menu__chat">
+                    <img src="/assets/img/ic_tg_color.svg" alt="" class="mobile-menu__chat-icon">
+                    <div class="mobile-menu__chat-name text-14">Чат Telegram</div>
+                </a>
+                <a href="#" target="_blank" class="mobile-menu__chat">
+                    <img src="/assets/img/ic_wp_color.svg" alt="" class="mobile-menu__chat-icon">
+                    <div class="mobile-menu__chat-name text-14">Чат WhatsApp</div>
+                </a>
+            </div>
+        </div>
+        <div class="mobile-menu__box">
+            <a href="mailto:info@sarmamebel.ru" class="mobile-menu__contact text-18-medium">info@sarmamebel.ru</a>
+            <span class="mobile-menu__note text-13">Бесплатный звонок по всей России, 24/7</span>
+        </div>
+        <div class="mobile-menu__socials">
+            <span class="mobile-menu__note text-14">Наши соцсети</span>
+            <div class="mobile-menu__social-list">
+                {% for icon in mobileMenuSocialList %}
+                    <a href="#" target="_blank" class="mobile-menu__social-link btn-grey">
+                        <img src="{{ icon }}" alt="">
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

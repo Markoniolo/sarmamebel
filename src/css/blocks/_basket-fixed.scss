@@ -1,0 +1,52 @@
+.basket-fixed {
+    position: fixed;
+    z-index: 100;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    display: none;
+    text-decoration: none;
+}
+
+.basket-fixed_active {
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.basket-fixed__area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 16px 19px;
+    color: $c-white;
+    border-radius: 8px;
+    background: #0A4881;
+}
+
+.basket-fixed__span {
+
+}
+
+.basket-fixed__box {
+    display: flex;
+}
+
+.basket-fixed__count {
+    position: relative;
+    color: rgba($c-white, 0.5);
+    margin-right: 13px;
+    &::before {
+        content: '∙';
+        width: 5px;
+        height: 11px;
+        position: absolute;
+        top: 0;
+        right: -9px;
+        color: rgba($c-white, 0.5);
+    }
+}
+
+.basket-fixed__price {
+
+}

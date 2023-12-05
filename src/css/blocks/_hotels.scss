@@ -1,0 +1,178 @@
+.hotels {
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+    }
+}
+
+.hotels__area {
+    margin-bottom: 56px;
+    border-radius: 8px;
+    padding: 56px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../img/hotels/hotels-area-bg.svg");
+    background-size: cover;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+        flex-direction: column;
+        justify-content: unset;
+        padding: 24px;
+        background-image: url("../img/hotels/hotels-area-bg_mob.svg");
+    }
+}
+
+.hotels__left {
+    width: 550px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.hotels__title {
+    margin-bottom: 16px;
+}
+
+.hotels__text {
+    margin-bottom: 104px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.hotels__bottom {
+    display: flex;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.hotels__box {
+    margin-right: 40px;
+    border-radius: 8px;
+    background-color: $c-white;
+    padding: 24px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-down($mobile-width) {
+        margin-right: 0;
+        min-height: 158px;
+    }
+}
+
+.hotels__number {
+    font-family: $font-second;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.48px;
+    @include breakpoint-down($mobile-width) {
+        font-size: 36px;
+        letter-spacing: -0.36px;
+    }
+}
+
+.hotels__box-text {
+    margin-top: auto;
+    @include breakpoint-down($mobile-width) {
+        margin-top: 21px;
+    }
+}
+
+.hotels__list {
+    padding: 25px 0;
+    @include breakpoint-down($mobile-width) {
+        padding: 24px 0 0;
+    }
+}
+
+.hotels__item {
+    &:first-child {
+        margin-bottom: 48px;
+        @include breakpoint-down($mobile-width) {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.hotels__right {
+    width: 500px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        max-width: 295px;
+        order: -1;
+        margin-bottom: 24px;
+    }
+}
+
+.hotels__picture {
+
+}
+
+.hotels__image {
+    height: 500px;
+    border-radius: 8px;
+    @include breakpoint-down($mobile-width) {
+        height: auto;
+    }
+}
+
+.hotels__headline {
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+    }
+}
+
+.hotels__slider {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+    }
+}
+
+.hotels__slide {
+    width: calc(25% - 12px);
+    @include breakpoint-down($mobile-width) {
+        width: calc(50% - 8px);
+        margin-bottom: 16px;
+    }
+}
+
+.hotels__slide-picture {
+    margin-bottom: 16px;
+}
+
+.hotels__slide-image {
+    border-radius: 8px;
+}
+
+.hotels__slide-name {
+
+}
+
+.hotels__logos {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-down($mobile-width) {
+        overflow-x: auto;
+        margin: 0 -16px;
+        &::before, &::after {
+            content: '';
+            width: 16px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+.hotels__logo {
+    flex-shrink: 0;
+    width: 244px;
+    &:not(:last-of-type) {
+        border-right: 1px solid rgba(51, 51, 51, 0.08);
+    }
+}

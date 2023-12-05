@@ -1,0 +1,127 @@
+.header-categories {
+
+}
+
+.header-categories__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-categories__category {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 14px 16px 14px 23px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.16px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: $transition-duration;
+    transition-property: background-color;
+    &:hover {
+        background: #F2F2F2;
+    }
+    svg {
+        margin-left: 2px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.header-categories__category_active {
+    background-color: $c-blue;
+    color: $c-white;
+    &:hover {
+        background: $c-blue;
+    }
+    svg {
+        transform: rotate(180deg);
+        path {
+            fill: $c-white;
+        }
+    }
+}
+
+.header-categories__category_green {
+    span {
+        display: block;
+        color: #7BBF3F;
+    }
+    .grey {
+        color: #B3B3B3;
+        margin: 0 2px;
+    }
+}
+
+.header-categories__category_red {
+    color: #D44A1B;
+}
+
+.header-categories__category-wrap {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $c-white;
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: $transition-duration;
+    transition-property: opacity;
+}
+
+.header-categories__category-wrap_active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.header-categories__container {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1224px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header-categories__category-area {
+
+}
+
+.header-categories__category-block {
+    display: none;
+    flex-wrap: wrap;
+}
+
+.header-categories__category-block_active {
+    display: flex;
+}
+
+.header-categories__category-box {
+    width: 210px;
+    margin-right: 24px;
+    margin-bottom: 56px;
+}
+
+.header-categories__category-name {
+    color: #B3B3B3;
+}
+
+.header-categories__category-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-categories__category-link {
+    margin-top: 16px;
+    color: $c-main;
+    text-decoration: none;
+}
+
+.header-categories__category-informer {
+    margin-left: auto;
+}

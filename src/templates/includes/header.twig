@@ -1,0 +1,187 @@
+{%
+    set headerNav = [
+        { title: 'Бонусная система',  index: '' },
+        { title: 'Акции', mod: 'red', index: '1' },
+        { title: 'Доставка и оплата',  index: '2' },
+        { title: 'Обмен и возврат',  index: '3' },
+        { title: 'Партнерам',  index: '4' },
+        { title: 'Ещё', mod: 'dropdown', list: ['Магазины','Энциклопедия сна','О компании','Гостиницам'], index: '5' },
+    ]
+%}
+{%
+    set headerCategory = [
+        { name: 'Тип', list: ['Пружинные','С ортопедическим эффектом','Беспружинные'] },
+        { name: 'Размер', list: ['Односпальные','Двуспальные','Детские'] },
+        { name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие'] },
+        { name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых'] },
+        { name: 'По форме', list: ['Тонкие','Высокие','Топперы'] },
+        { name: 'По цене', list: ['Недорогие','Премиум','Распродажа'] }
+    ]
+%}
+
+<div class="header-category-layer" data-element="header-category-layer"></div>
+<header class="{{ headerVars.mod ? 'header header_shadow' : 'header' }}">
+    {% include 'components/catalog.twig' %}
+    <div class="container">
+        <div class="header__wrap">
+            <div class="header__top">
+                <a href="#modal-city" class="header__city text-13-medium" data-fancybox>
+                    <img src="/assets/img/ic_city_arrow_blue.svg" alt="" class="header__city-icon">
+                    <div class="header__city-current">Иркутск <span class="header__city-count">∙ 23 салона</span></div>
+                </a>
+                <nav class="header__menu">
+                    <ul class="header__list">
+                        {% for item in headerNav %}
+                            <li class="header__item">
+                                {% if item.mod == 'dropdown' %}
+                                    <div class="header__link header__link_dropdown" data-class="header__link" data-active-class="header__link_active" data-element="header-link-dropdown">
+                                        <span class="header__link-span">{{ item.title }}</span>
+                                        <div class="header__link-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <mask id="mask0_517_68643" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                                                    <rect width="16" height="16" fill="#D9D9D9"/>
+                                                </mask>
+                                                <g mask="url(#mask0_517_68643)">
+                                                    <path d="M7.99863 11.3746L3.87109 7.24706L4.84863 6.26953L7.99863 9.41953L11.1486 6.26953L12.1262 7.24706L7.99863 11.3746Z" fill="#D9D9D9"/>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="header__dropdown">
+                                            {% for dropdownLink in item.list %}
+                                                <a href="#" class="header__dropdown-link">{{ dropdownLink }}</a>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <a href="#" class="{{ item.mod == 'red' ? 'header__link header__link_red' : 'header__link' }}">
+                                        {{ item.title }}
+                                    </a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+                <div class="header__phone-dropdown" data-element="header-link-dropdown"
+                     data-class="header__phone-dropdown" data-active-class="header__phone-dropdown_active">
+                    <div class="header__phone link-hover-blue">
+                        8 800 555-35-55
+                        <div class="header__phone-arrow">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_517_68643" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                                    <rect width="16" height="16" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_517_68643)">
+                                    <path d="M7.99863 11.3746L3.87109 7.24706L4.84863 6.26953L7.99863 9.41953L11.1486 6.26953L12.1262 7.24706L7.99863 11.3746Z" fill="#333333"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="header__contacts">
+                        <button class="header__contacts-close"></button>
+                        <a href="tel:88005553555" class="header__contacts-phone link-hover-blue">8 800 555-35-55</a>
+                        <div class="header__contacts-text">
+                            Принимаем звонки каждый день  с 8 до 22 по Иркутскому времени (GMT+8)
+                        </div>
+                        <a href="#modal-callback" class="header__contacts-button btn-blue" data-fancybox>Заказать звонок</a>
+                        <div class="header__contacts-social">
+                            <a href="#" target="_blank" class="header__contacts-item">
+                                <img src="/assets/img/ic_tg_color.svg" alt="" class="header__contacts-icon">
+                                <span class="header__contacts-name">Чат Telegram</span>
+                            </a>
+                            <a href="#" target="_blank" class="header__contacts-item">
+                                <img src="/assets/img/ic_wp_color.svg" alt="" class="header__contacts-icon">
+                                <span class="header__contacts-name">Чат WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#modal-callback" class="header__callback btn-transparent" data-fancybox>Заказать звонок</a>
+            </div>
+            <div class="header__area">
+                <a href="#mobile-menu" data-fancybox class="header__burger" type="button"></a>
+                <a href="#" class="header__logo">
+                    <img src="/assets/img/logo.svg" alt="" class="header__logo-image">
+                </a>
+                <button class="header__catalog btn-blue" type="button" data-element="header-catalog">
+                    Каталог
+                </button>
+                <div class="header__search-box" data-element="header-search-box">
+                    <div class="header__search-btns">
+                        <button class="header__search-close">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_517_68614" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                                    <rect width="16" height="16" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_517_68614)">
+                                    <path d="M4.85 12L4 11.15L7.15 8L4 4.85L4.85 4L8 7.15L11.15 4L12 4.85L8.85 8L12 11.15L11.15 12L8 8.85L4.85 12Z" fill="#808080"/>
+                                </g>
+                            </svg>
+                        </button>
+                        <button class="header__search-submit btn-blue">Найти</button>
+                    </div>
+                    <label class="header__search-label">
+                        <input type="search" class="header__search" data-element="header-search" placeholder="Поиск по каталогу">
+                        <img src="/assets/img/ic_search_grey.svg" alt="" class="header__search-icon">
+                    </label>
+                    {% include 'components/search.twig' with {'layer': 'true'} %}
+                </div>
+                <div class="header__btns">
+                    <a href="#" class="header__btn header__btn_favorite header__btn_count" data-count="3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_517_29971" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" transform="matrix(-1 0 0 1 24 0)" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_517_29971)">
+                                <path d="M12 20.3234C12.2333 20.3234 12.4708 20.2818 12.7125 20.1984C12.9542 20.1151 13.1667 19.9818 13.35 19.7984L15.075 18.2234C16.8417 16.6068 18.4375 15.0026 19.8625 13.4109C21.2875 11.8193 22 10.0651 22 8.14844C22 6.58177 21.475 5.27344 20.425 4.22344C19.375 3.17344 18.0667 2.64844 16.5 2.64844C15.6167 2.64844 14.7833 2.83594 14 3.21094C13.2167 3.58594 12.55 4.09844 12 4.74844C11.45 4.09844 10.7833 3.58594 10 3.21094C9.21667 2.83594 8.38333 2.64844 7.5 2.64844C5.93333 2.64844 4.625 3.17344 3.575 4.22344C2.525 5.27344 2 6.58177 2 8.14844C2 10.0651 2.70833 11.8234 4.125 13.4234C5.54167 15.0234 7.15 16.6318 8.95 18.2484L10.65 19.7984C10.8333 19.9818 11.0458 20.1151 11.2875 20.1984C11.5292 20.2818 11.7667 20.3234 12 20.3234Z" fill="#333333"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <a href="#modal-callback" class="header__btn-mobile" data-fancybox>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_524_36674" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                                <rect width="32" height="32" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_524_36674)">
+                                <path d="M25.7167 26C23.4028 26 21.0694 25.4604 18.7167 24.3813C16.3639 23.3021 14.1958 21.7708 12.2125 19.7875C10.2292 17.8042 8.69792 15.6361 7.61875 13.2833C6.53958 10.9306 6 8.59722 6 6.28333C6 5.92036 6.12315 5.61574 6.36945 5.36945C6.61574 5.12315 6.92036 5 7.28333 5H11.5805C11.8528 5 12.0893 5.0956 12.2903 5.2868C12.4912 5.47801 12.6241 5.71297 12.6889 5.99167L13.4667 9.80276C13.5056 10.088 13.4991 10.3407 13.4472 10.5611C13.3954 10.7815 13.2916 10.9694 13.1361 11.125L10.2486 14.0417C10.7153 14.8519 11.2257 15.6151 11.7798 16.3313C12.334 17.0474 12.9449 17.7296 13.6125 18.3778C14.2931 19.0713 15.0093 19.7081 15.7611 20.2882C16.513 20.8683 17.3037 21.3852 18.1333 21.8389L20.8945 19.0195C21.0824 18.8185 21.3077 18.6776 21.5702 18.5965C21.8327 18.5155 22.0935 18.4944 22.3528 18.5333L26.0083 19.3111C26.2935 19.3889 26.5301 19.5396 26.718 19.7632C26.906 19.9868 27 20.238 27 20.5167V24.7167C27 25.0796 26.8769 25.3843 26.6305 25.6305C26.3843 25.8769 26.0796 26 25.7167 26Z" fill="#333333"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <a href="#" class="header__btn header__btn_compare header__btn_count" data-count="3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_256_119797" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_256_119797)">
+                                <path d="M6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V11C4 10.45 4.19583 9.97917 4.5875 9.5875C4.97917 9.19583 5.45 9 6 9C6.55 9 7.02083 9.19583 7.4125 9.5875C7.80417 9.97917 8 10.45 8 11V18C8 18.55 7.80417 19.0208 7.4125 19.4125C7.02083 19.8042 6.55 20 6 20ZM12 20C11.45 20 10.9792 19.8042 10.5875 19.4125C10.1958 19.0208 10 18.55 10 18V6C10 5.45 10.1958 4.97917 10.5875 4.5875C10.9792 4.19583 11.45 4 12 4C12.55 4 13.0208 4.19583 13.4125 4.5875C13.8042 4.97917 14 5.45 14 6V18C14 18.55 13.8042 19.0208 13.4125 19.4125C13.0208 19.8042 12.55 20 12 20ZM18 20C17.45 20 16.9792 19.8042 16.5875 19.4125C16.1958 19.0208 16 18.55 16 18V15C16 14.45 16.1958 13.9792 16.5875 13.5875C16.9792 13.1958 17.45 13 18 13C18.55 13 19.0208 13.1958 19.4125 13.5875C19.8042 13.9792 20 14.45 20 15V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20Z" fill="#333333"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <a href="#modal-catalog" class="header__btn-mobile header__btn-mobile_search" data-fancybox>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_256_119791" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_256_119791)">
+                                <path d="M9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L20.3 18.9C20.4833 19.0833 20.575 19.3167 20.575 19.6C20.575 19.8833 20.4833 20.1167 20.3 20.3C20.1167 20.4833 19.8833 20.575 19.6 20.575C19.3167 20.575 19.0833 20.4833 18.9 20.3L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="#333333"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <a href="#" class="header__btn header__btn_basket header__btn_count" data-count="3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_517_86895" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" transform="matrix(-1 0 0 1 24 0)" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_517_86895)">
+                                <path d="M17 22C17.55 22 18.0208 21.8042 18.4125 21.4125C18.8042 21.0208 19 20.55 19 20C19 19.45 18.8042 18.9792 18.4125 18.5875C18.0208 18.1958 17.55 18 17 18C16.45 18 15.9792 18.1958 15.5875 18.5875C15.1958 18.9792 15 19.45 15 20C15 20.55 15.1958 21.0208 15.5875 21.4125C15.9792 21.8042 16.45 22 17 22ZM7 22C7.55 22 8.02083 21.8042 8.4125 21.4125C8.80417 21.0208 9 20.55 9 20C9 19.45 8.80417 18.9792 8.4125 18.5875C8.02083 18.1958 7.55 18 7 18C6.45 18 5.97917 18.1958 5.5875 18.5875C5.19583 18.9792 5 19.45 5 20C5 20.55 5.19583 21.0208 5.5875 21.4125C5.97917 21.8042 6.45 22 7 22ZM18.8 4H4.05C3.66667 4 3.375 4.17083 3.175 4.5125C2.975 4.85417 2.96667 5.2 3.15 5.55L6.7 11.95C6.88333 12.2833 7.12917 12.5417 7.4375 12.725C7.74583 12.9083 8.08333 13 8.45 13H15.9L17 15H6C5.71667 15 5.47917 15.0958 5.2875 15.2875C5.09583 15.4792 5 15.7167 5 16C5 16.2833 5.09583 16.5208 5.2875 16.7125C5.47917 16.9042 5.71667 17 6 17H17C17.75 17 18.3167 16.6708 18.7 16.0125C19.0833 15.3542 19.1 14.7 18.75 14.05L17.4 11.6L21 4H22C22.2833 4 22.5208 3.90417 22.7125 3.7125C22.9042 3.52083 23 3.28333 23 3C23 2.71667 22.9042 2.47917 22.7125 2.2875C22.5208 2.09583 22.2833 2 22 2H20.375C20.1917 2 20.0167 2.05 19.85 2.15C19.6833 2.25 19.5583 2.39167 19.475 2.575L18.8 4Z" fill="#333333"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <a href="#modal-login" class="header__btn header__btn_sign-in" data-fancybox>Войти</a>
+                </div>
+            </div>
+            <div class="header__bottom">
+                {% include 'components/header-categories.twig' %}
+            </div>
+        </div>
+    </div>
+</header>

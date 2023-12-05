@@ -1,0 +1,62 @@
+<div class="modal-login" id="modal-login">
+    <div class="modal-login__title headline">Вход в личный кабинет</div>
+    <div class="modal-login__loader">
+        <div class="modal-login__loader-circle"></div>
+        <div class="modal-login__loader-circle"></div>
+        <div class="modal-login__loader-circle"></div>
+        <div class="modal-login__loader-circle"></div>
+        <div class="modal-login__loader-circle"></div>
+    </div>
+    <div class="modal-login__text text-16">
+        СМС с паролем для входа отпрален  на&nbsp;номер <span class="modal-login__phone-value"></span>
+    </div>
+    <button class="modal-login__change-number text-16">Изменить номер</button>
+    <div class="modal-login__code">
+        <input type="number" class="modal-login__code-input headline input" maxlength="1" name="code1">
+        <input type="number" class="modal-login__code-input headline input" maxlength="1" name="code2">
+        <input type="number" class="modal-login__code-input headline input" maxlength="1" name="code3">
+        <input type="number" class="modal-login__code-input headline input" maxlength="1" name="code4">
+    </div>
+    <div class="modal-login__send-again text-13">
+        <button class="modal-login__send-again-btn text-13 link-underline" disabled>Отправить повторно</button>
+        через
+        <div class="modal-login__send-again-counter text-13">0:57</div>
+    </div>
+    <div class="modal-login__nav">
+        <div class="modal-login__nav-btn modal-login__nav-btn_active text-14">Вход</div>
+        <a href="#modal-registration" class="modal-login__nav-btn text-14" data-fancybox
+           data-element="modal-login-go-registration">
+            Регистрация
+        </a>
+    </div>
+    <div class="modal-login__area">
+        <input type="text" class="modal-login__input modal-login__input_login input" placeholder="Номер телефона, логин или email"
+               name="login">
+        <input type="password" class="modal-login__input modal-login__input_password input" placeholder="Пароль"
+               name="password">
+    </div>
+    <button class="modal-login__submit btn-blue" disabled>Продолжить</button>
+    <div class="modal-login__recovery-box">
+        <a href="#modal-recovery" class="modal-login__recovery link-underline text-13" data-fancybox>Восстановить пароль</a>
+    </div>
+    <label class="modal-login__notify">
+        <div class="modal-login__checkbox-box">
+            <input type="checkbox" checked class="modal-login__checkbox" name="notify-checkbox">
+            <div class="modal-login__checkbox-view"></div>
+        </div>
+        <div class="modal-login__notify-text text-13">
+            Хочу иногда получать смс-сообщения с подарками и интересными акциями
+        </div>
+    </label>
+    <div class="modal-login__social">
+        <div class="modal-login__social-note text-14">Войти через  соцсети</div>
+        <div class="modal-login__social-list">
+            <a href="#" class="modal-login__social-link">
+                <img src="/assets/img/ic_social_login_vk.svg" alt="" class="modal-login__social-icon">
+            </a>
+            <a href="#" class="modal-login__social-link">
+                <img src="/assets/img/ic_social_login_yandex.svg" alt="" class="modal-login__social-icon">
+            </a>
+        </div>
+    </div>
+</div>

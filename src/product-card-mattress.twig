@@ -1,0 +1,48 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Карточка товара матрас{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': 'header_shadow'} %}
+    {% include 'templates/includes/header.twig' with headerVars %}
+{% endblock %}
+
+{% block page %}
+    {% set crumbsVars = {'list': ['Главная','Каталог','Матрасы','Матрас Intense'], 'mod': ''} %}
+    {% include 'templates/includes/components/crumbs.twig' with crumbsVars %}
+
+    {% include 'templates/includes/product-card.twig' with {'type': 'mattress'} %}
+    {% include 'templates/includes/product-about.twig' with {'type': 'mattress'} %}
+    {% include 'templates/includes/product-info.twig' %}
+    {% include 'templates/includes/tile-line.twig' with {
+        'mod': '',
+        'title': 'Похожие товары',
+        'tile': [
+            { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_1.png', mod: 'жесткий/мягкий' },
+            { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_2.png', mod: 'жесткий/мягкий' },
+            { name: 'Матрас Fresh Herbs', image: '/assets/img/tile-item/tile-item-2_3.png', mod: 'жесткий/мягкий' },
+            { name: 'Матрас Green Moss', image: '/assets/img/tile-item/tile-item-2_4.png', mod: 'жесткий/мягкий' },
+            { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_4.png', mod: 'жесткий/мягкий' },
+        ]
+    } %}
+    {% include 'templates/includes/tile-line.twig' with {
+        'mod': 'tile-line tile-line_product-card',
+        'title': 'С этим товаром покупают',
+        'tile': [
+            { name: 'Кровать Мелоди Light', image: '/assets/img/tile-item/tile-item-1_1.png', mod: 'textile' },
+            { name: 'Кровать Berry', image: '/assets/img/tile-item/tile-item-1_2.png', mod: 'textile' },
+            { name: 'Кровать Орион New', image: '/assets/img/tile-item/tile-item-1_3.png', mod: 'textile' },
+            { name: 'Кровать Валенсия', image: '/assets/img/tile-item/tile-item-1_4.png', mod: 'textile' },
+            { name: 'Кровать Валенсия', image: '/assets/img/tile-item/tile-item-1_4.png', mod: 'textile' },
+        ]
+    } %}
+    {% include 'templates/includes/cyclopedia.twig' with {'title': 'Энциклопедия сна'} %}
+    {% include 'templates/includes/description.twig' %}
+    {% include 'templates/includes/feedback.twig' %}
+    {% include 'templates/includes/services.twig' %}
+    {% include 'templates/includes/modal/modal-order.twig' %}
+    {% include 'templates/includes/modal/modal-one-click.twig' %}
+    {% include 'templates/includes/modal/modal-basket.twig' %}
+    {% include 'templates/includes/modal/modal-question.twig' %}
+    {% include 'templates/includes/modal/modal-review.twig' %}
+{% endblock %}

@@ -1,0 +1,76 @@
+<div class="{{ mod ? mod : 'shops__area' }}">
+    <div class="shops__box" data-element="shops-box">
+        <div class="shops__vertical-slider">
+            <div class="shops__top" data-element="shops-top">
+                {% if mod != 'shops__area shops__area_pickup' %}
+                    <div class="shops__select">
+                        {% include 'custom-select.twig' with {
+                            'name': 'shops',
+                            'mod': 'custom-select custom-select_shops',
+                            'placeholder': 'Иркутск',
+                            'mod': 'custom-select custom-select_shops',
+                            'options': [{value: '0', text: 'Иркутск'},{value: '1', text: 'Москва'},
+                                {value: '2', text: 'Питер'}]
+                        } %}
+                    </div>
+                {% endif %}
+                    <button class="shops__close" type="button" data-element="shops-close"></button>
+            </div>
+
+                {% for box in shopsList %}
+                    <div class="{{ loop.first ? 'shops__list shops__list_active' : 'shops__list' }}" data-element="shops-list">
+                        {% for item in box %}
+                            <div class="shops__inner">
+                                <div class="shops__item" data-coords="{{ item.dataCoords }}"
+                                     data-element="shops-item" data-placemark="{{ item.placemark ? item.placemark : '' }}">
+                                    <img src="{{ item.icon }}" alt="" class="shops__icon">
+                                    <div class="shops__info">
+                                        <div class="shops__name text-16-medium">{{ item.name }}</div>
+                                        <div class="shops__span text-14">{{ item.span }}</div>
+                                        {% if item.note %}
+                                            <div class="shops__note text-14">{{ item.note }}</div>
+                                        {% endif %}
+                                        <div class="shops__link text-14">Подробнее</div>
+                                    </div>
+                                </div>
+                                <div class="shops__about">
+                                    <div class="shops__about-top">
+                                        <div class="shops__about-back" data-element="shops-about-back">
+                                            <div class="shops__about-back-button"></div>
+                                            <div class="shops__about-back-note">К списку</div>
+                                        </div>
+                                        <button class="shops__close" type="button" data-element="shops-close"></button>
+                                    </div>
+                                    <div class="shops__about-slider" data-element="shops-about-slider">
+                                        <div class="shops__about-wrapper swiper-wrapper">
+                                            {% for item in [1,2,3] %}
+                                                <div class="shops__about-slide swiper-slide">
+                                                    <img src="/assets/img/shops/shops-about-1.jpg" alt="" class="shops__about-image" loading="lazy">
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="shops__about-scrollbar swiper-scrollbar"></div>
+                                    </div>
+                                    <div class="shops__about-name text-16-medium">
+                                        {{ item.name }}
+                                    </div>
+                                    <a href="tel:88001002656" class="shops__about-link text-14">
+                                        8 800 100-26-56, доб. 5017
+                                    </a>
+                                    <div class="shops__about-span text-14">Ежедневно с 10:00 до 19:00</div>
+                                    <div class="shops__about-span text-14">
+                                        Склад — будни с 9:00 до 17:00, суббота с 9:00  до 16:00, воскресенье – выходной.
+                                    </div>
+                                    {% if mod == 'shops__area shops__area_pickup' or mod == 'shops__area shops__area_order' %}
+                                        <div class="shops__pickup btn-grey text-16-medium">Забрать заказ можно отсюда</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+        </div>
+    </div>
+    <div class="shops__map" id="shops__map" data-element="shops-map" data-coords="[52.255702, 104.332673]"></div>
+</div>

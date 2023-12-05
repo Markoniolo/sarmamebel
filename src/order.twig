@@ -1,0 +1,20 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Оформление заказа{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': 'header_shadow'} %}
+    {% include 'templates/includes/header.twig' with vars %}
+{% endblock %}
+
+{% block page %}
+
+    {% set crumbsVars = {'list': ['Главная','Корзина','Оформление заказа'], 'mod': ''} %}
+    {% include 'templates/includes/components/crumbs.twig' with crumbsVars %}
+
+    {% include 'templates/includes/order.twig' %}
+
+    {% include 'templates/includes/services.twig' %}
+    {% include 'templates/includes/modal/modal-address.twig' %}
+
+{% endblock %}

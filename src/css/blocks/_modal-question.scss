@@ -1,0 +1,126 @@
+.modal-question {
+    display: none;
+    width: 874px;
+    padding: 42px 32px 32px;
+    border-radius: 8px;
+    background: #FFF;
+    @include breakpoint-down($mobile-width) {
+        padding: 29px 16px 32px;
+        border-radius: 0;
+    }
+}
+
+.modal-question__headline {
+    margin-bottom: 10px;
+}
+
+.modal-question__text {
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        max-width: 290px;
+        width: 100%;
+    }
+}
+
+.modal-question__area {
+    margin-bottom: 24px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    @include breakpoint-down($mobile-width) {
+        padding: 16px;
+    }
+}
+
+.modal-question__label {
+    margin-bottom: 16px;
+}
+
+.modal-question__label_half {
+    width: calc(50% - 4px);
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.modal-question__input-name {
+    margin-bottom: 8px;
+    color: #808080;
+    display: block;
+}
+
+.modal-question__textarea {
+    height: 120px;
+    padding: 16px;
+    width: 100%;
+    border: 2px solid transparent;
+    &:focus {
+        border: 2px solid rgba(51, 51, 51, 0.16);
+    }
+}
+
+.modal-question__line {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.modal-question__input {
+    border-radius: 8px;
+    width: 100%;
+    border: 2px solid transparent;
+    &:focus {
+        border: 2px solid rgba(51, 51, 51, 0.16);
+    }
+}
+
+.modal-question__legend {
+    margin-bottom: 24px;
+    display: block;
+    color: #808080;
+}
+
+.modal-question__submit {
+    margin-bottom: 24px;
+    max-width: 335px;
+    width: 100%;
+    padding: 18px 19px 19px;
+    text-align: center;
+}
+
+.modal-question__policy {
+    display: flex;
+}
+
+.modal-question__checkbox-box {
+    width: 20px;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.modal-question__checkbox {
+    display: none;
+    &:checked + .modal-question__checkbox-view {
+        background: url("../img/ic_checkbox_checked.svg");
+    }
+}
+
+.modal-question__checkbox-view {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/ic_checkbox_empty.svg");
+    background-size: cover;
+    transition-duration: $transition-duration;
+    transition-property: background;
+}
+
+.modal-question__policy-text {
+    color: #808080;
+    line-height: 140%;
+    a {
+        text-decoration: underline;
+        color: #808080;
+    }
+}

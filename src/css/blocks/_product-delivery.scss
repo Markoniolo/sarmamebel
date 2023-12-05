@@ -1,0 +1,164 @@
+.product-delivery {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include breakpoint-down($mobile-width) {
+        flex-direction: column;
+    }
+}
+
+.product-delivery__main {
+    margin-right: 50px;
+    width: 782px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.product-delivery__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-delivery__item {
+    margin-bottom: 40px;
+}
+
+.product-delivery__headline {
+    margin-bottom: 12px;
+    a {
+        text-decoration: none;
+        color: $c-blue;
+    }
+}
+
+.product-delivery__line {
+    display: flex;
+    align-items: center;
+    @include breakpoint-down($mobile-width) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.product-delivery__box {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    margin-right: 4px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    padding: 8px 12px;
+    @include breakpoint-down($mobile-width) {
+        margin-right: 0;
+        margin-bottom: 4px;
+    }
+}
+
+.product-delivery__icon {
+    margin-right: 8px;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.product-delivery__value {
+
+}
+
+.product-delivery__text {
+    margin-left: 12px;
+    color: #808080;
+    @include breakpoint-down($mobile-width) {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+}
+
+.product-delivery__pickup {
+
+}
+
+.product-delivery__more {
+    margin-top: 12px;
+}
+
+.product-delivery__map-title {
+    margin-bottom: 12px;
+}
+
+.product-delivery__map {
+
+}
+
+.product-delivery__sidebar {
+    position: sticky;
+    top: 20px;
+    width: 392px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    @include breakpoint-down($mobile-width) {
+        position: static;
+        padding: 16px;
+        width: 100%;
+        order: -1;
+        margin-bottom: 32px;
+    }
+}
+
+.product-delivery__sidebar-title {
+    margin-bottom: 8px;
+}
+
+.product-delivery__sidebar-list {
+    margin-bottom: 24px;
+}
+
+.product-delivery__sidebar-item {
+    color: #808080;
+    &:not(:last-of-type) {
+        margin-bottom: 14px;
+    }
+}
+
+.product-delivery__pay-list {
+    display: flex;
+}
+
+.product-delivery__pay-item {
+    margin-right: 4px;
+}
+
+.product-delivery__pay-image {
+    border-radius: 4px;
+    width: 56px;
+    height: 26px;
+}
+
+.product-delivery__sidebar-bottom {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(51, 51, 51, 0.16);
+}
+
+.product-delivery__requisites-title {
+    margin-bottom: 16px;
+}
+
+.product-delivery__sidebar-button {
+    margin-bottom: 16px;
+    padding: 10px 11px 11px;
+    max-width: 274px;
+    width: 100%;
+    text-align: center;
+}
+
+.product-delivery__sidebar-note {
+    margin-bottom: 24px;
+    color: #B3B3B3;
+}
+
+.product-delivery__sidebar-more {
+    color: #808080;
+}

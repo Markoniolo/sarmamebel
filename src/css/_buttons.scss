@@ -1,0 +1,124 @@
+@mixin btn {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-transparent {
+    @include btn;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.13px;
+    color: $c-blue;
+    border-radius: 999px;
+    border: 2px solid rgba(10, 72, 129, 0.20);
+    padding: 7px 15px;
+    transition-property: border;
+    transition-duration: $transition-duration;
+    &:hover {
+        border: 2px solid $c-blue;
+    }
+}
+
+.btn-blue {
+    @include btn;
+    border-radius: 8px;
+    background-color: $c-blue;
+    color: $c-white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.16px;
+    text-align: center;
+    transition-property: background-color;
+    transition-duration: $transition-duration;
+    &:hover {
+        background-color: #0063BD;
+    }
+    &:disabled {
+        opacity: 0.3;
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+.btn-white {
+    @include btn;
+    color: $c-blue;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.16px;
+    background-color: $c-white;
+}
+
+.btn-grey {
+    border-radius: 8px;
+    background: rgba(51, 51, 51, 0.08);
+    text-align: center;
+    text-decoration: none;
+    color: #808080;
+    transition-duration: $transition-duration;
+    transition-property: background-color;
+    &:hover {
+        background-color: rgba(51, 51, 51, 0.16);
+    }
+}
+
+.btn-favorite {
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition-duration: $transition-duration;
+    transition-property: background-color;
+    &:hover {
+        &::before {
+            background-image: url("../img/ic_heart_blue-fill.svg");
+        }
+    }
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/ic_heart_grey.svg");
+        transition-duration: $transition-duration;
+        transition-property: background;
+    }
+}
+
+.btn-favorite_white {
+    background-color: rgba($c-white, .5);
+    &:hover {
+        background-color: $c-white;
+    }
+}
+
+.btn-compare {
+    background-color: #F2F2F2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        &::before {
+            background-image: url("../img/ic_compare_blue.svg");
+        }
+    }
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/ic_compare_grey.svg");
+        transition-duration: $transition-duration;
+        transition-property: background;
+    }
+}

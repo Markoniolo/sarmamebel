@@ -1,0 +1,26 @@
+<section class="{{ mod ? mod : 'tile-line' }}">
+    <div class="container">
+        <div class="tile-line__top">
+            <h2 class="tile-line__title title">
+                {{ title }}
+            </h2>
+            <div class="tile-line__nav">
+                <button class="tile-line__nav-btn tile-line__nav-btn_left" type="button"></button>
+                <button class="tile-line__nav-btn tile-line__nav-btn_right" type="button"></button>
+            </div>
+        </div>
+        {% if mod == 'tile-line tile-line_stock' %}
+            <a href="#" class="tile-line__all text-16">Все акционные товары</a>
+        {% endif %}
+        <div class="tile-line__slider" data-element="tile-line-slider">
+            <div class="tile-line__wrapper swiper-wrapper">
+                {% for item in tile %}
+                    <div class="tile-line__slide swiper-slide">
+                        {% include 'components/tile-item.twig' with item %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-scrollbar-blue swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,164 @@
+.faq {
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+    }
+}
+
+.faq__wrap {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.faq__main {
+    width: 704px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+        width: 100%;
+    }
+}
+
+.faq__title {
+    margin-bottom: 24px;
+}
+
+.faq__list {
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+    }
+}
+
+.faq__item {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.08);
+}
+
+.faq__top {
+    cursor: pointer;
+    padding: 24px 104px 24px 0;
+    position: relative;
+    @include breakpoint-down($mobile-width) {
+        padding: 24px 39px 24px 0;
+    }
+    path {
+        transition-property: fill;
+        transition-duration: $transition-duration;
+    }
+    &:hover {
+        path {
+            fill: $c-blue;
+        }
+    }
+    &_active {
+        & + .faq__text {
+            display: block;
+        }
+        .faq__arrow {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.faq__arrow {
+    position: absolute;
+    top: 24px;
+    right: 0;
+}
+
+.faq__text {
+    display: none;
+    padding-bottom: 24px;
+}
+
+.faq__btns {
+    display: flex;
+}
+
+.faq__download {
+    margin-right: 8px;
+    padding: 16px 14px;
+    color: #808080;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    max-width: 257px;
+    width: 100%;
+    svg {
+        margin-right: 8px;
+    }
+}
+
+.faq__more {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq__sidebar {
+    width: 392px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.faq__sidebar-box {
+    position: sticky;
+    top: 56px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    padding: 32px;
+}
+
+.faq__sidebar-headline {
+    margin-bottom: 8px;
+}
+
+.faq__sidebar-text {
+    color: #808080;
+}
+
+.faq__sidebar-phone {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.24px;
+    color: $c-main;
+    text-decoration: none;
+}
+
+.faq__callback {
+    padding: 10px 40px 11px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.faq__chats {
+    display: flex;
+}
+
+.faq__chat {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    &:first-child {
+        margin-right: 24px;
+    }
+}
+
+.faq__chat-icon {
+    border-radius: 8px;
+}
+
+.faq__chat-name {
+    margin-left: 8px;
+    color: #808080;
+}

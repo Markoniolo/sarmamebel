@@ -1,0 +1,180 @@
+{%
+    set shopsListDelivery =[
+        [
+            { name: 'Байкальская, 244в,  ТЦ «Мебель Холл», 2 этаж', span: 'Ежедневно с 10:00 до 19:00',
+                note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[52.255702, 104.332673]'},
+            { name: 'Октябрьской Революции, 1, корп. 7а, ТЦ «Акцент»', span: 'Ежедневно с 10:00 до 19:00',
+                note: '', icon: '/assets/img/ic_shop_blue.svg', dataCoords: '[52.293245, 104.294746]'},
+        ],
+    ]
+%}
+
+{%
+    set deliveryTable = [
+        [
+            { name: 'Матрасы', note: '' },
+            { name: '5–10 дней', note: 'Стандартного размера' },
+            { name: 'до 14 дней', note: 'При наличии ткани на складе'}
+        ],
+        [
+            { name: 'Кровати', note: '' },
+            { name: '21 день', note: 'При наличии ткани на складе' },
+            { name: 'до 45 дней', note: 'Если ткань индивидуальная ' },
+        ],
+        [
+            { name: 'Мягкая мебель', note: '' },
+            { name: '28 дней', note: 'При наличии ткани на складе' },
+            { name: 'до 40 дней', note: 'Если ткань индивидуальная ' },
+        ],
+        [
+            { name: 'Корпусная мебель', note: '' },
+            { name: 'до 14 дней', note: 'Любого размера и формата' },
+        ]
+    ]
+%}
+
+<div class="delivery">
+    <div class="container">
+        <h1 class="delivery__title title">Доставка и оплата по <a href="#modal-city" data-fancybox>Иркутску</a></h1>
+        <div class="delivery__wrap">
+            <div class="delivery__main">
+                <ul class="delivery__list">
+                    <li class="delivery__item">
+                        <div class="delivery__headline text-16-medium">Сроки доставки</div>
+                        <div class="delivery__line">
+                            <div class="delivery__box">
+                                <img src="/assets/img/ic_delivery_black.svg" alt="" class="delivery__icon">
+                                <div class="delivery__value text-18-medium">1 день</div>
+                            </div>
+                            <div class="delivery__text text-14">
+                                Для индивидуальных заказов сроки  рассчитываются вашим менеджером
+                            </div>
+                        </div>
+                    </li>
+                    <li class="delivery__item">
+                        <div class="delivery__headline text-16-medium">Доставка
+                            по <a href="#modal-city" data-fancybox>Иркутску</a></div>
+                        <div class="delivery__line">
+                            <div class="delivery__box">
+                                <div class="delivery__value text-18-medium">650 ₽</div>
+                            </div>
+                            <div class="delivery__text text-14">
+                                Если сумма заказа превышает 40 000 ₽ — доставка будет бесплатной!
+                            </div>
+                        </div>
+                    </li>
+                    <li class="delivery__item">
+                        <div class="delivery__headline text-16-medium">Подъем на этаж</div>
+                        <div class="delivery__line">
+                            <div class="delivery__box">
+                                <div class="delivery__value text-18-medium">99 ₽</div>
+                            </div>
+                            <div class="delivery__text text-14">
+                                Если у вас нет лифта, берем символическую плату за ручной труд
+                            </div>
+                        </div>
+                    </li>
+                    <li class="delivery__item">
+                        <div class="delivery__headline text-16-medium">Доставка по Иркутской области</div>
+                        <div class="delivery__line">
+                            <div class="delivery__box">
+                                <div class="delivery__value text-18-medium">650 ₽</div>
+                            </div>
+                            <div class="delivery__box">
+                                <div class="delivery__value text-18-medium">+55 ₽/доп. км</div>
+                            </div>
+                            <div class="delivery__text text-14">
+                                Доставка по области рассчитывается  вашим менеджером
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="delivery__pickup">
+                    <div class="delivery__map-title text-16-medium">Самовывоз</div>
+                    <div class="delivery__map">
+                        {% include 'components/shops-map.twig' with {'mod': 'shops__area shops__area_pickup', 'shopsList': shopsListDelivery} %}
+                    </div>
+                </div>
+                <div class="delivery__item">
+                    <div class="delivery__headline text-16-medium">Доставка по России</div>
+                    <div class="delivery__line delivery__line_wide">
+                        <div class="delivery__box">
+                            <div class="delivery__value text-18-medium">от 650 ₽</div>
+                        </div>
+                        <div class="delivery__type-box">
+                            <img src="/assets/img/ic_delivery_type_1.svg" alt="" class="delivery__type-icon">
+                        </div>
+                        <div class="delivery__type-box">
+                            <img src="/assets/img/ic_delivery_type_2.svg" alt="" class="delivery__type-icon">
+                        </div>
+                        <div class="delivery__text text-14">
+                            Конечная стоимость будет рассчитана  на этапе формирования заказа.
+                        </div>
+                    </div>
+                </div>
+                <div class="delivery__item">
+                    <div class="delivery__headline text-16-medium">Как получить товар?</div>
+                    <div class="delivery__text delivery__text_wide text-14">
+                        При получаении вам понадобиться чек, подтвержадющий оплату и документ удостоверяющий
+                        личность покупателя. Для юридических лиц нужна доверенность с печатью от компании-плательщика.
+                    </div>
+                </div>
+                <h2 class="delivery__caption title">Сроки изготовления</h2>
+                <div class="delivery__text delivery__text_wide text-14">
+                    Если нужного товара нет в наличии на региональном складе – мы изготовим его для вас индивидуально.
+                    Производство работает по будням и на изготовление нам понадобиться:
+                </div>
+                <div class="delivery__table">
+                    {% for row in deliveryTable %}
+                        <div class="delivery__row">
+                            {% for td in row %}
+                                <div class="delivery__td">
+                                    <div class="delivery__td-name text-16-medium">{{ td.name }}</div>
+                                    {% if td.note %}
+                                        <div class="delivery__td-note text-14">{{ td.note }}</div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="delivery__sidebar">
+                <div class="delivery__sidebar-pay">
+                    <div class="delivery__sidebar-title text-16-medium">Оплата</div>
+                    <ul class="delivery__sidebar-list">
+                        <li class="delivery__sidebar-item text-14">— Наличными курьеру</li>
+                        <li class="delivery__sidebar-item text-14">— Онлайн оплата на сайте</li>
+                        <li class="delivery__sidebar-item text-14">— В рассрочку от Почты России / MoneyCare</li>
+                        <li class="delivery__sidebar-item text-14">— Yandex Pay</li>
+                        <li class="delivery__sidebar-item text-14">— Оплата Долями без %</li>
+                        <li class="delivery__sidebar-item text-14">— В кредит от Сбера</li>
+                        <li class="delivery__sidebar-item text-14">— По рассчетному счету (для юр. лиц)</li>
+                    </ul>
+                    <div class="delivery__sidebar-title text-16-medium">Принимаем к оплате</div>
+                    <ul class="delivery__pay-list">
+                        <li class="delivery__pay-item">
+                            <img src="/assets/img/product-delivery-pay-1.svg" alt="" class="delivery__pay-image">
+                        </li>
+                        <li class="delivery__pay-item">
+                            <img src="/assets/img/product-delivery-pay-2.svg" alt="" class="delivery__pay-image">
+                        </li>
+                        <li class="delivery__pay-item">
+                            <img src="/assets/img/product-delivery-pay-3.svg" alt="" class="delivery__pay-image">
+                        </li>
+                    </ul>
+                    <div class="delivery__sidebar-bottom">
+                        <div class="delivery__requisites-title text-16-medium">Реквизиты</div>
+                        <a href="#" download class="delivery__sidebar-button btn-blue text-16-medium">
+                            Скачать реквизиты в PDF
+                        </a>
+                        <div class="delivery__sidebar-note text-13">
+                            Банковские реквизиты интернет-магазина для оплаты по безналичному расчету
+                        </div>
+                    </div>
+                </div>
+                {% include 'components/more-questions.twig' %}
+            </div>
+        </div>
+    </div>
+</div>

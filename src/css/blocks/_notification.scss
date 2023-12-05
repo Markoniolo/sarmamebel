@@ -1,0 +1,58 @@
+.notification {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 8px;
+    background: #ECE5DF;
+    padding: 16px;
+    max-width: 233px;
+    width: 100%;
+    position: fixed;
+    z-index: 50;
+    bottom: 16px;
+    right: 16px;
+    opacity: 0;
+    pointer-events: none;
+    min-height: 143px;
+    transition-property: opacity;
+    transition-duration: $transition-duration;
+    @include breakpoint-down($mobile-width) {
+        bottom: 80px;
+        max-width: 343px;
+        min-height: 127px;
+    }
+}
+
+.notification_active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.notification__title {
+    margin-bottom: 4px;
+    color: #808080;
+}
+
+.notification__name {
+    margin-bottom: 4px;
+}
+
+.notification__link {
+    margin-top: auto;
+    padding-right: 22px;
+    position: relative;
+    line-height: 26px;
+    display: inline-block;
+    color: $c-blue;
+    text-decoration: none;
+    &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 3px;
+        right: 0;
+        background: url("../img/ic_arrow_right_blue.svg");
+        background-size: cover;
+    }
+}

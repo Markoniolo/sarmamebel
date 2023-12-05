@@ -1,0 +1,60 @@
+{%
+    set productDescriptionSidebarList = [
+        { icon: '/assets/img/ic_product_description_1.svg', note: 'Гарантия 18 месяцев' },
+        { icon: '/assets/img/ic_product_description_2.svg', note: 'Честные цены  от производителя' },
+        { icon: '/assets/img/ic_product_description_3.svg', note: 'Безопасная оплата на сайте' },
+    ]
+%}
+
+{%
+    set productDescriptionList = [
+        {
+            image: '/assets/img/product-description/product-description-1.jpg',
+            headline: 'Умный сон и быстрое восстановление',
+            text: 'Коллекция Sleep Technology сделана из технологичных "умных" материалов. Такие пены умеют дышать, охлаждать, создавать эргономичную поддержку спины. Пружинные блоки включают в себя больше пружин, обладают большей чувствительностью и адаптивностью к движениям тела. Матрасам Smart можно доверить уставший от стресса и тренировок организм. Пока он отдыхает, матрасы Smart работают.',
+            mod: ''
+        },
+        {
+            image: '/assets/img/product-description/product-description-2.jpg',
+            headline: 'Трикотажный чехол с вискозой',
+            text: 'Все матрасы Sleep Technology одеты в трикотажные чехлы c добавлением вискозных нитей. Трикотажный чехол обладает главным свойством нового времени –  он защищает от микроорганизмов и обеспечивает воздухообмен. Входящая в состав ткани вискоза обладает уникальным охлаждающим свойством  и делает поверхность чехла нежной как шелк.',
+            mod: 'product-description__item product-description__item_reverse'
+        },
+        {
+            image: '/assets/img/product-description/product-description-3.jpg',
+            headline: 'Умные слои',
+            text: 'Пены в коллекции Sleep Technology создают идеальный микроклимат спального места. Специальные «умные» компоненты превращают обычный матрас в интеллектуальный домашний гаджет. Матрасы Smart можно отнести к этому классу за счет уникальных свойств латексированных и дышащих пен с угольной пропиткой и массажным эффектом.',
+            mod: ''
+        },
+    ]
+%}
+
+<div class="product-description">
+    <div class="product-description__main">
+        <ul class="product-description__list">
+            {% for item in productDescriptionList %}
+                <li class="{{ item.mod ? item.mod : 'product-description__item' }}">
+                    <div class="product-description__box">
+                        <div class="product-description__headline headline">{{ item.headline }}</div>
+                        <p class="product-description__text text-14">{{ item.text }}</p>
+                    </div>
+                    <picture class="product-description__picture">
+                        <img src="{{ item.image }}" alt="" class="product-description__image">
+                    </picture>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="product-description__sidebar">
+        <ul class="product-description__sidebar-list">
+            {% for item in productDescriptionSidebarList %}
+                <li class="product-description__sidebar-item">
+                    <div class="product-description__sidebar-box">
+                        <img src="{{ item.icon }}" alt="" class="product-description__sidebar-icon">
+                    </div>
+                    <div class="product-description__sidebar-note text-18-medium">{{ item.note }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

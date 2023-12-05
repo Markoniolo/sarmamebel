@@ -1,0 +1,48 @@
+<div class="product-questions">
+    <div class="product-questions__main">
+        <div class="product-questions__empty text-16-medium">Вопросов пока нет — задайте первым!</div>
+        <ul class="product-questions__list">
+            {% for item in [1,2,3,4,5] %}
+                <li class="product-questions__item">
+                    <div class="product-questions__top">
+                        <div class="product-questions__author">
+                            <img src="/assets/img/ic_question_avatar_user.svg" alt="" class="product-questions__avatar">
+                            <div class="product-questions__name text-16-medium">Александра</div>
+                        </div>
+                        <div class="product-questions__date text-14">14 сентября 2023</div>
+                    </div>
+                    <div class="product-questions__text text-14">
+                        Добрый день! Подскажите дно у ящиков из ДВП или другой материал и какую нагрузку ящик выдерживает?
+                    </div>
+                    <div class="product-questions__answer">
+                        <div class="product-questions__top">
+                            <div class="product-questions__author">
+                                <img src="/assets/img/ic_question_avatar_expert.svg" alt="" class="product-questions__avatar">
+                                <div class="product-questions__name text-16-medium">Александр</div>
+                                <div class="product-questions__name-tag text-11-medium">Эксперт Сарма</div>
+                            </div>
+                            <div class="product-questions__date text-14">Ответили 14 сентября 2023</div>
+                        </div>
+                        <div class="product-questions__text text-14">
+                            Добрый день, Александра! Максимальная нагрузка на ящик 5 кг, дно ящика из ДВП
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="product-questions__pagination">
+            {% include 'pagination.twig' %}
+        </div>
+    </div>
+    <div class="product-questions__sidebar">
+        <div class="product-questions__sidebar-box">
+            <div class="product-questions__sidebar-title text-16-medium">У вас есть вопросы?</div>
+            <div class="product-questions__sidebar-note text-14">Звоните — мы поможем с выбором!</div>
+        </div>
+        <div class="product-questions__sidebar-box">
+            <a href="tel:88005553555" class="product-questions__phone headline">8 800 555-35-55</a>
+            <div class="product-questions__sidebar-note text-14">По всей России, бесплатно 24/7</div>
+        </div>
+        <a href="#modal-question" class="product-questions__button btn-blue" data-fancybox>Задать вопрос</a>
+    </div>
+</div>

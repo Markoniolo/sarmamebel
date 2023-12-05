@@ -1,0 +1,268 @@
+{%
+    set articleNav = [
+        { text: 'На что влияет поза сна', link: '#impact' },
+        { text: 'Сон на животе', link: '#stomach' },
+        { text: 'На спине', link: '#back' },
+        { text: 'Итог', link: '#result' },
+        { text: 'Каталог', link: '#catalog' },
+    ]
+%}
+
+{%
+    set articleTile = [
+        { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_1.png', mod: '' },
+        { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_2.png', mod: '' },
+        { name: 'Матрас Fresh Herbs', image: '/assets/img/tile-item/tile-item-2_3.png', mod: '' },
+        { name: 'Матрас Green Moss', image: '/assets/img/tile-item/tile-item-2_4.png', mod: '' },
+        { name: 'Матрас Foggy Morning', image: '/assets/img/tile-item/tile-item-2_4.png', mod: '' },
+    ]
+%}
+
+<section class="article">
+    <div class="container">
+        <h1 class="article__title title">Выбираем матрас по позе сна</h1>
+        <div class="article__top">
+            <div class="article__author">
+                <img src="/assets/img/article/author.jpg" alt="" class="article__author-image">
+                <div class="article__author-name text-14">Екатерина Константинопольская<span>, главный редактор</span></div>
+            </div>
+            <div class="article__info">
+                <div class="article__info-item">
+                    <img src="/assets/img/ic_calendar_grey.svg" alt="" class="article__info-icon">
+                    <div class="article__info-note text-14">3 февраля, 2023</div>
+                </div>
+                <div class="article__info-item">
+                    <img src="/assets/img/ic_time_grey.svg" alt="" class="article__info-icon">
+                    <div class="article__info-note text-14">6 минут чтения</div>
+                </div>
+                <div class="article__info-item">
+                    <img src="/assets/img/ic_view_grey.svg" alt="" class="article__info-icon">
+                    <div class="article__info-note text-14">6 165</div>
+                </div>
+            </div>
+        </div>
+        <div class="article__tags">
+            <div class="article__tag text-14">Матрасы</div>
+            <div class="article__tag text-14">Здоровье</div>
+        </div>
+        <div class="article__wrap">
+            <div class="article__main">
+                <p class="article__text-main text-20">
+                    Поза, в которой чаще всего спит человек, оказывает большое влияние  на самочувствие по утрам,
+                    качество сна и общее состояние организма.  К сожалению, какой-то одной идеальной и правильной
+                    позы для сна  не существует. Необходимо выбирать ее в зависимости от степени жесткости вашего
+                    матраса и особенностей организма. В этой статье  мы разберемся, как положение тела во время отдыха
+                    влияет  на человеческий организм и какие позы для сна можно назвать лучшими.
+                </p>
+                <h3 class="article__headline text-24">Содержание статьи</h3>
+                <ul class="article__nav">
+                    {% for item in articleNav %}
+                        <li class="article__nav-item">
+                            <a href="{{ item.link }}" class="article__nav-link" data-role="scroll-to-anchor">{{ item.text }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <h3 class="article__headline text-24" id="impact">На что влияет поза сна</h3>
+                <div class="article__photo">
+                    <picture class="article__photo-picture">
+                        <img src="/assets/img/article/photo.jpg" alt="" class="article__photo-image">
+                    </picture>
+                    <div class="article__photo-line">
+                        <div class="article__photo-left text-14">Часто просыпаетесь не в духе? Возможно дело не в вас.</div>
+                        <div class="article__photo-right text-14">Фото: Unsplash</div>
+                    </div>
+                </div>
+                <p class="article__text text-18">
+                    Достаточно посидеть на неудобном стуле полчаса, чтобы мысли о неприятных ощущениях вытеснили
+                    из головы все остальные. А теперь вспомните, что мы проводим во сне около 8 часов в день и если
+                    все это время тело будет находиться в неправильном положении, это может нанести существенный
+                    вред организму.
+                </p>
+                <div class="article__text text-18">
+                    На что конкретно влияет поза сна:
+                </div>
+                <ul class="article__list">
+                    <li class="article__item text-18">кровоснабжение органов, включая головной мозг;</li>
+                    <li class="article__item text-18">пищеварение,</li>
+                    <li class="article__item text-18">регенерацию мышц,</li>
+                    <li class="article__item text-18">состояние позвоночника,</li>
+                    <li class="article__item text-18">состояние кожи лица,</li>
+                    <li class="article__item text-18">на лимфатическую систему.</li>
+                </ul>
+                <h3 class="article__headline text-24" id="stomach">Сон на животе</h3>
+                <p class="article__text text-18">
+                    Согласно исследованиям, спать на животе предпочитает около 15% людей.  К сожалению, эту позу сна
+                    трудно назвать здоровой для организма. Главная проблема — неправильное положение позвоночника и
+                    шейного отдела, также избыточное давление на область грудной клетки и внутренних органов.  В итоге
+                    вместо снятия накопленной за день нагрузки необходимо, организм испытывает дополнительный дискофорт.
+                </p>
+                <p class="article__text text-18">
+                    Еще один негативный фактор заключается в том, что человеку фактически приходится спать лицом
+                    в подушку. Из-за этого возникают отеки на лице, кожа сдавливается, что приводит к появлению ранних
+                    морщин и старению кожи. Кроме того, отсутствует поддержка шейного отдела позвоночника, что чревато
+                    неприятными ощущениями в шее по утрам и мигренями.
+                </p>
+                <p class="article__text text-18">
+                    <span class="article__text-highlight">Рекомендуем отказаться</span> от сна на животе и выбрать
+                    позу сна на спине или на боку. Если вы не в состоянии сразу отказать от этой вредной привычки,
+                    выбирайте модели матрасов с эластичными наполнителями в верхних слоях. Отличным решением будет
+                    выбор матраса с эффектом памяти (MEMORY) в составе.
+                </p>
+                <h3 class="article__caption text-18-medium">Как снизить негативное влияние на организм?</h3>
+                <ol class="article__list">
+                    <li class="article__item text-18">
+                        Немного сменить позу. Достаточно согнуть одну ногу, чтобы снять нагрузку  с позвоночника и
+                        снизить давление на внутренние органы. 
+                    </li>
+                    <li class="article__item text-18">
+                        Чтобы не просыпаться по утрам с отекшим лицом и избежать преждевременного появления морщин,
+                        выбирайте <a href="#" class="article__link">анатомичные подушки из материалов с эффектом памяти</a>. Они
+                        деликатно
+                        повторяют каждый изгиб вашего тела, не оказывая на лицо обратного давления. Именно сдавливание
+                        кожи лица и является причиной появления морщин. Благодаря уникальному свойству пены с эффектом
+                        памяти, этого можно избежать. Подушка должна быть невысокой, чтобы шейный отдел был в правильном
+                        положении.
+                    </li>
+                </ol>
+                <h3 class="article__caption text-18-medium">Матрас для сна на животе</h3>
+                <p class="article__text text-18">
+                    Для того, чтобы снизить негативное влияние сна на животе, следует выбирать умеренно мягкие или
+                    средние модели с пружинами или без. Но для того, чтобы получить полноценную пользу от сна на
+                    ортопедическом матрасе, лучше выбирать сон на спине.
+                </p>
+                <div class="article__product">
+                    <picture class="article__product-picture">
+                        <img src="/assets/img/article/product.jpg" alt="" class="article__product-image">
+                    </picture>
+                    <div class="article__product-line">
+                        <div class="article__product-left text-14">
+                            Для сна на животе подойдет средняя по жесткости
+                            модель <a href="#" class="article__link">Green Moss с микромассажным эффектом</a>
+                        </div>
+                        <a href="#" class="article__product-button btn-blue">К товару</a>
+                    </div>
+                </div>
+                <div class="article__slider-area">
+                    <button class="article__slider-btn article__slider-btn_left" type="button"></button>
+                    <button class="article__slider-btn article__slider-btn_right" type="button"></button>
+                    <div class="article__slider" data-element="article-slider">
+                        <div class="article__wrapper swiper-wrapper">
+                            {% for item in articleTile %}
+                                <div class="article__slide swiper-slide">
+                                    {% include 'components/tile-item.twig' with item %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-scrollbar-blue swiper-scrollbar"></div>
+                    </div>
+                </div>
+                <h3 class="article__headline text-24" id="back">На спине</h3>
+                <p class="article__text text-18">
+                    <span class="article__text-highlight">Одна из лучших поз для сна</span> при условии, что вы спите на правильно
+                    подобранном для вас спальном
+                    месте. Позвоночник в этой позе принимает нейтральное положение. Это позволяет ему избавиться от
+                    накопленной за день нагрузки. При этом отдыхают и мышцы — не зря спортсменам рекомендуют спать
+                    именно на жестких моделях. Эффективный отдых мышц способствует их ускоренной регенерации.
+                </p>
+                <p class="article__text text-18">
+                    Из минусов этой позы можно отметить храп и повышенный шанс столкнуться с сонным параличом.
+                    Также лучше не спать на спине, если вы страдаете от апноэ. Но данные явления встречаются
+                    довольно редко. Если вы ранее не сталкивались с ними, можно смело выбирать эту позу для ночного отдыха.
+                </p>
+                <div class="article__slider-area article__slider-area_single">
+                    <button class="article__slider-btn article__slider-btn_left" type="button"></button>
+                    <button class="article__slider-btn article__slider-btn_right" type="button"></button>
+                    <div class="article__slider" data-element="article-slider-pagination">
+                        <div class="article__wrapper swiper-wrapper">
+                            {% for item in [1,2,3,4,5,6] %}
+                                <div class="article__slide swiper-slide">
+                                    <picture class="article__slide-picture">
+                                        <img src="/assets/img/article/article-slide.jpg" alt="" class="article__slide-image">
+                                    </picture>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="article__pagination swiper-pagination"></div>
+                    </div>
+                    <div class="article__slider-note text-14">
+                        Неправильный выбор подушки во время сна на спине приведет  к&nbsp;напряжению мышц и боли в области шеи
+                    </div>
+                </div>
+                <div class="article__advice text-20">
+                    После выбора жесткости можно смело переходить к сравнению конструкции пружинных и беспружинных
+                    матрасов,  их преимуществ и недостатков.
+                </div>
+                <h3 class="article__headline text-24" id="result">Итог</h3>
+                <p class="article__text text-18">
+                    Поза сна накладывает большое влияние на организм человека. Если вы хотите, чтобы ваш сон был
+                    здоровым, выбирайте сон на спине или на левом боку. Но также не стоит забывать и об аксессуарах
+                    для сна. Неправильно подобранный матрас или слишком высокая подушка могут свести на нет все плюсы
+                    сна в правильной позе.
+                </p>
+                <p class="article__text text-18">
+                    Обратитесь к нашим специалистам, если вам нужно помочь подобрать матрас в зависимости от любимой
+                    позы для сна и других параметров.
+                </p>
+                <div class="article__area">
+                    <h3 class="article__headline text-24" id="catalog">Товары из статьи</h3>
+                    <div class="article__slider-area">
+                        <button class="article__slider-btn article__slider-btn_left" type="button"></button>
+                        <button class="article__slider-btn article__slider-btn_right" type="button"></button>
+                        <div class="article__slider" data-element="article-slider">
+                            <div class="article__wrapper swiper-wrapper">
+                                {% for item in articleTile %}
+                                    <div class="article__slide swiper-slide">
+                                        {% include 'components/tile-item.twig' with item %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="swiper-scrollbar-blue swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                    <div class="article__more">
+                        <span class="article__more-note text-14">Смотрите также: </span>
+                        <a href="#" class="article__link">усиленные пружина в пружине (DS)</a>,
+                        <a href="#" class="article__link">недорогие беспружинные 250 пружин на кв.м.</a>,
+                        <a href="#" class="article__link">Даймонд Раш для французских раскладушек</a>
+                    </div>
+                    <div class="article__bottom">
+                        <div class="article__bottom-tags">
+                            <div class="article__bottom-tags-note text-14">Теги:</div>
+                            <div class="article__tags">
+                                <div class="article__tag text-14">Матрасы</div>
+                                <div class="article__tag text-14">Здоровье</div>
+                            </div>
+                        </div>
+                        <div class="article__reacts">
+                            <button class="article__react article__react_like">
+                                <svg class="article__react-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_203_168442" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                        <rect width="20" height="20" fill="#D9D9D9"/>
+                                    </mask>
+                                    <g mask="url(#mask0_203_168442)">
+                                        <path d="M14.9524 17H6.85714V6.6L12.5238 1L13.5357 2C13.6302 2.09333 13.7077 2.22 13.7685 2.38C13.8292 2.54 13.8595 2.69333 13.8595 2.84V3.12L12.969 6.6H17.381C17.8127 6.6 18.1905 6.76 18.5143 7.08C18.8381 7.4 19 7.77333 19 8.2V9.8C19 9.89333 18.9899 9.99333 18.9696 10.1C18.9494 10.2067 18.919 10.3067 18.8786 10.4L16.45 16.04C16.3286 16.3067 16.1262 16.5333 15.8429 16.72C15.5595 16.9067 15.2627 17 14.9524 17ZM5.2381 6.6V17H2V6.6H5.2381Z" fill="#B3B3B3"/>
+                                    </g>
+                                </svg>
+                                <span class="article__react-value text-14">2</span>
+                            </button>
+                            <button class="article__react article__react_dislike">
+                                <svg class="article__react-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_203_168412" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                        <rect width="20" height="20" fill="#D9D9D9"/>
+                                    </mask>
+                                    <g mask="url(#mask0_203_168412)">
+                                        <path d="M5.04762 3H13.1429V13.4L7.47619 19L6.46429 18C6.36984 17.9067 6.29226 17.78 6.23155 17.62C6.17083 17.46 6.14048 17.3067 6.14048 17.16V16.88L7.03095 13.4H2.61905C2.1873 13.4 1.80952 13.24 1.48571 12.92C1.1619 12.6 1 12.2267 1 11.8V10.2C1 10.1067 1.01012 10.0067 1.03036 9.9C1.0506 9.79333 1.08095 9.69333 1.12143 9.6L3.55 3.96C3.67143 3.69333 3.87381 3.46667 4.15714 3.28C4.44048 3.09333 4.7373 3 5.04762 3ZM14.7619 13.4V3H18V13.4H14.7619Z" fill="#B3B3B3"/>
+                                    </g>
+                                </svg>
+                                <span class="article__react-value text-14"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="article__sidebar">
+                {% include 'components/article-side.twig' with {'mod': 'article-side article-side_post'} %}
+            </div>
+        </div>
+    </div>
+</section>

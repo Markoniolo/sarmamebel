@@ -1,0 +1,31 @@
+.special-offer {
+    padding: 0 25px;
+    background-color: $c-blue;
+}
+
+.special-offer_hide {
+    display: none;
+}
+
+.special-offer-text {
+    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.13px;
+    color: $c-white;
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.special-offer-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../img/ic_close_white.svg");
+    background-size: cover;
+}

@@ -1,0 +1,108 @@
+{%
+    set headerCategories = [
+        { title: 'Матрасы', mod: 'dropdown', index: '',
+            list: [
+                {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+                {name: 'Размер', list: ['Односпальные','Двуспальные','Детские']},
+                {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+                {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+                {name: 'По форме', list: ['Тонкие','Высокие','Топперы']},
+                {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+            ]
+        },
+        { title: 'Кровати', mod: 'dropdown', index: '1',
+            list: [
+                {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+                {name: 'Размер', list: ['Односпальные','Двуспальные','Детские']},
+                {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+                {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+            ]
+        },
+        { title: 'Диваны <span class="grey">∙</span> <span>Ценопад</span>', mod: 'green', index: '2',
+            list: [
+                {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+                {name: 'По форме', list: ['Тонкие','Высокие','Топперы']},
+                {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+            ]
+        },
+        { title: 'Аксессуары для сна', mod: 'dropdown', index: '3',
+            list: [
+                {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+                {name: 'Размер', list: ['Односпальные','Двуспальные','Детские']},
+                {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+                {name: 'По форме', list: ['Тонкие','Высокие','Топперы']},
+                {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+            ]
+        },
+        { title: 'Мебель для спальни', mod: 'dropdown', index: '4',
+            list: [
+            {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+            {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+            {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+            {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+        ]
+        },
+        { title: 'Кресла и пуфы', mod: 'dropdown', index: '5',
+            list: [
+                {name: 'Тип', list: ['Пружинные','С ортопедическим  эффектом','Беспружинные']},
+                {name: 'Размер', list: ['Односпальные','Двуспальные','Детские']},
+                {name: 'Жесткость', list: ['Мягкие','Средняя жёсткость','Жёсткие']},
+                {name: 'По назначению', list: ['На диван','Анатомические','На большой вес','Для пожилых']},
+                {name: 'По форме', list: ['Тонкие','Высокие','Топперы']},
+                {name: 'По цене', list: ['Недорогие','Премиум','Распродажа']},
+            ]
+        },
+        { title: 'Новинки', mod: 'red', index: '6',
+        },
+    ]
+%}
+
+<div class="header-categories">
+    <ul class="header-categories__list">
+        {% for item in headerCategories %}
+            {% if item.mod == 'red' %}
+                <a href="#" class="header-categories__category header-categories__category_{{ item.mod }}" data-index={{ loop.index - 1 }}>
+                    {{ item.title }}
+                </a>
+            {% else %}
+                <li class="header-categories__category header-categories__category_{{ item.mod }}" data-index={{ loop.index - 1 }}
+                data-element="header-categories-category">
+                    {{ item.title }}
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_517_68643" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                            <rect width="16" height="16" fill="#fff"/>
+                        </mask>
+                        <g mask="url(#mask0_517_68643)">
+                            <path d="M7.99863 11.3746L3.87109 7.24706L4.84863 6.26953L7.99863 9.41953L11.1486 6.26953L12.1262 7.24706L7.99863 11.3746Z" fill="#333333"/>
+                        </g>
+                    </svg>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div class="header-categories__category-wrap" data-element="header-categories-category-wrap">
+        <div class="header-categories__container">
+            <div class="header-categories__category-area">
+                {% for item in headerCategories %}
+                    {% if item.mod != 'red' %}
+                        <div class="header-categories__category-block" data-element="header-categories-category-block">
+                            {% for category in item.list %}
+                                <div class="header-categories__category-box">
+                                    <div class="header-categories__category-name text-13">{{ category.name }}</div>
+                                    <div class="header-categories__category-list">
+                                        {% for box in category.list %}
+                                            <a href="#" class="header-categories__category-link text-16 link-hover-blue">{{ box }} {{ item.index }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="header-categories__category-informer">
+                {% include 'informer.twig' %}
+            </div>
+        </div>
+    </div>
+</div>

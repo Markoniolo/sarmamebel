@@ -1,0 +1,10 @@
+/*
+    Пример подключения шрифта woff/woff2
+    https://css-tricks.com/snippets/css/using-font-face/
+
+    @include font-face('ProximaNova', '../fonts/ProximaNova-Regular/ProximaNova-Regular');
+*/
+
+@include font-face('EuclidCircularA', '../fonts/EuclidCircularA-Regular', 400)
+@include font-face('EuclidCircularA', '../fonts/EuclidCircularA-Medium', 500)
+@include font-face('CloserText', '../fonts/CloserText-Medium', 500)

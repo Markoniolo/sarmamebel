@@ -1,0 +1,44 @@
+<form class="modal-question" id="modal-question">
+    <div class="modal-question__headline headline">Задать вопрос</div>
+    <div class="modal-question__text text-16">
+        У вас возникли вопросы или необходима консультация, напишите нам!
+    </div>
+    <div class="modal-question__area">
+        <label class="modal-question__label">
+            <span class="modal-question__input-name text-14">Ваш вопрос*</span>
+            <textarea class="modal-question__textarea input text-16-medium" placeholder="Задайте ваш вопрос" required></textarea>
+        </label>
+        <div class="modal-question__line">
+            <label class="modal-question__label modal-question__label_half">
+                <span class="modal-question__input-name text-14">Электронная почта*</span>
+                <input type="email" class="modal-question__input input text-16-medium" placeholder="Электронная почта*" required>
+            </label>
+            <label class="modal-question__label modal-question__label_half">
+                <span class="modal-question__input-name text-14">Телефон</span>
+                <input type="tel" class="modal-question__input input text-16-medium" placeholder="Номер телефона">
+            </label>
+        </div>
+        <div class="modal-question__line">
+            <label class="modal-question__label modal-question__label_half">
+                <span class="modal-question__input-name text-14">Имя*</span>
+                <input type="text" class="modal-question__input input text-16-medium" placeholder="Имя*" required>
+            </label>
+            <label class="modal-question__label modal-question__label_half">
+                <span class="modal-question__input-name text-14">Номер заказа (если есть)</span>
+                <input type="number" class="modal-question__input input text-16-medium" placeholder="6 цифр">
+            </label>
+        </div>
+    </div>
+    <span class="modal-question__legend text-14">*обязательно для заполнения</span>
+    <button class="modal-question__submit btn-blue text-16-medium">Отправить сообщение</button>
+    <div class="modal-question__policy">
+        <label class="modal-question__checkbox-box">
+            <input type="checkbox" checked class="modal-question__checkbox" name="policy-checkbox">
+            <div class="modal-question__checkbox-view"></div>
+        </label>
+        <div class="modal-question__policy-text text-13">
+            Нажимая кнопку «Свяжитесь со мной», я даю свое согласие на сбор и обработку моих персональных
+            данных в соответствии с <a href="#">политикой конфиденциальности</a>
+        </div>
+    </div>
+</form>

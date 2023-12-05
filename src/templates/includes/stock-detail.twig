@@ -1,0 +1,73 @@
+{%
+    set stockDetailList = [
+        { name: 'Just', count: '24 модели' },
+        { name: 'Like Forest', count: '3 модели' },
+        { name: 'Multiflex', count: '12 моделей' },
+        { name: 'Sleep Tehnology', count: '24 модели' },
+        { name: 'Kids Dream', count: '3 модели' },
+    ]
+%}
+
+<section class="stock-detail">
+    <div class="container">
+        <h1 class="stock-detail__title title">Скидка на топпер при покупке матраса - 20%</h1>
+        <div class="stock-detail__top">
+            <div class="stock-detail__left text-16">Осталось 3 месяца 19 дней</div>
+            <div class="stock-detail__share">
+                <span class="stock-detail__share-text text-16">Поделиться</span>
+                <img src="/assets/img/ic_share_blue.svg" alt="" class="stock-detail__share-icon">
+            </div>
+        </div>
+        <div class="stock-detail__wrap">
+            <div class="stock-detail__main">
+                <picture class="stock-detail__picture">
+                    <source srcset="/assets/img/stock-detail/stock-detail-1_mob.jpg" media="(max-width: 1260px)">
+                    <img src="/assets/img/stock-detail/stock-detail-1.jpg" alt="" class="stock-detail__image">
+                </picture>
+                <div class="stock-detail__headline headline">
+                    До 30.09.2023 в интернет-магазине и фирменных салонах Sarma
+                    скидка 20% на <a href="#">топпер</a> при покупке матраса.
+                </div>
+                <div class="stock-detail__caption text-16">
+                    Предложение действует при покупке любого матраса из серий:
+                </div>
+                <div class="stock-detail__list">
+                    {% for item in stockDetailList %}
+                        <a href="#" class="stock-detail__item">
+                            <span class="stock-detail__name text-20-medium">{{ item.name }}</span>
+                            <span class="stock-detail__count text-14">{{ item.count }}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+                <div class="stock-detail__caption text-16">
+                    Скидка распространяется на все топперы, кроме Eva и Tom.
+                </div>
+                <div class="stock-detail__more text-16">
+                    Предложение ограничено. Подробности акции уточняйте по телефону горячей линии:
+                    <a href="tel:88001002656" class="text-18-medium">8 800 100-26-56</a> и у консультантов в фирменных салонах.
+                </div>
+            </div>
+            <div class="stock-detail__sidebar">
+                <div class="stock-detail__sidebar-headline headline">Общие правила скидок</div>
+                <ul class="stock-detail__sidebar-list">
+                    <li class="stock-detail__sidebar-item text-14">
+                        Скидки по отдельным акциям не суммируются.
+                    </li>
+                    <li class="stock-detail__sidebar-item text-14">
+                        Скидка не распространяется на товар, приобретенный в кредит.
+                    </li>
+                    <li class="stock-detail__sidebar-item text-14">
+                        Покупатель вправе выбрать наибольшую скидку по одной из акций.
+                    </li>
+                    <li class="stock-detail__sidebar-item text-14">
+                        Время проведения акций может быть продлено.
+                    </li>
+                    <li class="stock-detail__sidebar-item text-14">
+                        <a href="#">Обмен и возврат</a> некачественных товаров, приобретенных в рамках акции,
+                        осуществляется в общем порядке, предусмотренном действующим законодательством РФ.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

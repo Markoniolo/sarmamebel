@@ -1,0 +1,131 @@
+.product-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include breakpoint-down($mobile-width) {
+        flex-direction: column;
+    }
+}
+
+.product-description__main {
+    width: 792px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.product-description__list {
+
+}
+
+.product-description__item {
+    display: flex;
+    @include breakpoint-down($mobile-width) {
+        flex-direction: column;
+    }
+    &:not(:last-of-type) {
+        margin-bottom: 56px;
+        @include breakpoint-down($mobile-width) {
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.product-description__item_reverse {
+    .product-description__picture {
+        margin-left: 0;
+        margin-right: 40px;
+        @include breakpoint-down($mobile-width) {
+            margin-right: 0;
+        }
+    }
+    .product-description__box {
+        order: 1;
+        @include breakpoint-down($mobile-width) {
+            order: unset;
+        }
+    }
+}
+
+.product-description__box {
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.product-description__headline {
+    margin-bottom: 8px;
+}
+
+.product-description__text {
+
+}
+
+.product-description__picture {
+    width: 368px;
+    flex-shrink: 0;
+    margin-left: 40px;
+    @include breakpoint-down($mobile-width) {
+        margin-left: 0;
+        margin-bottom: 24px;
+        max-width: 343px;
+        width: 100%;
+        order: -1;
+    }
+}
+
+.product-description__image {
+    height: 230px;
+    @include breakpoint-down($mobile-width) {
+        height: 214px;
+        object-fit: cover;
+    }
+}
+
+.product-description__sidebar {
+    position: sticky;
+    top: 20px;
+    width: 392px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #F5F3F1;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        margin-top: 32px;
+        position: static;
+        padding: 24px;
+    }
+}
+
+.product-description__sidebar-list {
+
+}
+
+.product-description__sidebar-item {
+    display: flex;
+    align-items: center;
+    &:not(:last-of-type) {
+        margin-bottom: 24px;
+    }
+}
+
+.product-description__sidebar-box {
+    flex-shrink: 0;
+    margin-right: 12px;
+    border-radius: 16px;
+    background-color: #7BBF3F;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-description__sidebar-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.product-description__sidebar-note {
+
+}

@@ -1,0 +1,73 @@
+{%
+    set interiors = [
+        {
+            image: '/assets/img/interiors/interiors-1.jpg',
+            points: [
+                { name: 'Стул Джулиан', top: '293', left: '730', index: '0', image: '/assets/img/interiors/interiors-product-1.png' },
+                { name: 'Стул какой-то', top: '333', left: '232', index: '1', image: '/assets/img/interiors/interiors-product-2.png' },
+            ]
+        },
+        {
+            image: '/assets/img/interiors/interiors-2.jpg',
+            points: [
+                { name: 'Стул Джулиан', top: '352', left: '129', index: '2', image: '/assets/img/interiors/interiors-product-3.png' },
+                { name: 'Стул какой-то', top: '293', left: '730', index: '3', image: '/assets/img/interiors/interiors-product-4.png'},
+            ]
+        },
+        {
+            image: '/assets/img/interiors/interiors-3.jpg',
+            points: [
+                { name: 'Стул какой-то', top: '264', left: '192', index: '4', image: '/assets/img/interiors/interiors-product-5.png' },
+                { name: 'И ещё один стул', top: '291', left: '633', index: '5', image: '/assets/img/interiors/interiors-product-1.png' },
+            ]
+        }
+    ]
+%}
+
+<section class="interiors" data-element="interiors">
+    <div class="container">
+        <div class="interiors__fixed">
+            <div class="interiors__layer"></div>
+            <div class="interiors__list">
+                {% for slide in interiors %}
+                    {% for point in slide.points %}
+                        {% include 'components/interiors__modal.twig' with {'mod': 'interiors__modal interiors__modal_fixed'} %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="interiors__top">
+            <h2 class="interiors__title title">Вдохновляйтесь реальными интерьерами!</h2>
+            <p class="interiors__text text-16">
+                Тысячи наших клиентов уже поделились фотографиями стильных квартир с мебелью. Посмотрите на них и
+                выберете  то, что подходит именно под вас и ваш интерьер.
+            </p>
+            <div class="interiors__nav">
+                <button class="interiors__nav-btn interiors__nav-btn_left" type="button"></button>
+                <button class="interiors__nav-btn interiors__nav-btn_right" type="button"></button>
+            </div>
+        </div>
+        <div class="interiors__slider" data-element="interiors-slider">
+            <div class="interiors__wrapper swiper-wrapper">
+                {% for slide in interiors %}
+                    <div class="interiors__slide swiper-slide">
+                        <div class="interiors__inner">
+                            <picture class="interiors__picture">
+                                <img src="{{ slide.image }}" alt="" class="interiors__image" loading="lazy">
+                            </picture>
+                            {% for point in slide.points %}
+                                <div class="interiors__wrap" data-top="{{ point.top }}" data-left="{{ point.left }}">
+                                    <div class="interiors__circle" data-element="interiors-circle"
+                                         data-index="{{ point.index }}"></div>
+                                    {% include 'components/interiors__modal.twig' with {'mod': ''} %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-scrollbar-blue swiper-scrollbar"></div>
+        </div>
+        <a href="#" class="interiors__more text-16-medium">Показать ещё</a>
+    </div>
+</section>

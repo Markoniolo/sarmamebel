@@ -1,0 +1,58 @@
+{%
+    set anotherStockTile = [
+    { image: '/assets/img/stock/stock-1.jpg', tag: 'Успейте до 30.09.2023',
+        left: 'Осталось 3 месяца 19 дней', name: 'Скидка на топпер при покупке матраса - 20%' },
+    { image: '/assets/img/stock/stock-2.jpg', tag: 'Успейте до 19.09.2023',
+        left: 'Осталось 1 месяц 12 часов', name: 'Герда + Fresh Herbs за 35 999 ₽' },
+    { image: '/assets/img/stock/stock-3.jpg', tag: 'Успейте до 10.09.2023',
+        left: 'Остался 6 дней 8 часов', name: 'Скидки на мебель и матрасы для детей и подростков' },
+    { image: '/assets/img/stock/stock-4.jpg', tag: 'Успейте до 10.09.2023',
+        left: 'Остался 2 месяца 6 дней', name: 'Обмен матраса после покупки' },
+    { image: '/assets/img/stock/stock-5.jpg', tag: '',
+        left: 'От 14 июня', name: 'Открытие дисконт-магазина в городе Усолье-Сибирское' },
+    { image: '/assets/img/stock/stock-6.jpg', tag: '',
+        left: 'От 14 июня', name: 'Особое предложение к открытию дачного сезона' },
+    { image: '/assets/img/stock/stock-7.jpg', tag: 'Успейте до 30.09.2023',
+        left: 'Осталось 3 месяца 19 дней', name: 'Скидка на топпер при покупке матраса - 20%' },
+    { image: '/assets/img/stock/stock-8.jpg', tag: 'Успейте до 19.09.2023',
+        left: 'Осталось 1 месяц 12 часов', name: 'Герда + Fresh Herbs за 35 999 ₽' },
+    { image: '/assets/img/stock/stock-9.jpg', tag: 'Успейте до 10.09.2023',
+        left: 'Остался 6 дней 8 часов', name: 'Скидки на мебель и матрасы для детей и подростков' },
+]
+%}
+
+<section class="another-stock">
+    <div class="container">
+        <div class="another-stock__top">
+            <h2 class="another-stock__title title">
+                Другие акции
+            </h2>
+            <div class="another-stock__nav">
+                <button class="another-stock__nav-btn another-stock__nav-btn_left" type="button"></button>
+                <button class="another-stock__nav-btn another-stock__nav-btn_right" type="button"></button>
+            </div>
+        </div>
+        <div class="another-stock__slider" data-element="another-stock-slider">
+            <div class="another-stock__wrapper swiper-wrapper">
+                {% for item in anotherStockTile %}
+                    <a href="#" class="another-stock__link swiper-slide">
+                        <div class="another-stock__box">
+                            <picture class="another-stock__picture">
+                                <img src="{{ item.image }}" alt="" class="another-stock__image">
+                            </picture>
+                            {% if item.tag %}
+                                <div class="another-stock__tag text-11-medium">
+                                    {{ item.tag }}
+                                    <span style="background-color: #14703F"></span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="another-stock__left text-13">{{ item.left }}</div>
+                        <div class="another-stock__name text-18-medium">{{ item.name }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="swiper-scrollbar-blue swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>

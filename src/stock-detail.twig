@@ -1,0 +1,32 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Акции детальная{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': 'header_shadow'} %}
+    {% include 'templates/includes/header.twig' with headerVars %}
+{% endblock %}
+
+{% block page %}
+    {% set crumbsVars = {'list': ['Главная','Акции','Скидка на топпер при покупке матраса - 20%'], 'mod': ''} %}
+    {% include 'templates/includes/components/crumbs.twig' with crumbsVars %}
+
+    {% include 'templates/includes/stock-detail.twig' %}
+
+    {% include 'templates/includes/tile-line.twig' with {
+        'mod': 'tile-line tile-line_stock',
+        'title': 'Товары по акции',
+        'tile': [
+            { name: 'Кровать Мелоди Light', image: '/assets/img/tile-item/tile-item-1_1.png', mod: 'жесткий/мягкий' },
+            { name: 'Кровать Berry', image: '/assets/img/tile-item/tile-item-1_2.png', mod: 'жесткий/мягкий' },
+            { name: 'Кровать Орион New', image: '/assets/img/tile-item/tile-item-1_3.png', mod: 'жесткий/мягкий' },
+            { name: 'Кровать Валенсия', image: '/assets/img/tile-item/tile-item-1_4.png', mod: 'жесткий/мягкий' },
+            { name: 'Кровать Валенсия', image: '/assets/img/tile-item/tile-item-1_4.png', mod: 'жесткий/мягкий' },
+        ]
+    } %}
+
+    {% include 'templates/includes/another-stock.twig' %}
+
+    {% include 'templates/includes/feedback.twig' %}
+    {% include 'templates/includes/services.twig' %}
+{% endblock %}

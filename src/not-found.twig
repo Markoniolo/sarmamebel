@@ -1,0 +1,32 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}404{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': 'header_shadow'} %}
+    {% include 'templates/includes/header.twig' with vars %}
+{% endblock %}
+
+{% block page %}
+
+    {% set crumbsVars = {'list': ['Главная','Такой страницы не существует'], 'mod': ''} %}
+    {% include 'templates/includes/components/crumbs.twig' with crumbsVars %}
+
+    {% include 'templates/includes/not-found.twig' %}
+
+    {% include 'templates/includes/tile-line.twig' with {
+        'mod': '',
+        'title': 'Хиты продаж среди <a href="#">кроватей</a>',
+        'tile': [
+            { name: 'Кровать Мелоди Light', image: '/assets/img/tile-item/tile-item-1_1.png', mod: 'textile' },
+            { name: 'Кровать Berry', image: '/assets/img/tile-item/tile-item-1_2.png', mod: 'textile' },
+            { name: 'Кровать Орион New', image: '/assets/img/tile-item/tile-item-1_3.png', mod: 'textile' },
+            { name: 'Кровать Валенсия', image: '/assets/img/tile-item/tile-item-1_4.png', mod: 'textile' },
+            { name: 'Кровать Валенсия 2', image: '/assets/img/tile-item/tile-item-1_4.png', mod: 'textile' },
+        ]
+    } %}
+    {% include 'templates/includes/description.twig' %}
+    {% include 'templates/includes/feedback.twig' %}
+    {% include 'templates/includes/services.twig' %}
+
+{% endblock %}

@@ -1,0 +1,127 @@
+.bonus-cap {
+    margin-bottom: 56px;
+}
+
+.bonus-cap__area {
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background: $c-blue;
+    color: $c-white;
+    padding: 32px 80px 32px;
+    overflow: hidden;
+    @include breakpoint-down($mobile-width) {
+        padding: 24px 24px 279px;
+    }
+}
+
+.bonus-cap__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 532px;
+    width: 100%;
+    margin-left: auto;
+    @include breakpoint-down($mobile-width) {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}
+
+.bonus-cap__picture {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 914px;
+    height: 320px;
+    @include breakpoint-down($mobile-width) {
+        width: 697px;
+        height: 279px;
+    }
+}
+
+.bonus-cap__image {
+
+}
+
+.bonus-cap__title {
+    margin-bottom: 18px;
+    div {
+        display: inline;
+    }
+    img {
+        display: inline;
+        width: 22px;
+        height: 22px;
+        @include breakpoint-down($mobile-width) {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+.bonus-cap__text {
+    max-width: 441px;
+    width: 100%;
+    margin-bottom: 84px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 64px;
+        max-width: 100%;
+    }
+}
+
+.bonus-cap__button {
+    padding: 18px 50px 19px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.bonus-cap__list {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-down($mobile-width) {
+        display: block;
+    }
+}
+
+.bonus-cap__item {
+    padding: 16px 24px;
+    width: 300px;
+    border-radius: 8px;
+    background: #F5F3F1;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        &:not(:last-of-type) {
+            margin-bottom: 8px;
+        }
+    }
+    &:nth-child(1), &:nth-child(2) {
+        .bonus-cap__name {
+            max-width: 170px;
+            @include breakpoint-down($mobile-width) {
+                max-width: 100%;
+            }
+        }
+    }
+    &:nth-child(3) {
+        .bonus-cap__name {
+            max-width: 200px;
+            @include breakpoint-down($mobile-width) {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.bonus-cap__value {
+    display: block;
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 32px;
+    }
+}
+
+.bonus-cap__name {
+
+}

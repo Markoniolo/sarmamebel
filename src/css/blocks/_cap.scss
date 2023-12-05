@@ -1,0 +1,124 @@
+.cap {
+    margin-bottom: 50px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 40px;
+    }
+}
+
+.cap__area {
+    display: flex;
+    align-items: flex-start;
+}
+
+.cap__slider {
+    margin-right: 24px;
+    flex-grow: 1;
+    overflow: hidden;
+    padding-bottom: 20px;
+    position: relative;
+    @include breakpoint-down($mobile-width) {
+        flex-grow: unset;
+        max-width: 343px;
+        width: 100%;
+        margin-right: 16px;
+    }
+    @include breakpoint-down(766px) {
+        margin-right: 0;
+    }
+    .swiper-wrapper {
+        padding-bottom: 0;
+    }
+}
+
+.cap__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.40);
+    top: 50%;
+    transform: translateY(calc(-50% - 10px));
+    transition-property: background-color;
+    transition-duration: $transition-duration;
+    @include breakpoint-down($mobile-width) {
+        display: none;
+    }
+    &:hover {
+        background-color: $c-white;
+    }
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/ic_arrow_right_blue.svg");
+    }
+}
+
+.cap__nav_left {
+    left: 16px;
+    transform: translateY(calc(-50% - 10px)) rotate(180deg);
+}
+
+.cap__nav_right {
+    right: 16px;
+}
+
+.cap__wrapper {
+
+}
+
+.cap__slide {
+    margin-right: 24px;
+    @include breakpoint-down(766px) {
+        margin-right: 0;
+    }
+}
+
+.cap__picture {
+
+}
+
+.cap__image {
+    object-fit: cover;
+    height: 320px;
+    border-radius: 8px;
+    @include breakpoint-down(766px) {
+        height: 343px;
+    }
+}
+
+.cap__informer {
+    width: 288px;
+    flex-shrink: 0;
+    @include breakpoint-down(766px) {
+        display: none;
+    }
+}
+
+.cap__pagination {
+    display: flex;
+    top: unset !important;
+    bottom: 10px !important;
+    right: 0 !important;
+    width: unset !important;
+    height: 2px;
+    margin: 0 12px;
+    box-sizing: border-box;
+    @include breakpoint-down($mobile-width) {
+        margin: 0 -4px;
+    }
+    .swiper-pagination-bullet {
+        border-radius: 2px;
+        width: 100%;
+        height: 2px;
+        background-color: rgba($c-main, .08);
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: $c-blue;
+    }
+}

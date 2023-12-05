@@ -1,0 +1,213 @@
+.article-side {
+    @include breakpoint-down($mobile-width) {
+        margin-top: 56px;
+    }
+}
+
+.article-side_post {
+    .article-side__tags {
+        @include breakpoint-down($mobile-width) {
+            position: static;
+            flex-wrap: wrap;
+            margin: 0 -3px 34px;
+            padding: 0;
+            &::before, &::after {
+                content: none;
+            }
+        }
+    }
+}
+
+.article-side__title {
+    margin-bottom: 16px;
+}
+
+.article-side__title_mob-hide {
+    @include breakpoint-down($mobile-width) {
+        display: none;
+    }
+}
+
+.article-side__social {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.article-side__social-button {
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-side__social-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.article-side__social-share {
+    padding: 0 24px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    .article-side__social-icon {
+        margin-right: 8px;
+    }
+}
+
+.article-side__tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -3px 34px;
+    @include breakpoint-down($mobile-width) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 -16px;
+        padding-bottom: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        &::before, &::after {
+            content: '';
+            width: 10px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+.article-side__tag {
+    margin: 0 3px 6px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.article-side__input {
+    display: none;
+    &:checked ~ .article-side__view {
+        background-color: $c-blue;
+        color: $c-white;
+        padding-right: 30px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            display: block;
+            background-image: url("../img/ic_close_white.svg");
+            background-size: cover;
+        }
+    }
+}
+
+.article-side__view {
+    border-radius: 999px;
+    background-color: rgba(51, 51, 51, 0.08);
+    padding: 2px 12px 4px;
+    color: #808080;
+    transition-property: background-color;
+    transition-duration: $transition-duration;
+    &:hover {
+        background-color: rgba(51, 51, 51, 0.16);
+    }
+}
+
+.article-side__tag-name {
+
+}
+
+.article-side__list {
+    margin-bottom: 40px;
+}
+
+.article-side__item {
+    display: flex;
+    text-decoration: none;
+    color: $c-main;
+    &:not(:last-of-type) {
+        margin-bottom: 16px;
+    }
+    &:hover {
+        .article-side__item-name {
+            color: $c-blue;
+        }
+    }
+}
+
+.article-side__image {
+    flex-shrink: 0;
+    width: 120px;
+    height: 105px;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+.article-side__box {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-side__item-name {
+
+}
+
+.article-side__item-views {
+    margin-top: auto;
+    color: #B3B3B3;
+    padding-left: 24px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background-image: url("../img/ic_view_grey.svg");
+        background-size: cover;
+    }
+}
+
+.article-side__subscribe {
+    border-radius: 8px;
+    background: #F5F3F1;
+    padding: 24px;
+}
+
+.article-side__headline {
+    margin-bottom: 8px;
+}
+
+.article-side__subscribe-note {
+    margin-bottom: 16px;
+    color: #808080;
+}
+
+.article-side__line {
+    display: flex;
+}
+
+.article-side__subscribe-input {
+    margin-right: 8px;
+    max-width: 280px;
+    width: 100%;
+}
+
+.article-side__submit {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-side__submit-icon {
+    width: 24px;
+    height: 24px;
+}

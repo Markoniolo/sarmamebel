@@ -1,0 +1,141 @@
+.agency {
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+    }
+}
+
+.agency__nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -3px 24px;
+}
+
+.agency__tab {
+    margin: 0 3px 6px;
+    padding: 2px 12px 4px;
+    border-radius: 999px;
+    background: rgba(51, 51, 51, 0.08);
+    color: #808080;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: $transition-duration;
+    &:hover {
+        background-color: rgba(51, 51, 51, 0.16);
+    }
+}
+
+.agency__tab_active {
+    background-color: $c-blue;
+    color: $c-white;
+    padding-right: 30px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 8px;
+        width: 20px;
+        height: 20px;
+        display: block;
+        background-image: url("../img/ic_close_white.svg");
+        background-size: cover;
+    }
+    &:hover {
+        background-color: $c-blue;
+    }
+}
+
+.agency__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -12px -24px;
+    @include breakpoint-down($mobile-width) {
+        margin: 0 0 16px;
+    }
+}
+
+.agency__item {
+    width: calc(50% - 24px);
+    margin: 0 12px 24px;
+    padding: 32px 24px;
+    border-radius: 8px;
+    background: #F5F3F1;
+    @include breakpoint-down($mobile-width) {
+        margin: 0 0 16px;
+        padding: 16px;
+        width: 100%;
+    }
+}
+
+.agency__item_hide {
+    display: none;
+}
+
+.agency__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 16px;
+        align-items: flex-start;
+    }
+}
+
+.agency__icons {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 21px;
+    flex-shrink: 0;
+}
+
+.agency__icon {
+    width: 60px;
+    @include breakpoint-down($mobile-width) {
+        width: 48px;
+    }
+    &:not(:first-of-type) {
+        margin-left: -24px;
+    }
+}
+
+.agency__title {
+
+}
+
+.agency__name {
+    margin-bottom: 24px;
+    color: #808080;
+}
+
+.agency__line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 12px;
+        display: block;
+    }
+}
+
+.agency__span {
+
+}
+
+.agency__email {
+    color: $c-blue;
+    text-decoration: none;
+    @include breakpoint-down($mobile-width) {
+        margin-top: 12px;
+        display: inline-block;
+    }
+}
+
+.agency__time {
+    color: #808080;
+    @include breakpoint-down($mobile-width) {
+        margin-top: 12px;
+    }
+}

@@ -1,0 +1,90 @@
+{%
+    set articlesTile = [
+        {
+            image: '/assets/img/articles/articles-1.jpg', tag: 'Матрасы',
+            name: '«Посчитайте овечек», или 8 способов  быстро уснуть', mod: 'articles__item articles__item_wide'
+        },
+        {
+            image: '/assets/img/articles/articles-2.jpg', tag: 'Как выбрать',
+            name: 'Как выбрать матрас:  4 важных вопроса, на которые стоит ответить перед покупкой', mod: ''
+        },
+        {
+            image: '/assets/img/articles/articles-3.jpg', tag: 'Для ребенка',
+            name: 'Какой жесткости должен быть матраса для ребенка?', mod: ''
+        },
+        {
+            image: '/assets/img/articles/articles-4.jpg', tag: 'Кровати',
+            name: 'Проверка на удобство:  4 способа понять, как расположить кровать в спальне', mod: ''
+        },
+        {
+            image: '/assets/img/articles/articles-5.jpg', tag: 'Кровати',
+            name: 'Спальня Taiga', mod: ''
+        },
+        {
+            image: '/assets/img/articles/articles-6.jpg', tag: 'Здоровье',
+            name: 'Рецепт здорового пробуждения —  как взбодриться без кофе', mod: 'articles__item articles__item_wide'
+        },
+        {
+            image: '/assets/img/articles/articles-7.jpg', tag: 'Матрасы',
+            name: '3, 5 или 7 – сколько зон комфорта в матрасе?', mod: ''
+        },
+        {
+            image: '/assets/img/articles/articles-8.jpg', tag: 'Для ребенка',
+            name: 'Какой жесткости должен быть матраса для ребенка?', mod: ''
+        },
+        {
+            image: '/assets/img/articles/articles-9.jpg', tag: 'Матрасы',
+            name: 'Преимущества беспружинных матрасов', mod: ''
+        },
+        {
+            image: '/assets/img/articles/articles-10.jpg', tag: 'Для ребенка',
+            name: 'Как выбрать детский матрас?', mod: ''
+        },
+    ]
+%}
+
+<section class="articles">
+    <div class="container">
+        <h1 class="articles__title title">Энциклопедия сна</h1>
+        <div class="articles__wrap">
+            <div class="articles__main">
+                <div class="articles__sort">
+                    <label class="articles__sort-item">
+                        <input type="radio" checked class="articles__sort-radio" name="articles-sort" value="По дате">
+                        <span class="articles__sort-name text-14">По дате</span>
+                        <img src="/assets/img/ic_sort_arrow_top.svg" alt="" class="articles__sort-icon">
+                    </label>
+                    <label class="articles__sort-item">
+                        <input type="radio" class="articles__sort-radio" name="articles-sort" value="По популярности">
+                        <span class="articles__sort-name text-14">По популярности</span>
+                        <img src="/assets/img/ic_sort_arrow_top.svg" alt="" class="articles__sort-icon">
+                    </label>
+                </div>
+                <div class="articles__tile">
+                    {% for item in articlesTile %}
+                        <a href="#" class="{{ item.mod ? item.mod : 'articles__item' }}">
+                            <div class="articles__box">
+                                <picture class="articles__picture">
+                                    <img src="{{ item.image }}" alt="" class="articles__image">
+                                </picture>
+                                <div class="articles__tag text-11-medium">{{ item.tag }}</div>
+                            </div>
+                            <div class="articles__line">
+                                <div class="articles__date text-13">15 июня</div>
+                                <div class="articles__time text-13">8 мин</div>
+                            </div>
+                            <div class="{{ item.mod ? 'articles__name headline' : 'articles__name text-18-medium' }}">
+                                {{ item.name }}
+                            </div>
+                            <button class="articles__button btn-blue">Читать</button>
+                        </a>
+                    {% endfor %}
+                </div>
+                {% include 'components/pagination.twig' %}
+            </div>
+            <div class="articles__sidebar">
+                {% include 'components/article-side.twig' %}
+            </div>
+        </div>
+    </div>
+</section>

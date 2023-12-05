@@ -1,0 +1,138 @@
+.modal-address {
+    padding: 42px 32px;
+    display: none;
+    border-radius: 8px;
+    background: $c-white;
+    width: 664px;
+    @include breakpoint-down($mobile-width) {
+        border-radius: 0;
+        padding: 29px 16px 32px;
+    }
+}
+
+.modal-address__headline {
+    margin-bottom: 34px;
+}
+
+.modal-address__list {
+    padding: 32px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    margin-bottom: 16px;
+    @include breakpoint-down($mobile-width) {
+        padding: 16px;
+    }
+}
+
+.modal-address__label {
+    position: relative;
+    background-color: $c-white;
+    border-radius: 8px;
+    padding: 16px;
+    &:not(:last-of-type) {
+        margin-bottom: 8px;
+    }
+}
+
+.modal-address__btns {
+    display: flex;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    @include breakpoint-down($mobile-width) {
+        flex-direction: column;
+    }
+}
+
+.modal-address__btn {
+    width: 24px;
+    height: 24px;
+    &:hover {
+        path {
+            fill: #808080;
+        }
+    }
+    path {
+        transition-property: fill;
+        transition-duration: $transition-duration;
+    }
+}
+
+.modal-address__btn_edit {
+
+}
+
+.modal-address__btn_delete {
+    margin-left: 16px;
+    @include breakpoint-down($mobile-width) {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+}
+
+.modal-address__input {
+    display: none;
+    &:checked {
+        & ~ .modal-address__view {
+            background-image: url("../img/ic_radio_checked.svg");
+        }
+
+        & ~ .modal-address__border {
+            display: block;
+        }
+    }
+}
+
+.modal-address__view {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/ic_radio_empty.svg");
+    background-size: cover;
+    transition-duration: $transition-duration;
+    transition-property: background;
+}
+
+.modal-address__border {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid $c-blue;
+    pointer-events: none;
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+.modal-address__inner {
+    padding-left: 32px;
+    padding-right: 75px;
+    @include breakpoint-down($mobile-width) {
+        padding-right: 30px;
+    }
+}
+
+.modal-address__name {
+
+}
+
+.modal-address__text {
+    margin-top: 8px;
+    color: #808080;
+}
+
+.modal-address__button {
+    padding: 18px 19px 19px;
+    max-width: 320px;
+    width: 100%;
+    @include breakpoint-down($mobile-width) {
+        max-width: 343px;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="{{ mod ? mod : 'custom-select' }}">
+    <select name="{{ name }}" id="">
+        {% for item in options %}
+            <option value="{{ item.value }}">{{ item.text }}</option>
+        {% endfor %}
+    </select>
+    <div class="custom-select__view">{{ placeholder }}</div>
+</div>

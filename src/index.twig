@@ -1,0 +1,93 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Список страниц{% endblock %}
+
+{% block page %}
+    {%
+        set pagesList = [
+            {
+                link: 'main',
+                title: 'Главная'
+            },
+            {
+                link: 'bonus-system',
+                title: 'Бонусная система'
+            },
+            {
+                link: 'catalog',
+                title: 'Каталог'
+            },
+            {
+                link: 'product-card',
+                title: 'Карточка товара'
+            },
+            {
+                link: 'product-card-mattress',
+                title: 'Карточка товара матрасы'
+            },
+            {
+                link: 'basket-empty',
+                title: 'Корзина пустая'
+            },
+            {
+                link: 'basket',
+                title: 'Корзина'
+            },
+            {
+                link: 'order',
+                title: 'Оформление заказа'
+            },
+            {
+                link: 'order-done',
+                title: 'Заказ оформлен'
+            },
+            {
+                link: 'delivery',
+                title: 'Доставка и оплата'
+            },
+            {
+                link: 'refund',
+                title: 'Обмен и возврат'
+            },
+            {
+                link: 'not-found',
+                title: '404'
+            },
+            {
+                link: 'articles',
+                title: 'Все статьи'
+            },
+            {
+                link: 'article',
+                title: 'Cтатья'
+            },
+            {
+                link: 'about',
+                title: 'О компании'
+            },
+            {
+                link: 'partners',
+                title: 'Партнерам'
+            },
+            {
+                link: 'stock',
+                title: 'Акции'
+            },
+            {
+                link: 'stock-detail',
+                title: 'Акции детальная'
+            }
+        ]
+    %}
+    <div class="container">
+        <h1>{{ block('title') }}</h1>
+
+        <ul>
+            {% for item in pagesList %}
+                <li>
+                    <a href="{{ item.link }}.html">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

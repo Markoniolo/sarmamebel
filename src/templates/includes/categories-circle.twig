@@ -1,0 +1,30 @@
+{%
+    set categoriesCircleList = [
+        { name: 'Матрасы', image: '/assets/img/categories-circle/categories-circle-1.jpg' },
+        { name: 'Диваны', image: '/assets/img/categories-circle/categories-circle-2.jpg' },
+        { name: 'Кровати', image: '/assets/img/categories-circle/categories-circle-3.jpg' },
+        { name: 'Подушки', image: '/assets/img/categories-circle/categories-circle-4.jpg' },
+        { name: 'Одеяла', image: '/assets/img/categories-circle/categories-circle-5.jpg' },
+        { name: 'Шкафы', image: '/assets/img/categories-circle/categories-circle-6.jpg' },
+        { name: 'Комоды', image: '/assets/img/categories-circle/categories-circle-7.jpg' },
+        { name: 'Кресла', image: '/assets/img/categories-circle/categories-circle-8.jpg' },
+        { name: 'Пуфы', image: '/assets/img/categories-circle/categories-circle-9.jpg' },
+    ]
+%}
+
+<section class="categories-circle">
+    <div class="container">
+        <div class="categories-circle__slider" data-element="categories-circle-slider">
+            <div class="categories-circle__list swiper-wrapper">
+                {% for item in categoriesCircleList %}
+                    <a href="#" class="categories-circle__item swiper-slide">
+                        <picture class="categories-circle__picture">
+                            <img src="{{ item.image }}" alt="" class="categories-circle__image" loading="lazy">
+                        </picture>
+                        <span class="categories-circle__name text-16-medium">{{ item.name }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

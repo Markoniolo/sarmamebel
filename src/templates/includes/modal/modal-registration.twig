@@ -1,0 +1,70 @@
+<div class="modal-registration" id="modal-registration">
+    <div class="modal-registration__title headline">Добро пожаловать!</div>
+    <div class="modal-registration__text text-16">
+        Зарегистрируйтесь, чтобы получать выгоду с каждой покупки. Кстати,  за&nbsp;регистрацию — <span>250 бонусов!</span>
+    </div>
+    <a href="#" class="modal-registration__loyalty text-14">Подробнее о программе лояльности</a>
+    <div class="modal-registration__nav">
+        <a href="#modal-login" class="modal-registration__nav-btn text-14" data-fancybox
+           data-element="modal-registration-go-login">Вход</a>
+        <div class="modal-registration__nav-btn modal-registration__nav-btn_active text-14">Регистрация</div>
+    </div>
+    <div class="modal-registration__area">
+        <label class="modal-registration__label">
+            <span class="modal-registration__label-name text-14">Номер телефона*</span>
+            <input type="tel" class="modal-registration__input input" placeholder="Введите номер" name="phone" required>
+            <span class="modal-registration__input-note text-13">Для подтверждения будет отправлено СМС.</span>
+            <button class="modal-registration__input-phone-send"></button>
+        </label>
+        <label class="modal-registration__label modal-registration__label_code">
+            <span class="modal-registration__label-name text-14">Код из СМС*</span>
+            <input type="text" class="modal-registration__input input" name="code" required>
+        </label>
+        <label class="modal-registration__label">
+            <span class="modal-registration__label-name text-14">Имя*</span>
+            <input type="text" class="modal-registration__input input" placeholder="Как к вам обращаться?" name="name" required>
+        </label>
+        <label class="modal-registration__label">
+            <span class="modal-registration__label-name text-14">Логин*</span>
+            <input type="text" class="modal-registration__input input" placeholder="Придумайте логин" name="login" required>
+            <span class="modal-registration__input-note text-13">
+                Нужен для того чтобы обмениваться баллами, авторизировать и оставлять отзывы.
+            </span>
+        </label>
+        <label class="modal-registration__label">
+            <span class="modal-registration__label-name text-14">Эл. почта</span>
+            <input type="email" class="modal-registration__input input" placeholder="Введите ваш e-mail" name="email">
+        </label>
+    </div>
+    <button class="modal-registration__submit btn-blue" disabled>Зарегестрироваться</button>
+    <label class="modal-registration__notify">
+        <div class="modal-registration__checkbox-box">
+            <input type="checkbox" checked class="modal-registration__checkbox" name="policy-checkbox">
+            <div class="modal-registration__checkbox-view"></div>
+        </div>
+        <div class="modal-registration__notify-text text-13">
+            Нажимая кнопку «Зарегестрироваться», я даю свое согласие на сбор и обработку моих персональных
+            данных в&nbsp;соответствии с <a href="#" class="link-underline">политикой конфиденциальности</a>
+        </div>
+    </label>
+    <label class="modal-registration__notify">
+        <div class="modal-registration__checkbox-box">
+            <input type="checkbox" checked class="modal-registration__checkbox" name="notify-checkbox">
+            <div class="modal-registration__checkbox-view"></div>
+        </div>
+        <div class="modal-registration__notify-text text-13">
+            Хочу иногда получать смс-сообщения с подарками и интересными акциями
+        </div>
+    </label>
+    <div class="modal-registration__social">
+        <div class="modal-registration__social-note text-14">Регистрация с помощью соцсетей</div>
+        <div class="modal-registration__social-list">
+            <a href="#" class="modal-registration__social-link">
+                <img src="/assets/img/ic_social_login_vk.svg" alt="" class="modal-registration__social-icon">
+            </a>
+            <a href="#" class="modal-registration__social-link">
+                <img src="/assets/img/ic_social_login_yandex.svg" alt="" class="modal-registration__social-icon">
+            </a>
+        </div>
+    </div>
+</div>

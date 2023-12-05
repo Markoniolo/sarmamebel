@@ -1,0 +1,113 @@
+.about {
+    margin-bottom: 56px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 48px;
+    }
+}
+
+.about__title {
+    margin-bottom: 18px;
+}
+
+.about__area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 56px;
+    background-image: url("../img/about/about_bg.svg");
+    background-size: cover;
+    @include breakpoint-down($mobile-width) {
+        padding: 24px;
+        display: block;
+    }
+}
+
+.about__video-box {
+    position: relative;
+    display: block;
+    width: 500px;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 24px;
+        width: 100%;
+        max-width: 295px;
+    }
+}
+
+.about__video-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(#000, .7);
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/ic_play_white.svg");
+    }
+}
+
+.about__video-placeholder {
+    height: 500px;
+    border-radius: 8px;
+    object-fit: cover;
+    @include breakpoint-down($mobile-width) {
+        height: 295px;
+    }
+}
+
+.about__box {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    min-height: 500px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+        min-height: unset;
+    }
+}
+
+.about__headline {
+    margin-bottom: 16px;
+}
+
+.about__text {
+    margin-bottom: 82px;
+}
+
+.about__list {
+    position: relative;
+    margin-top: auto;
+}
+
+.about__emblem {
+    position: absolute;
+    right: 15px;
+    top: -40px;
+    width: 72px;
+    height: 72px;
+    transform: rotate(-12deg);
+    @include breakpoint-down($mobile-width) {
+        top: -55px;
+    }
+}
+
+.about__item {
+    border-radius: 8px;
+    padding: 24px;
+    background-color: $c-white;
+    @include breakpoint-down($mobile-width) {
+        padding: 16px;
+    }
+    &:not(:last-of-type) {
+        margin-bottom: 16px;
+    }
+}

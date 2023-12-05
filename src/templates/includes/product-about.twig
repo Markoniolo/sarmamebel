@@ -1,0 +1,103 @@
+{%
+    set productAaboutList = [
+        { title: 'Чехол жаккард Jersey с простежкой на 100 г синтепона', number: '1' },
+        { title: 'Внутренний чехол Promtex из спанбонда ', number: '2' },
+        { title: 'Пена RelaxFoam (2 см)', number: '3' },
+        { title: 'Термовойлок', number: '4' },
+        { title: 'Блок независимых пружин (256 шт./кв.м)  с укреплением краев', number: '5' },
+        { title: 'Внешний чехол Promtex из спанбонда', number: '6' },
+    ]
+%}
+
+<section class="product-about">
+    <div class="container">
+        <div class="product-about__area">
+            <div class="product-about__stats">
+                {% if type == 'mattress' %}
+                    <div class="product-about__stats-box">
+                        <div class="product-about__stats-name text-14">Серия</div>
+                        <div class="product-about__stats-value color-blue headline">
+                            Sleep Technology
+                            <div class="product-about__stats-hint">
+                                {% include 'components/hint.twig' %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-about__stats-box">
+                        <div class="product-about__stats-name text-14">Жесткость</div>
+                        <div class="product-about__stats-value headline">
+                            <img src="/assets/img/ic_product-about_stats.svg" alt="" class="product-about__stats-icon">
+                            Мягкий/жесткий
+                        </div>
+                    </div>
+                    <div class="product-about__stats-box">
+                        <div class="product-about__stats-name text-14">Макс. нагрузка на спальное место</div>
+                        <div class="product-about__stats-value headline">150 кг</div>
+                    </div>
+                    <div class="product-about__stats-box">
+                        <div class="product-about__stats-name text-14">Высота матраса</div>
+                        <div class="product-about__stats-value headline">21</div>
+                    </div>
+                {% else %}
+                    <div class="product-about__stats-box">
+                        <div class="product-about__stats-name text-14">Серия</div>
+                        <div class="product-about__stats-value color-blue headline">
+                            Sleep Technology
+                            <div class="product-about__stats-hint">
+                                {% include 'components/hint.twig' %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-about__stats-box">
+                        <div class="product-about__stats-name text-14">Толщина изголовья, мм</div>
+                        <div class="product-about__stats-value headline">80 кг</div>
+                    </div>
+                {% endif %}
+            </div>
+            {% if type == 'mattress' %}
+                <p class="product-about__description text-16">
+                    Новая модель в серии COMFY — матрас Intense. Главная особенность этого матраса — в его сочетании
+                    инновационного настила «Био-кокос» и пружинного блока Tun Spring. Благодаря сбалансированной
+                    плотности Био-кокоса и жёсткости пружинного блока матрас обеспечит правильную анатомическую
+                    поддержку тела во время сна и отдыха.Бурлет матраса выполнен из светло-серого тика —ткани,
+                    устойчивой к истираниям, затяжкам, но обеспечивающей хороший воздухообмен настилам матраса.
+                    Отлично подходит для людей средней весовой категории.
+                </p>
+            {% else %}
+                <p class="product-about__description text-16">
+                    Геометрическая вертикальная стежка, ножки из массива, удобство, эргономика и яркие цвета ассоциируются
+                    с 50-ми, когда зарождался один из самых узнаваемых стилей — мид-сенчури. Кровать Палермо — яркий
+                    представитель этого актуального стиля.
+                </p>
+            {% endif %}
+        </div>
+        {% if type == 'mattress' %}
+            <div class="product-about__wrap">
+                <picture class="product-about__picture">
+                    <img src="/assets/img/product-about-mattress.svg" alt="" class="product-about__image">
+                </picture>
+                <div class="product-about__box">
+                    <div class="product-about__box-headline headline">Состав слоев</div>
+                    <ul class="product-about__list">
+                        {% for item in productAaboutList %}
+                            <li class="product-about__item">
+                                <div class="product-about__number text-13-medium">{{ item.number }}</div>
+                                <div class="product-about__item-inner">
+                                    <div class="{{ loop.first ? 'product-about__item-top product-about__item-top_active text-16' : 'product-about__item-top text-16' }}"
+                                         data-element="product-about-item-top">
+                                        {{ item.title }}
+                                    </div>
+                                    <p class="product-about__item-text text-14">
+                                        Особое переплетение волокон трикотажа обеспечивает свободный воздухообмен во внутренних
+                                        слоях матраса, создавая оптимальный температурный режим. Добавление вискозы усиливает
+                                        терморегулирующий и антистатический эффект трикотажа
+                                    </p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>

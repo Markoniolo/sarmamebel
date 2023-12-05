@@ -1,0 +1,132 @@
+<section class="refund">
+    <div class="container">
+        <h1 class="refund__title title">Обмен и возврат</h1>
+        <div class="refund__wrap">
+            <div class="refund__main">
+                <p class="refund__text-main text-20">
+                    При покупке товаров в интернет-магазине Сарма права покупателей регламентируются «Законом о защите прав
+                    потребителей» от 07.02.1992 N 2300-1 (ред. от 11.06.2021). Согласно Статье 26.1. товар, приобретенный
+                    дистанционным способом (через интернет), подлежит возврату в течение 7 дней с момента покупки,
+                    а обмену — в течение 14 дней. Возврат денежных средств производится в течение 10 дней после вывоза товара.
+                </p>
+                {% for item in ['/assets/img/ic_check_green.svg','/assets/img/ic_close_red.svg'] %}
+                    <div class="refund__dropdown-wrap">
+                        <div class="refund__dropdown">
+                            <img src="{{ item }}" alt="" class="refund__dropdown-icon">
+                            <div class="refund__dropdown-text text-18-medium">Какие товары подлежат обмену/возврату</div>
+                        </div>
+                        <div class="refund__dropdown-content">
+                            <ul class="refund__dropdown-list">
+                                <li class="refund__dropdown-item text-18">
+                                    доставленный товар ненадлежащего качества,
+                                </li>
+                                <li class="refund__dropdown-item text-18">
+                                    ошибка при обработке заказа по вине продавца: доставлен не тот товар или не того размера,
+                                </li>
+                                <li class="refund__dropdown-item text-18">
+                                    ошибка в каталоге интернет-магазина (товар не соответствует характеристикам, указанным
+                                    на сайте по габаритам, форме, расцветке, комплектации, размеру).
+                                </li>
+                            </ul>
+                            <div class="refund__dropdown-box text-14">
+                                Согласно государственному стандарту 19917–93 отклонения в размере матраса в пределах
+                                1–2 см допустимы и не считаются браком.
+                            </div>
+                            <div class="refund__dropdown-note text-14">
+                                При этом, возврат или обмен товаров возможен лишь в том случае, если изделие сохранило
+                                потребительские свойства и товарный вид, не было в употреблении и при наличии фабричных ярлыков.
+                            </div>
+                            <div class="refund__dropdown-note text-14">
+                                Производитель оставляет за собой право на изменение характеристик матрасной продукции,
+                                не влияющей на качество (возможно тоновое отличие материала от представленных изображений
+                                на сайте, что не является недостатком, в связи с разными партиями поставки комплектующих или ткани).
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <h2 class="refund__headline headline">Порядок возврата денег до получения товара</h2>
+                <div class="refund__text text-16">
+                    Если вы оплатили товар онлайн и решили отказаться до его получения, то напишите нам на
+                    почту <a href="mailto:sales@sarmamebel.ru">sales@sarmamebel.ru</a>, в чат или
+                    позвоните <a href="tel:88005553555">8 800 555-35-55</a>. Далее менеджер запросит
+                    необходимые данные по заказу
+                </div>
+                <div class="refund__note text-14">Деньги вернутся в течение 10 дней.</div>
+                <h2 class="refund__headline headline">Порядок обмена/возврата товара</h2>
+                <div class="refund__text text-16">
+                    Для оформления возврата бракованного товара или обмена неподошедшего, заполните форму в конце
+                    страницы. Подробно опишите проблему, а также укажите пожелания: возврат или обмен.
+                </div>
+                <h3 class="refund__caption text-16-medium">К претензии необходимо приложить:</h3>
+                <ol class="refund__list">
+                    <li class="refund__item text-16">Номер заказа;</li>
+                    <li class="refund__item text-16">Фото всего изделия, а также отдельно фото дефекта (если имеется заводской брак);</li>
+                    <li class="refund__item text-16">Фото ярлыка на изделии (при наличии);</li>
+                    <li class="refund__item text-16">Контактные данные (почта, телефон) покупателя, оформившего заказ;</li>
+                    <li class="refund__item text-16">Заполнить и прикрепить <a href="#">бланк на возврат товара</a> (при наличии).</li>
+                </ol>
+                <div class="refund__note text-14">
+                    Претензия будет направлена в отдел рекламаций. При необходимости менеджер по рекламациям может
+                    запросить дополнительные фото или видео товара. Срок рассмотрения — от 3 до 10 рабочих дней.
+                    После рассмотрения претензии с клиентом связывается отдел рекламаций для согласования дальнейших действий.
+                </div>
+                <h2 class="refund__headline headline">Заявка на возврат</h2>
+                <div class="refund__text text-16">
+                    Считаете, что наступил гарантийный случай? — оставьте заявку. Не забудьте прикрепить фото чека.
+                </div>
+                <form class="refund__form">
+                    <div class="refund__area">
+                        <label class="refund__label">
+                            <span class="refund__label-name text-14">Причина возврата?*</span>
+                            <input type="text" class="refund__input input" name="reason">
+                        </label>
+                        <label class="refund__label">
+                            <span class="refund__label-name text-14">Имя*</span>
+                            <input type="text" class="refund__input input" placeholder="Как к вам обращаться" name="name">
+                        </label>
+                        <label class="refund__label">
+                            <span class="refund__label-name text-14">Телефон*</span>
+                            <input type="tel" class="refund__input input" placeholder="Укажите номер" name="phone">
+                        </label>
+                        <label class="refund__label">
+                            <span class="refund__label-name text-14">Электронная почта*</span>
+                            <input type="email" class="refund__input input" placeholder="Ваш e-mail" name="email">
+                        </label>
+                        <label class="refund__label refund__label_wide">
+                            <span class="refund__label-name text-14">Сообщение*</span>
+                            <textarea name="message" class="refund__textarea input" placeholder="Опишите проблему"></textarea>
+                            <div class="refund__label-left text-13">
+                                Осталось символов: <span class="refund__label-left-count">2 000</span>
+                            </div>
+                        </label>
+                        <label class="refund__label refund__label_wide">
+                            <div class="refund__file-title text-14">Прикрепите файл</div>
+                            <input type="file" class="refund__file-input">
+                            <div class="refund__file-area">
+                                <div class="refund__file-icon"></div>
+                                <span class="refund__file-note text-13">
+                                    Прикрепите .jpeg, .jpg, .png, .heic, .pdf, .webp, .mp4, .mov, .avi. Не более 4 мб на файл
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="refund__legend text-14">*обязательно для заполнения</div>
+                    <button class="refund__submit btn-blue">Отправить заявку</button>
+                    <label class="refund__policy">
+                        <div class="refund__checkbox-box">
+                            <input type="checkbox" checked class="refund__checkbox" name="policy-checkbox">
+                            <div class="refund__checkbox-view"></div>
+                        </div>
+                        <div class="refund__policy-text text-13">
+                            Нажимая кнопку «Добавить отзыв», я даю свое согласие на сбор и обработку моих
+                            персональных данных в соответствии с <a href="#" class="link-underline">политикой конфиденциальности</a>
+                        </div>
+                    </label>
+                </form>
+            </div>
+            <div class="refund__sidebar">
+                {% include 'components/more-questions.twig' %}
+            </div>
+        </div>
+    </div>
+</section>

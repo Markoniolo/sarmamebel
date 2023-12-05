@@ -1,0 +1,64 @@
+.mobile-bar {
+    padding: 8px 0 12px;
+    display: none;
+    background-color: $c-white;
+    z-index: 100;
+    border-top: 1px solid #F2F2F2;
+}
+
+.mobile-bar_active {
+    @include breakpoint-down($mobile-width) {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.mobile-bar__area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile-bar__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 69px;
+    width: 100%;
+    text-decoration: none;
+    color: $c-main;
+}
+
+.mobile-bar__box {
+    position: relative;
+    &::before {
+        content: attr(data-count);
+        position: absolute;
+        display: block;
+        border: 2px solid $c-white;
+        padding: 1px 5px;
+        top: -7px;
+        right: -10px;
+        min-height: 20px;
+        min-width: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -0.13px;
+        border-radius: 999px;
+        background-color: $c-blue;
+        color: $c-white;
+    }
+}
+
+.mobile-bar__icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+}
+
+.mobile-bar__name {
+
+}

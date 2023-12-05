@@ -1,0 +1,37 @@
+<div class="{{ mod ? mod : 'interiors__modal' }}">
+    <div class="interiors__modal-area">
+        <div class="interiors__modal-tags">
+            <div class="interiors__modal-tag text-11-medium" style="background-color: #D44A1B; color: #fff">Sale</div>
+            <div class="interiors__modal-tag text-11-medium" style="background-color: #EE7E19; color: #fff">Хит</div>
+            <div class="interiors__modal-tag text-11-medium" style="background-color: #D7CCC3; color: #333">Новинка</div>
+        </div>
+        <button class="interiors__modal-favorite" type="button"></button>
+        {% if mod %}
+            <button class="interiors__modal-close" type="button"></button>
+        {% endif %}
+        <a href="#" class="interiors__modal-link">
+            <picture class="interiors__modal-picture">
+                <img src="{{ point.image }}" alt="" class="interiors__modal-image" loading="lazy">
+            </picture>
+            <div class="interiors__modal-inner">
+                <div class="interiors__modal-name text-16-medium">{{ point.name }}</div>
+                <div class="interiors__modal-info">
+                    <div class="interiors__modal-box">
+                        <div class="interiors__modal-star">
+                            <div class="interiors__modal-star-fill" style="width: 50%"></div>
+                        </div>
+                        <div class="interiors__modal-review text-14">4,9</div>
+                    </div>
+                    <div class="interiors__modal-count text-14">53 отзыва</div>
+                    <div class="interiors__modal-status text-14">В наличии</div>
+                </div>
+                <div class="interiors__modal-price">
+                    <div class="interiors__modal-price-current text-18-medium">11 250 ₽</div>
+                    <div class="interiors__modal-price-old text-16">11 250 ₽</div>
+                    <div class="interiors__modal-price-action text-14">–17%</div>
+                </div>
+                <div class="interiors__modal-more text-16-medium">Подробнее</div>
+            </div>
+        </a>
+    </div>
+</div>

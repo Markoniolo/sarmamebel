@@ -1,0 +1,24 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}О компании{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': 'header_shadow'} %}
+    {% include 'templates/includes/header.twig' with vars %}
+{% endblock %}
+
+{% block page %}
+
+    {% set crumbsVars = {'list': ['Главная','О компании'], 'mod': ''} %}
+    {% include 'templates/includes/components/crumbs.twig' with crumbsVars %}
+
+    {% include 'templates/includes/about.twig' %}
+    {% include 'templates/includes/history-tile.twig' %}
+    {% include 'templates/includes/certificates.twig' with {'title': 'Сертификаты и награды'} %}
+    {% include 'templates/includes/vacancies.twig' %}
+
+    {% include 'templates/includes/feedback.twig' %}
+    {% include 'templates/includes/services.twig' %}
+    {% include 'templates/includes/modal/modal-video-mission.twig' %}
+
+{% endblock %}

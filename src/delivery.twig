@@ -1,0 +1,21 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Доставка и оплата{% endblock %}
+
+{% block header %}
+    {% set headerVars = {'mod': 'header_shadow'} %}
+    {% include 'templates/includes/header.twig' with vars %}
+{% endblock %}
+
+{% block page %}
+
+    {% set crumbsVars = {'list': ['Главная','Доставка и оплата'], 'mod': ''} %}
+    {% include 'templates/includes/components/crumbs.twig' with crumbsVars %}
+
+    {% include 'templates/includes/delivery.twig' %}
+
+    {% include 'templates/includes/description.twig' %}
+    {% include 'templates/includes/feedback.twig' %}
+    {% include 'templates/includes/services.twig' %}
+
+{% endblock %}

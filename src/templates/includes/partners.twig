@@ -1,0 +1,19 @@
+<section class="partners" data-element="partners">
+    <div class="container">
+        <h1 class="partners__title title">Информация для партнёров</h1>
+        <div class="partners__tabs">
+            <button class="partners__tab partners__tab_active text-18-medium" data-index="0">Преимущества</button>
+            <button class="partners__tab text-18-medium" data-index="1">Дилерам</button>
+            <button class="partners__tab text-18-medium" data-index="2">Гостиницам</button>
+            <button class="partners__tab text-18-medium" data-index="3">Представительства</button>
+        </div>
+        <div class="partners__list">
+            <div class="partners__item partners__item_active">{% include '/components/advantages.twig' %}</div>
+            <div class="partners__item">{% include '/components/dealers.twig' %}</div>
+            <div class="partners__item">{% include '/components/hotels.twig' %}</div>
+            <div class="partners__item">
+                {% include '/components/agency.twig' %}
+            </div>
+        </div>
+    </div>
+</section>

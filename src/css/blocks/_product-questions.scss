@@ -1,0 +1,124 @@
+.product-questions {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include breakpoint-down($mobile-width) {
+        flex-direction: column;
+    }
+}
+
+.product-questions__main {
+    width: 704px;
+    @include breakpoint-down($mobile-width) {
+        width: 100%;
+    }
+}
+
+.product-questions__empty {
+    color: #808080;
+}
+
+.product-questions__list {
+
+}
+
+.product-questions__item {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.16);
+}
+
+.product-questions__top {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-questions__author {
+    display: flex;
+    align-items: center;
+}
+
+.product-questions__avatar {
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+}
+
+.product-questions__name {
+
+}
+
+.product-questions__name-tag {
+    margin-left: 8px;
+    padding: 0 8px 2px;
+    background-color: $c-blue;
+    color: $c-white;
+}
+
+.product-questions__date {
+    color: #808080;
+}
+
+.product-questions__text {
+
+}
+
+.product-questions__answer {
+    margin-top: 16px;
+    padding-left: 52px;
+    border-left: 4px solid $c-blue;
+    @include breakpoint-down($mobile-width) {
+        padding-left: 36px;
+        .product-questions__date {
+            margin-top: 8px;
+        }
+    }
+}
+
+.product-questions__pagination {
+    max-width: 343px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.product-questions__sidebar {
+    position: sticky;
+    top: 20px;
+    width: 392px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #F2F2F2;
+    @include breakpoint-down($mobile-width) {
+        order: -1;
+        width: 100%;
+        margin-bottom: 24px;
+        position: static;
+    }
+}
+
+.product-questions__sidebar-box {
+    margin-bottom: 24px;
+}
+
+.product-questions__sidebar-title {
+    margin-bottom: 8px;
+}
+
+.product-questions__sidebar-note {
+    color: #808080;
+}
+
+.product-questions__phone {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-family: $font-main;
+    color: $c-main;
+    text-decoration: none;
+}
+
+.product-questions__button {
+    padding: 10px 40px 11px;
+}

@@ -1,0 +1,254 @@
+.cyclopedia {
+    padding: 56px 0 50px;
+    background-image: url("../img/cyclopedia/cyclopedia-bg.svg");
+    background-size: cover;
+    background-position: center;
+    @include breakpoint-down($mobile-width) {
+        background-image: url("../img/cyclopedia/cyclopedia-bg-mob.svg");
+        padding: 48px 0;
+        overflow: hidden;
+    }
+}
+
+.cyclopedia__wrap {
+    margin-bottom: 32px;
+    position: relative;
+    @include breakpoint-down($mobile-width) {
+        margin-bottom: 24px;
+    }
+}
+
+.cyclopedia__title {
+    margin-bottom: 16px;
+}
+
+.cyclopedia__all {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 16px;
+    padding-right: 22px;
+    color: $c-blue;
+    text-decoration: none;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 1px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background-image: url("../img/ic_btn_all_blue.svg");
+    }
+}
+
+.cyclopedia__text {
+    max-width: 700px;
+    width: 100%;
+}
+
+.cyclopedia__nav {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.cyclopedia__nav-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid rgba(51, 51, 51, 0.16);
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint-down($mobile-width) {
+        display: none;
+    }
+    &:hover {
+        &::before {
+            background-image: url("../img/ic_arrow_right_blue.svg");
+        }
+    }
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/ic_arrow_right_grey.svg");
+        transition-property: background;
+        transition-duration: $transition-duration;
+    }
+}
+
+.cyclopedia__nav-button_left {
+    &::before {
+        transform: rotate(180deg);
+    }
+}
+
+.cyclopedia__nav-button_right {
+    margin-left: 8px;
+}
+
+.cyclopedia__slider {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 46px;
+    @include breakpoint-down($mobile-width) {
+        padding-bottom: 0;
+        overflow: visible;
+    }
+    .swiper-wrapper {
+        @include breakpoint-down($mobile-width) {
+            padding-bottom: 0;
+        }
+    }
+    .swiper-scrollbar {
+        @include breakpoint-down($mobile-width) {
+            display: none;
+        }
+    }
+}
+
+.cyclopedia__slide {
+    &:not(:last-of-type) {
+        margin-right: 24px;
+        @include breakpoint-down($mobile-width) {
+            margin-right: 16px;
+        }
+    }
+    display: flex;
+    flex-direction: column;
+    width: 288px;
+    height: auto;
+    border-radius: 8px;
+    background-color: $c-white;
+    overflow: hidden;
+    text-decoration: none;
+    @include breakpoint-up(1261px) {
+        &:hover {
+            .cyclopedia__button {
+                opacity: 1;
+                pointer-events: all;
+            }
+            .cyclopedia__image {
+                height: 234px;
+            }
+        }
+    }
+}
+
+.cyclopedia__box {
+    position: relative;
+}
+
+.cyclopedia__picture {
+
+}
+
+.cyclopedia__image {
+    height: 288px;
+    width: 100%;
+    object-fit: cover;
+    transition-property: height;
+    transition-duration: $transition-duration;
+    @include breakpoint-down($mobile-width) {
+        height: 180px;
+    }
+}
+
+.cyclopedia__tag {
+    padding: 0 4px 2px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 140%;
+    color: $c-white;
+    display: inline-block;
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: -4px;
+        bottom: 0;
+        left: 0;
+        clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+        background-color: $c-blue;
+    }
+}
+
+.cyclopedia__inner {
+    padding: 16px 24px 40px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
+.cyclopedia__line {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.cyclopedia__date {
+    position: relative;
+    color: #B3B3B3;
+    margin-right: 20px;
+    &::before {
+        content: '∙';
+        position: absolute;
+        top: 0;
+        right: -12px;
+        width: 4px;
+        height: 16px;
+        font-size: 13px;
+        line-height: 120%;
+        letter-spacing: -0.13px;
+        color: #B3B3B3;
+        text-align: center;
+    }
+}
+
+.cyclopedia__time {
+    position: relative;
+    color: #B3B3B3;
+    padding-left: 20px;
+    &::before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: -1px;
+        left: 0;
+        background-image: url("../img/ic_time_grey.svg");
+    }
+}
+
+.cyclopedia__name {
+    color: $c-main;
+}
+
+.cyclopedia__button {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    bottom: 16px;
+    left: 24px;
+    align-items: center;
+    padding: 8px 32px;
+    transition-duration: $transition-duration;
+    transition-property: opacity, background-color;
+    &::after {
+        content: '';
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        margin-left: 4px;
+        background-image: url("../img/cyclopedia/ic_arrow_right_white_read.svg");
+    }
+}

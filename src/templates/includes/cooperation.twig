@@ -1,0 +1,93 @@
+<section class="cooperation">
+    <div class="container">
+        <form class="cooperation__form">
+            <h2 class="cooperation__title title">Заявка на сотрудничество</h2>
+            <p class="cooperation__text text-16">
+                Менеджеры компании всегда на связи и смогут оперативно решить любые вопросы: принять заявку,
+                проследить за своевременной отгрузкой, обеспечить рекламной продукцией.
+            </p>
+            <div class="cooperation__area">
+                <label class="cooperation__label">
+                    <span class="cooperation__note text-14">Имя*</span>
+                    <input type="text" class="cooperation__input input" name="name" required>
+                </label>
+                <label class="cooperation__label">
+                    <span class="cooperation__note text-14">Фамилия*</span>
+                    <input type="text" class="cooperation__input input" name="surname" required>
+                </label>
+                <label class="cooperation__label">
+                    <span class="cooperation__note text-14">Название организации*</span>
+                    <input type="text" class="cooperation__input input" name="surname" required
+                           placeholder="Введите название организации">
+                </label>
+                <div class="cooperation__label">
+                    <span class="cooperation__note text-14">Город*</span>
+                    {% include '/components/custom-select.twig' with {
+                        'name': 'shops',
+                        'mod': 'custom-select custom-select_cooperation',
+                        'placeholder': '',
+                        'mod': 'custom-select custom-select_shops',
+                        'options': [{value: '0', text: 'Иркутск'},{value: '1', text: 'Москва'},
+                            {value: '2', text: 'Питер'}]
+                    } %}
+                </div>
+                <label class="cooperation__label">
+                    <span class="cooperation__note text-14">Email</span>
+                    <input type="email" class="cooperation__input input" name="surname" required
+                           placeholder="Введите электронную почту">
+                </label>
+                <label class="cooperation__label">
+                    <span class="cooperation__note text-14">Телефон*</span>
+                    <input type="tel" class="cooperation__input input" name="surname" required
+                           placeholder="Введите номер">
+                </label>
+                <div class="cooperation__box">
+                    <span class="cooperation__note text-14">Интересующая группа товаров</span>
+                    <div class="cooperation__list">
+                        <label class="cooperation__checkbox">
+                            <input type="checkbox" class="cooperation__checkbox-input checkbox" name="product-group" value="Матрасы">
+                            <span class="cooperation__checkbox-view checkbox-view"></span>
+                            <span class="cooperation__checkbox-name text-14">Матрасы</span>
+                        </label>
+                        <label class="cooperation__checkbox">
+                            <input type="checkbox" class="cooperation__checkbox-input checkbox" name="product-group" value="Мягкая мебель">
+                            <span class="cooperation__checkbox-view checkbox-view"></span>
+                            <span class="cooperation__checkbox-name text-14">Мягкая мебель</span>
+                        </label>
+                        <label class="cooperation__checkbox">
+                            <input type="checkbox" class="cooperation__checkbox-input checkbox" name="product-group" value="Кухни">
+                            <span class="cooperation__checkbox-view checkbox-view"></span>
+                            <span class="cooperation__checkbox-name text-14">Кухни</span>
+                        </label>
+                        <label class="cooperation__checkbox">
+                            <input type="checkbox" class="cooperation__checkbox-input checkbox" name="product-group" value="Корпусная мебель">
+                            <span class="cooperation__checkbox-view checkbox-view"></span>
+                            <span class="cooperation__checkbox-name text-14">Корпусная мебель</span>
+                        </label>
+                    </div>
+                </div>
+                <label class="cooperation__label cooperation__label_wide">
+                    <span class="cooperation__note text-14">Комментарий</span>
+                    <input type="email" class="cooperation__input input" name="comment" required
+                           placeholder="Вопросы, пожелания, уточнения">
+                </label>
+                <div class="cooperation__bottom">
+                    <button class="cooperation__submit btn-blue">Оформить заявку</button>
+                    <div class="cooperation__bottom-note text-16">
+                        Менеджер перезвонит вам в ближайшее время
+                    </div>
+                </div>
+                <label class="cooperation__policy">
+                    <div class="cooperation__checkbox-box">
+                        <input type="checkbox" checked class="cooperation__checkbox-policy checkbox" name="policy-checkbox">
+                        <div class="cooperation__checkbox-view checkbox-view"></div>
+                    </div>
+                    <div class="cooperation__policy-text text-13">
+                        Нажимая кнопку «Оформить заявку», я даю свое согласие на сбор и обработку моих персональных
+                        данных в соответствии с <a href="#" class="link-underline">политикой конфиденциальности</a>
+                    </div>
+                </label>
+            </div>
+        </form>
+    </div>
+</section>

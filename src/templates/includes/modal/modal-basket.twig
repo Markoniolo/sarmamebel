@@ -1,0 +1,61 @@
+<div class="modal-basket" id="modal-basket">
+    <div class="modal-basket__headline headline">Товар в корзине</div>
+    <div class="modal-basket__product">
+        <div class="modal-basket__inner">
+            <img src="/assets/img/tile-item/tile-item-2_1.png" alt="" class="modal-basket__image">
+            <div class="modal-basket__box">
+                <div class="modal-basket__name text-14">Матрас Intense</div>
+                <div class="modal-basket__sizes">
+                    <div class="modal-basket__sizes-span text-14">Габариты, Ш х Д, см</div>
+                    <div class="modal-basket__sizes-select">
+                        {% include '../components/custom-select.twig' with {
+                            'name': 'size',
+                            'placeholder': '120 x 200',
+                            'mod': '',
+                            'options': [{value: '0', text: '120 x 200'},{value: '1', text: '200 x 120'},
+                                {value: '2', text: '150 x 150'}]
+                        } %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-basket__price">
+            <div class="modal-basket__price-current text-16-medium">123 890 ₽</div>
+            <div class="modal-basket__price-old text-16">156 890 ₽</div>
+        </div>
+    </div>
+    <div class="modal-basket__slider-top">
+        <div class="modal-basket__slider-headline headline">Не забудьте купить</div>
+        <div class="modal-basket__nav-box">
+            <button class="modal-basket__nav modal-basket__nav_left"></button>
+            <button class="modal-basket__nav modal-basket__nav_right"></button>
+        </div>
+    </div>
+    <div class="modal-basket__slider" data-element="modal-basket-slider">
+        <div class="modal-basket__wrapper swiper-wrapper">
+            {% for item in [1,2,3,4] %}
+                <div class="modal-basket__slide swiper-slide">
+                    <picture class="modal-basket__slide-picture">
+                        <img src="/assets/img/tile-item/tile-item-1_1.png" alt="" class="modal-basket__slide-image">
+                    </picture>
+                    <div class="modal-basket__slide-name text-14">Кровать Мелоди Light</div>
+                    <div class="modal-basket__slide-price">
+                        <div class="modal-basket__slide-price-current text-16-medium">+12 890 ₽</div>
+                        <div class="modal-basket__slide-price-old text-16">13 890 ₽</div>
+                    </div>
+                    {% if loop.first %}
+                        <button class="modal-basket__slide-add modal-basket__slide-add_active btn-grey text-16-medium" type="button">
+                            В корзине</button>
+                    {% else %}
+                        <button class="modal-basket__slide-add btn-grey text-16-medium" type="button">Добавить</button>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="modal-basket__scrollbar swiper-scrollbar-blue swiper-scrollbar"></div>
+    </div>
+    <div class="modal-basket__buttons">
+        <a href="#" class="modal-basket__basket btn-blue">Перейти в корзину</a>
+        <button class="modal-basket__close btn-grey text-16-medium" type="button">Продолжить покупки</button>
+    </div>
+</div>

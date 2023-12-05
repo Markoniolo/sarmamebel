@@ -1,0 +1,35 @@
+{%
+    set certificatesSlider = [
+        '/assets/img/certificates/certificates-1.jpg',
+        '/assets/img/certificates/certificates-2.jpg',
+        '/assets/img/certificates/certificates-3.jpg',
+        '/assets/img/certificates/certificates-4.jpg',
+        '/assets/img/certificates/certificates-5.jpg',
+    ]
+%}
+
+<section class="certificates">
+    <div class="container">
+        <div class="certificates__wrap">
+            <img src="/assets/img/certificates/certificates-emblem.svg" alt="" class="certificates__emblem">
+            <div class="certificates__area">
+                <div class="certificates__box">
+                    <h2 class="certificates__title title">{{ title }}</h2>
+                    <p class="certificates__text text-16">
+                        Продукция бренда «Сарма» имеет сертификаты качества, соответствует ГОСТу и обладает длительным сроком службы.
+                    </p>
+                </div>
+                <div class="certificates__inner">
+                    <div class="certificates__slider" data-element="certificates-slider">
+                        <div class="certificates__wrapper swiper-wrapper">
+                            {% for item in certificatesSlider %}
+                                <img src="{{ item }}" alt="" class="certificates__image swiper-slide">
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-scrollbar-blue swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
