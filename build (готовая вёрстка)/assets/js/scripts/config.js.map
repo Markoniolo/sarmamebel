@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":[],"file":"config.js"}
+{"version":3,"sources":["scripts/config.js"],"names":["APP","name"],"mappings":";;AAAA,IAAMA,GAAG,GAAG;AACXC,EAAAA,IAAI,EAAE;AADK,CAAZ","sourcesContent":["const APP = {\r\n\tname: 'iBrush HTML Starter'\r\n};\r\n"],"file":"config.js"}
